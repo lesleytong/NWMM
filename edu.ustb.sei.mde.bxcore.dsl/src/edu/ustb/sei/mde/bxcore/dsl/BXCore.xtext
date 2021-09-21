@@ -1,0 +1,373 @@
+grammar edu.ustb.sei.mde.bxcore.dsl.BXCore with org.eclipse.xtext.xbase.Xbase
+
+import "http://www.eclipse.org/xtext/xbase/Xbase" as xbase
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+import "http://www.eclipse.org/xtext/common/JavaVMTypes" as types
+
+generate bXCore "http://www.ustb.edu/sei/mde/bxcore/dsl/BXCore"
+
+BXProgram :
+	imports+=ImportSection*
+	javaImports=XImportSection?
+	slots += DataSlot*
+	definitions += Definition*
+;
+
+ContextAwareAction returns ContextAwareAction:
+	ContextAwareDerivationAction | ContextAwareUnidirectionalAction
+;
+
+ImportSection :
+	'import' metamodel=[ecore::EPackage|STRING] 'as' shortName=ValidID
+;
+
+DataSlot :
+	'slot' var=FullJvmFormalParameter ('=' initializer=XExpression)? 
+;
+
+Definition :
+	CustomizedBiGULDefinition | TypeDefinition | BXFunctionDefinition | IndexDefinition | HelperDefinition
+;
+
+HelperDefinition :
+	'helper' type=JvmTypeReference name=ValidID '(' (parameters+=JvmFormalParameter (',' parameters+=JvmFormalParameter)*)? ')' body=XBlockExpression
+;
+
+CustomizedBiGULDefinition :
+	'bigul' name=ValidID 
+		'(' sourceParams+=JvmFormalParameter (',' sourceParams+=JvmFormalParameter)* ')' 
+		'(' viewParams+=JvmFormalParameter (',' viewParams+=JvmFormalParameter)* ')'
+	(('get' get = XExpression) & ('put' put = XExpression))
+;
+
+TypeLiteral :
+	TupleTypeLiteral | PatternTypeLiteral
+;
+
+TupleTypeLiteral :
+	UnorderedTupleTypeLiteral | OrderedTupleTypeLiteral | PredefinedTypeLiteral
+;
+
+UnorderedTupleTypeLiteral :
+	source=[ImportSection|ValidID] '!' ('(' elements+=TypeVarWithoutInitializer (',' elements+=TypeVarWithoutInitializer)* ')')
+;
+
+UnorderedTupleTypeLiteralWithInitializer returns UnorderedTupleTypeLiteral :
+	source=[ImportSection|ValidID] '!' ('(' elements+=TypeVarWithInitializer (',' elements+=TypeVarWithInitializer)* ')')
+;
+
+OrderedTupleTypeLiteral :
+	source=[ImportSection|ValidID] '!' ('[' elements+=TypeVarWithoutInitializer (',' elements+=TypeVarWithoutInitializer)* ']')
+;
+
+TypeVar returns TypeVar:
+	TypeVarWithoutInitializer | TypeVarWithInitializer
+;
+
+TypeVarWithoutInitializer returns TypeVar :
+	name=ValidID ':' type=TypeRef (many?='[]')?
+;
+TypeVarWithInitializer returns TypeVar :
+	name=ValidID ':' type=TypeRef (many?='[]')? => '<-' initializer=ContextAwareDerivationAction
+;
+
+PredefinedTypeLiteral :
+	type=('empty')
+;
+
+PatternTypeLiteral :
+	source=[ImportSection|ValidID] '!' root=PatternNode 
+	('(' additional+=TypeVar (',' additional+=TypeVar)* ')')? 
+	('[' filter=ContextAwareCondition ']')? 
+	('order' orderBy=[AbstractPatternEdge|ValidID] (direction=('after'|'before') pivot=[TypeVar|ValidID])?)?
+;
+
+TypeDefinition:
+	('type' name=ValidID '=' literal = TypeLiteral) | PatternDefinition
+;
+
+PatternDefinition:
+	'pattern' name=ValidID '=' literal=PatternTypeLiteral
+;
+
+ContextTypeRef :
+	({DefinedContextTypeRef} type=[TypeDefinition|ValidID]) 
+	| TupleTypeLiteral
+;
+
+BXFunctionDefinition :
+	'function' name=ValidID typeIndicator=TypeIndicator?  '=' statement = XmuCoreStatement
+;
+
+TypeRef :
+	{EcoreTypeRef} type=[ecore::EClassifier|ValidID] |
+	{FeatureTypeRef} type=[ecore::EClassifier|ValidID] (=> '::' feature=[ecore::EStructuralFeature|ValidID])
+;
+
+IndexDefinition :
+	'index' name=ValidID '<' sourceType=ContextTypeRef ',' viewType=ContextTypeRef '>'
+;
+
+PatternNode :
+	name=ValidID ':' type=[ecore::EClassifier|ValidID] (many?='[]')? ('{' (edges+=AbstractPatternEdge (',' edges+=AbstractPatternEdge)*)? '}')?
+;
+
+AbstractPatternEdge :
+	PatternEdge | PatternPathEdge
+;
+
+PatternEdge :
+	name=ValidID ':' feature=[ecore::EStructuralFeature|ValidID] (many?='[]')? operator='=' value=PatternValueCondition
+;
+
+PatternPathEdge :
+	name=ValidID ':' path=DashedPathType (many?='[]')? operator='=' value=PatternValueCondition
+;
+
+DashedPathType :
+	segment = DashedPathTypeSegment (=> '.' next = DashedPathType)?
+;
+
+DashedPathTypeSegment :
+	'(' types += [ecore::EStructuralFeature|ValidID] (=> '|' types += [ecore::EStructuralFeature|ValidID])* ')' (repeat=('?'|'*'|'+'))?
+;
+
+PatternValueCondition :
+	PatternNode | PatternNodeRef
+;
+
+PatternNodeRef :
+	node=[PatternNode|ValidID]
+;
+
+Pattern :
+	PatternTypeLiteral | PatternDefinitionReference
+;
+
+PatternDefinitionReference :
+	pattern=[PatternDefinition|ValidID]
+;
+
+XmuCoreStatement :
+	XmuCoreFork |
+	XmuCoreParallelComposition |
+	XmuCoreCompositionChildStatement
+;
+
+XmuCoreCompositionChildStatement :
+	XmuCoreMatchSource | XmuCoreMatchView |
+	XmuCoreExpandSource | XmuCoreExpandView | 
+	XmuCoreGraphReplace |
+	XmuCoreSwitch | XmuCoreAlign | => XmuCoreFunctionCall | 
+	XmuCoreIndex |
+	XmuCoreForEachMatchSource | XmuCoreContextSource| XmuCoreDeriveSource | XmuCoreDependencyView
+;
+
+TypeIndicator :
+	'<' sourceType=ContextTypeRef ',' viewType=ContextTypeRef '>'
+;
+
+XmuCoreContextSource :
+	'context' typeIndicator=TypeIndicator? 
+		mappingView=UnorderedTupleTypeLiteralWithInitializer 
+		body=XmuCoreStatement
+;
+
+ContextAwareDerivationAction :
+	body = XExpression
+;
+
+XmuCoreDeriveSource :
+	'derive' typeIndicator=TypeIndicator?  
+		derivedType = UnorderedTupleTypeLiteralWithInitializer body=XmuCoreStatement
+;
+
+XmuCoreDependencyView :
+	'dependency' typeIndicator=TypeIndicator? dependentType = UnorderedTupleTypeLiteralWithInitializer body=XmuCoreStatement
+;
+
+XmuCoreMatchSource :
+	'matchS' typeIndicator=TypeIndicator? pattern=Pattern body=XmuCoreStatement
+;
+
+XmuCoreMatchView :
+	'matchV' typeIndicator=TypeIndicator? pattern=Pattern body=XmuCoreStatement
+;
+
+XmuCoreExpandSource :
+	'expandS' typeIndicator=TypeIndicator? pattern=Pattern '(' mappings+=VarMapping (','  mappings+=VarMapping)* ')' '->' body=XmuCoreStatement
+;
+
+XmuCoreExpandView :
+	'expandV' typeIndicator=TypeIndicator? pattern=Pattern '(' mappings+=VarMapping (','  mappings+=VarMapping)* ')' '->' body=XmuCoreStatement
+;
+
+VarMapping :
+	 to=ValidID '<-' from=ValidID
+;
+
+XmuCoreGraphReplace :
+	'replace' typeIndicator=TypeIndicator? source=Pattern view=Pattern ('{' conversions+=Conversion+ '}')?
+;
+
+XmuCoreParallelComposition :
+	typeIndicator=TypeIndicator? '{' bodies+=XmuCoreCompositionChildStatement (=> '|' bodies+=XmuCoreCompositionChildStatement)+ '}' 
+;
+
+XmuCoreSwitch :
+	'switch' typeIndicator=TypeIndicator? '['
+		branches+=XmuCoreSwitchBranch+
+		adaptions+=XmuCoreSwitchAdaption*
+	']'
+;
+
+XmuCoreSwitchBranch :
+	'case' condition=ContextAwareCondition ':' action=XmuCoreStatement 
+;
+
+XmuCoreSwitchAdaption:
+	'adaption' condition=ContextAwareCondition ':' action=ContextAwareUnidirectionalAction
+;
+
+Conversion :
+	bigul=BiGULStatement '(' source+=ValidID (',' source+=ValidID)* ')' '(' view+=ValidID (',' view+=ValidID)* ')'
+;
+
+XmuCoreFork :
+	'fork' typeIndicator=TypeIndicator? '{' forks+=XmuCoreForkBranch ( '|' forks+=XmuCoreForkBranch)+ '}'
+;
+
+XmuCoreForkBranch :
+	'(' sourceMappings+=VarMapping (','  sourceMappings+=VarMapping)* ')' ','
+	'(' viewMappings+=VarMapping (','  viewMappings+=VarMapping)* ')' '->'
+	body=XmuCoreStatement
+;
+
+XmuCoreAlign :
+	'align' typeIndicator=TypeIndicator? sourcePattern=Pattern viewPattern=Pattern ('with' alignment=ContextAwareCondition)?
+		(('match' '->' match=XmuCoreStatement) & ('unmatchS' '->' unmatchS=ContextAwareUnidirectionalAction) & ('unmatchV' '->' unmatchV=ContextAwareUnidirectionalAction))
+;
+
+XmuCoreFunctionCall :
+	target=[BXFunctionDefinition|ValidID] typeIndicator=TypeIndicator? => '(' (sourceMappings+=VarMapping (','  sourceMappings+=VarMapping)*)? ')'
+	'(' (viewMappings+=VarMapping (','  viewMappings+=VarMapping)*)? ')'
+;
+
+XmuCoreIndex :
+	'index' typeIndicator=TypeIndicator? parts+=IndexPart (',' parts+=IndexPart)* 'in' body=XmuCoreStatement
+;
+
+IndexPart :
+	signature=[IndexDefinition|ValidID] '<' sourceKeys+=ValidID (',' sourceKeys+=ValidID)* '|' viewKeys+=ValidID (',' viewKeys+=ValidID)* '>'
+;
+
+XmuCoreForEachMatchSource :
+	'foreach' typeIndicator=TypeIndicator? pattern=Pattern 'do' body=XmuCoreStatement
+;
+
+ContextAwareCondition :
+	condition=XExpression
+;
+
+ContextAwareUnidirectionalAction :
+	action=XBlockExpression
+;
+
+BiGULStatement :
+	BiGULReplace | BiGULSkip | CustomizedBiGULReference
+;
+
+BiGULReplace :
+	{BiGULReplace} => 'replace'
+;
+
+BiGULSkip :
+	{BiGULSkip} =>  'skip'
+;
+
+CustomizedBiGULReference :
+	function=[CustomizedBiGULDefinition|ValidID]
+;
+
+@Override
+ValidID :
+	ID | 'index' | 'align' | 'match' | 'int' | 'String' |'boolean' | 'type' |'source' |'view' | 'get' | 'put' | 'context'
+;
+
+ @Override
+XPrimaryExpression returns xbase::XExpression :
+	ModificationExpressionBlock
+	| ModificationExpression
+	| ContextExpression
+	| NewInstanceExpression
+	| AllInstanceExpression
+//	| MatchExpression
+	| super
+;
+
+
+ 
+ContextExpression returns ContextExpression:
+	(ContextPrimaryExpression ({NavigationExpression.host=current} '.' navOp=('@'|'@@') pathName=ValidID)*)
+;
+
+ContextPrimaryExpression:
+	ContextVarExpression
+;
+ContextVarExpression returns ContextPrimaryExpression:
+	({ContextVarExpression} name=ValidID '@' side=SideEnum) |
+	({ExpressionConversion} '@'  side=SideEnum ':' metamodel=[ImportSection|ValidID] '!' type=[ecore::EClass|ValidID] (many?='[]')? '(' expression=XExpression ')')
+;
+
+
+
+NewInstanceExpression :
+	'new' type=AnnotatedType (=>'[' size=XExpression ']'| => '(' sourceValue=XExpression ',' targetValue=XExpression ')')?
+;
+
+AnnotatedType :
+	'@' side=SideEnum ':' metamodel=[ImportSection|ValidID] '!' type=[ecore::EClass|ValidID] (=>'::' feature=[ecore::EStructuralFeature|ValidID])?
+;
+
+AllInstanceExpression :
+	type=AnnotatedType '.' 'allInstances'
+;
+
+enum SideEnum :
+	source='source' | view='view' | context='context'
+;
+
+
+ModificationExpressionBlock returns xbase::XExpression:
+	{ModificationExpressionBlock} 'begin' (expressions+=XExpression ';'?)* 'end'
+;
+
+ModificationExpression returns ModificationExpression :
+	EnforcementExpression | DeleteElementExpression | InsertElementExpression | MatchExpression
+;
+
+EnforcementExpression:
+	'enforce' pattern=Pattern ('{' valueMappings+=ValueMapping (',' valueMappings+=ValueMapping)*'}')? ';'
+;
+
+MatchExpression:
+	'find' pattern=Pattern ('{' valueMappings+=ValueMapping (',' valueMappings+=ValueMapping)*'}')?
+		(=> 'then' then=XBlockExpression)? (=> 'otherwise' otherwise=XBlockExpression)?
+	';'
+;
+
+
+DeleteElementExpression:
+	=> 'delete' element=XExpression ';'
+;
+
+InsertElementExpression :
+	=> 'insert' element=XExpression ((position=('before'|'after') anchor=XExpression)|(position='first'))? ';'
+;
+
+
+ValueMapping :
+	varName=ValidID '<-' expression=XExpression
+;
+
+

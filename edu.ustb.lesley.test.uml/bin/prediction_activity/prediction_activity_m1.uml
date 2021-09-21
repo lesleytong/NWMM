@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="Heart Disease Prediction using data mining activity diagram" visibility="public">
+  <packagedElement xsi:type="uml:Activity" name="Activity" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Patient%20data" source="//Activity/InitialNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Extract%20data%20" source="//Activity/Patient%20data">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Match%20Symptons" source="//Activity/Extract%20data%20">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/classify%20data" source="//Activity/Match%20Symptons">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/DecisionNode2" source="//Activity/classify%20data">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/None" source="//Activity/DecisionNode2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Arrhythmia_" source="//Activity/DecisionNode2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Congenital" source="//Activity/DecisionNode2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Coronary%20artery" source="//Activity/DecisionNode2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Cardiovascular" source="//Activity/DecisionNode2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Result" source="//Activity/Congenital">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/ActivityFinalNode" source="//Activity/Result">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Result" source="//Activity/Coronary%20artery">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Result" source="//Activity/Coronary%20artery">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Result" source="//Activity/Arrhythmia_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Result" source="//Activity/None">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Result" source="//Activity/Cardiovascular">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Patient data" visibility="public" incoming="//Activity/ControlFlow" outgoing="//Activity/ControlFlow.1" body="" language=""/>
+    <ownedNode xsi:type="uml:InitialNode" name="InitialNode" visibility="public" outgoing="//Activity/ControlFlow"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Extract data " visibility="public" incoming="//Activity/ControlFlow.1" outgoing="//Activity/ControlFlow.2" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="classify data" visibility="public" incoming="//Activity/ControlFlow.3" outgoing="//Activity/ControlFlow.4" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Match Symptons" visibility="public" incoming="//Activity/ControlFlow.2" outgoing="//Activity/ControlFlow.3" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="DecisionNode" visibility="public"/>
+    <ownedNode xsi:type="uml:MergeNode" name="MergeNode" visibility="public"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Result" visibility="public" incoming="//Activity/ControlFlow.10 //Activity/ControlFlow.12 //Activity/ControlFlow.13 //Activity/ControlFlow.14 //Activity/ControlFlow.15 //Activity/ControlFlow.16" outgoing="//Activity/ControlFlow.11" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="DecisionNode2" visibility="public" incoming="//Activity/ControlFlow.4" outgoing="//Activity/ControlFlow.5 //Activity/ControlFlow.6 //Activity/ControlFlow.7 //Activity/ControlFlow.8 //Activity/ControlFlow.9"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="None" visibility="public" incoming="//Activity/ControlFlow.5" outgoing="//Activity/ControlFlow.15" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Coronary artery" visibility="public" incoming="//Activity/ControlFlow.8" outgoing="//Activity/ControlFlow.12 //Activity/ControlFlow.13" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Congenital" visibility="public" incoming="//Activity/ControlFlow.7" outgoing="//Activity/ControlFlow.10" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Arrhythmia_" visibility="public" incoming="//Activity/ControlFlow.6" outgoing="//Activity/ControlFlow.14" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Cardiovascular" visibility="public" incoming="//Activity/ControlFlow.9" outgoing="//Activity/ControlFlow.16" body="" language=""/>
+    <ownedNode xsi:type="uml:ActivityFinalNode" name="ActivityFinalNode" visibility="public" incoming="//Activity/ControlFlow.11"/>
+    <ownedNode xsi:type="uml:MergeNode" name="TKmKXz" visibility="public"/>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+	<extension point="org.eclipse.emf.ecore.generated_package">
+		<package 
+			uri = "http://www.ustb.edu/sei/mde/bxcore/dsl/BXCore"
+			class = "edu.ustb.sei.mde.bxcore.dsl.bXCore.BXCorePackage"
+			genModel = "model/generated/BXCore.genmodel" />
+	</extension>
+</plugin>

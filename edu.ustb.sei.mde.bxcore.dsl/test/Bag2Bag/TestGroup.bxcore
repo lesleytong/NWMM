@@ -1,0 +1,62 @@
+import '/TestXMU/model/SimpleClass.ecore' as uml
+import '/TestXMU/model/MyBag2.ecore' as bag
+
+import java.util.List
+import edu.ustb.sei.mde.graph.typedGraph.TypedNode
+import edu.ustb.sei.mde.bxcore.SourceType
+
+function ClassModel2Container = 
+align uml p:Package bag t:Container with {true}
+match -> {
+	replace uml p:Package bag t:Container |
+	align uml p:Package{lc:classes=c:Class[]{ln:name=cn:EString}} bag t:Container{le:elements=e:Element{lk:key=kv:EString,lo:occurence=o:EInt}}
+		with {
+			val cond1 = cn@source.equals(kv@view);
+			val cond2 = (c@source).size===o@view;
+			return cond1 && cond2; 
+		}
+		match -> replace uml p:Package{lc:classes=c:Class[]{ln:name=cn:EString}} bag t:Container{le:elements=e:Element{lk:key=kv:EString,lo:occurence=o:EInt}} {
+			count (c) (o)
+			replace (cn) (kv)
+		}
+		unmatchS -> {
+			val element = t@view.@elements.findFirst[TypedNode e| @view:bag!Element(e).@key.equals(cn@source)];
+			if(element!==null) source // leave it to unmatchV
+			else {
+				println('unmatchS')
+				begin
+					delete lc@source;
+					delete ln@source;
+					delete c@source;
+				end
+			}
+		}
+		unmatchV -> { 
+			val clazzes = p@source.@classes.filter[c|@source:uml!Class(c).@name.equals(kv@view)].toList;
+			val occ = o@view;
+			if(clazzes.size<occ) {
+				println('unmatchV1') 
+				val c = new @source:uml!Class[occ-clazzes.size];
+				val lc = new @source:uml!Package::classes[occ-clazzes.size];
+				val ln = new @source:uml!Class::name[occ-clazzes.size];
+				begin
+					enforce uml p:Package{lc:classes=c:Class[]{ln:name=cn:EString}} {lc=lc, c=c, ln=ln, cn=kv@view};
+				end
+			} else {
+				println('unmatchV2')
+				begin
+					delete clazzes.subList(occ, clazzes.size);
+					enforce uml p:Package{lc:classes=c:Class[]{ln:name=cn:EString}}; 
+				end
+			}
+		}
+}
+unmatchS -> {} 
+unmatchV -> {}
+
+bigul count(List<TypedNode> c) (int count) 
+get {
+	count = c.size
+}
+put {
+} 

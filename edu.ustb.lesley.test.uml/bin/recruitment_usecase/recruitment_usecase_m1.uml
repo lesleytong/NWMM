@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="online recruitment system-usecase diagram" visibility="public">
+  <packagedElement xsi:type="uml:Actor" name="applicant_BK_" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="database_BK_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="login" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="send interview details" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="register" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="attend test" visibility="public">
+    <extend visibility="public" extendedCase="//attend%20test"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Actor" name="recruiter_BK_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="select talented applicant" visibility="public">
+    <extend visibility="public" extendedCase="//select%20talented%20applicant"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="send appointment letter" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="Actor_UseCase" visibility="public" memberEnd="//Actor_UseCase/useCase //Actor_UseCase/actor" navigableOwnedEnd="//Actor_UseCase/actor //Actor_UseCase/useCase">
+    <ownedEnd name="actor" visibility="public" type="//applicant_BK_" association="//Actor_UseCase">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase" visibility="public" type="//login" association="//Actor_UseCase">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Actor_UseCase2" visibility="public" memberEnd="//Actor_UseCase2/useCase2 //Actor_UseCase2/actor" navigableOwnedEnd="//Actor_UseCase2/actor //Actor_UseCase2/useCase2">
+    <ownedEnd name="actor" visibility="public" type="//applicant_BK_" association="//Actor_UseCase2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase2" visibility="public" type="//register" association="//Actor_UseCase2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Actor_UseCase3" visibility="public" memberEnd="//Actor_UseCase3/useCase3 //Actor_UseCase3/actor" navigableOwnedEnd="//Actor_UseCase3/actor //Actor_UseCase3/useCase3">
+    <ownedEnd name="actor" visibility="public" type="//applicant_BK_" association="//Actor_UseCase3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase3" visibility="public" type="//send%20interview%20details" association="//Actor_UseCase3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Actor_UseCase4" visibility="public" memberEnd="//Actor_UseCase4/useCase4 //Actor_UseCase4/actor" navigableOwnedEnd="//Actor_UseCase4/actor //Actor_UseCase4/useCase4">
+    <ownedEnd name="actor" visibility="public" type="//applicant_BK_" association="//Actor_UseCase4">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase4" visibility="public" type="//attend%20test" association="//Actor_UseCase4">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Actor_UseCase5" visibility="public" memberEnd="//Actor_UseCase5/useCase5 //Actor_UseCase5/actor" navigableOwnedEnd="//Actor_UseCase5/actor //Actor_UseCase5/useCase5">
+    <ownedEnd name="actor" visibility="public" type="//applicant_BK_" association="//Actor_UseCase5">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase5" visibility="public" type="//select%20talented%20applicant" association="//Actor_UseCase5">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Actor_UseCase6" visibility="public" memberEnd="//Actor_UseCase6/useCase6 //Actor_UseCase6/actor" navigableOwnedEnd="//Actor_UseCase6/actor //Actor_UseCase6/useCase6">
+    <ownedEnd name="actor" visibility="public" type="//applicant_BK_" association="//Actor_UseCase6">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase6" visibility="public" type="//send%20appointment%20letter" association="//Actor_UseCase6">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase_Actor2" visibility="public" memberEnd="//UseCase_Actor2/actor2 //UseCase_Actor2/useCase" navigableOwnedEnd="//UseCase_Actor2/useCase //UseCase_Actor2/actor2">
+    <ownedEnd name="useCase" visibility="public" type="//login" association="//UseCase_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor2" visibility="public" type="//database_BK_" association="//UseCase_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase2_Actor2" visibility="public" memberEnd="//UseCase2_Actor2/actor2 //UseCase2_Actor2/useCase2" navigableOwnedEnd="//UseCase2_Actor2/useCase2 //UseCase2_Actor2/actor2">
+    <ownedEnd name="useCase2" visibility="public" type="//register" association="//UseCase2_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor2" visibility="public" type="//database_BK_" association="//UseCase2_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase6_Actor2" visibility="public" memberEnd="//UseCase6_Actor2/actor2 //UseCase6_Actor2/useCase6" navigableOwnedEnd="//UseCase6_Actor2/useCase6 //UseCase6_Actor2/actor2">
+    <ownedEnd name="useCase6" visibility="public" type="//send%20appointment%20letter" association="//UseCase6_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor2" visibility="public" type="//database_BK_" association="//UseCase6_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase3_Actor3" visibility="public" memberEnd="//UseCase3_Actor3/actor3 //UseCase3_Actor3/useCase3" navigableOwnedEnd="//UseCase3_Actor3/useCase3 //UseCase3_Actor3/actor3">
+    <ownedEnd name="useCase3" visibility="public" type="//send%20interview%20details" association="//UseCase3_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor3" visibility="public" type="//recruiter_BK_" association="//UseCase3_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase5_Actor3" visibility="public" memberEnd="//UseCase5_Actor3/actor3 //UseCase5_Actor3/useCase5" navigableOwnedEnd="//UseCase5_Actor3/useCase5 //UseCase5_Actor3/actor3">
+    <ownedEnd name="useCase5" visibility="public" type="//select%20talented%20applicant" association="//UseCase5_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor3" visibility="public" type="//recruiter_BK_" association="//UseCase5_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase6_Actor3" visibility="public" memberEnd="//UseCase6_Actor3/actor3 //UseCase6_Actor3/useCase6" navigableOwnedEnd="//UseCase6_Actor3/useCase6 //UseCase6_Actor3/actor3">
+    <ownedEnd name="useCase6" visibility="public" type="//send%20appointment%20letter" association="//UseCase6_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor3" visibility="public" type="//recruiter_BK_" association="//UseCase6_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="dent class diagram" visibility="public">
+  <packagedElement xsi:type="uml:Class" name="person" visibility="public">
+    <ownedAttribute name="id" visibility="protected" type="//Integer"/>
+    <ownedAttribute name="FName" visibility="public" type="//String"/>
+    <ownedAttribute name="password" visibility="public" type="//String"/>
+    <ownedAttribute name="image" visibility="public" type="//String"/>
+    <ownedAttribute name="birthDate" visibility="public" type="//date"/>
+    <ownedOperation name="void search" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:DataType" name="date" visibility="public"/>
+  <packagedElement xsi:type="uml:Class" name="admin" visibility="public">
+    <generalization general="//person"/>
+    <ownedAttribute name="jobTitle_" visibility="public" type="//String"/>
+    <ownedOperation name=" addUsers" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="editUsers" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="deleteUsers" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="editAppointment" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="addPayment" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="editPayment" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="appointment" visibility="public">
+    <ownedAttribute name="id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="Id" visibility="public" type="//doctor"/>
+    <ownedAttribute name="ID" visibility="public" type="//services"/>
+    <ownedOperation name="addAppointment" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="deleteAppointment" visibility="public"/>
+    <ownedOperation name="editAppointment" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="doctor" visibility="public">
+    <generalization general="//person"/>
+    <ownedAttribute name="shift" visibility="public" type="//Integer"/>
+    <ownedAttribute name="specialization" visibility="public" type="//String"/>
+    <ownedOperation name="viewschedule" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="onlineconsultation" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="viewrecords" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:DataType" name="void" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="appointment_admin" visibility="public" memberEnd="//appointment_admin/@ownedEnd.1 //appointment_admin/@ownedEnd.0" navigableOwnedEnd="//appointment_admin/@ownedEnd.0 //appointment_admin/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//appointment" association="//appointment_admin">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//admin" association="//appointment_admin">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="services" visibility="public">
+    <ownedAttribute name="id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="name" visibility="public" type="//String"/>
+    <ownedAttribute name="price" visibility="public" type="//Integer"/>
+    <ownedAttribute name="description" visibility="public" type="//String"/>
+    <ownedOperation name="viewService" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="addService" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="deleteService" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="editService" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="1Zhtiv" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="services_appointment" visibility="public" memberEnd="//services_appointment/@ownedEnd.1 //services_appointment/@ownedEnd.0" navigableOwnedEnd="//services_appointment/@ownedEnd.0 //services_appointment/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//services" association="//services_appointment">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//appointment" aggregation="shared" association="//services_appointment">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="appointment_doctor" visibility="public" memberEnd="//appointment_doctor/doctor //appointment_doctor/@ownedEnd.0" navigableOwnedEnd="//appointment_doctor/@ownedEnd.0 //appointment_doctor/doctor">
+    <ownedEnd name="" visibility="public" type="//appointment" association="//appointment_doctor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="doctor" visibility="public" type="//doctor" association="//appointment_doctor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="client" visibility="public">
+    <generalization general="//person"/>
+    <ownedAttribute name="age_" visibility="public" type="//Integer"/>
+    <ownedAttribute name="phoneno." visibility="public" type="//String"/>
+    <ownedAttribute name="id" visibility="public" type="//appointment"/>
+    <ownedAttribute name="td3QjV" visibility="public"/>
+    <ownedOperation name="paybill" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="bookAppointmint" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="client_appointment" visibility="public" memberEnd="//client_appointment/@ownedEnd.1 //client_appointment/@ownedEnd.0" navigableOwnedEnd="//client_appointment/@ownedEnd.0 //client_appointment/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//client" association="//client_appointment">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//appointment" association="//client_appointment">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="messages" visibility="public">
+    <ownedAttribute name="msgId" visibility="public" type="//Integer"/>
+    <ownedAttribute name="msg" visibility="public" type="//String"/>
+    <ownedAttribute name="id" visibility="public" type="//client"/>
+    <ownedOperation name="sendMsg" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="rcvMsg" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//void" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:DataType" name="time" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="messages_client" visibility="public" memberEnd="//messages_client/@ownedEnd.1 //messages_client/@ownedEnd.0" navigableOwnedEnd="//messages_client/@ownedEnd.0 //messages_client/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//messages" association="//messages_client">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//client" aggregation="shared" association="//messages_client">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="messages_doctor" visibility="public" memberEnd="//messages_doctor/@ownedEnd.1 //messages_doctor/@ownedEnd.0" navigableOwnedEnd="//messages_doctor/@ownedEnd.0 //messages_doctor/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//messages" association="//messages_doctor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//doctor" aggregation="shared" association="//messages_doctor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="payment" visibility="public">
+    <ownedAttribute name="paymentID" visibility="public" type="//Integer"/>
+    <ownedAttribute name="R8wLqN" visibility="public"/>
+    <ownedOperation name="gSfHSB" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="payment_client" visibility="public" memberEnd="//payment_client/@ownedEnd.1 //payment_client/@ownedEnd.0" navigableOwnedEnd="//payment_client/@ownedEnd.0 //payment_client/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//payment" association="//payment_client">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//client" association="//payment_client">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="payment_admin" visibility="public" memberEnd="//payment_admin/@ownedEnd.1 //payment_admin/@ownedEnd.0" navigableOwnedEnd="//payment_admin/@ownedEnd.0 //payment_admin/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//payment" association="//payment_admin">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//admin" association="//payment_admin">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="payment_appointment" visibility="public" memberEnd="//payment_appointment/@ownedEnd.1 //payment_appointment/@ownedEnd.0" navigableOwnedEnd="//payment_appointment/@ownedEnd.0 //payment_appointment/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//payment" association="//payment_appointment">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//appointment" aggregation="shared" association="//payment_appointment">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="notification" visibility="public">
+    <ownedAttribute name="msgId" visibility="public" type="//messages"/>
+    <ownedAttribute name="ID" visibility="public" type="//client"/>
+    <ownedAttribute name="ID" visibility="public" type="//doctor"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="notification_messages" visibility="public" memberEnd="//notification_messages/@ownedEnd.1 //notification_messages/@ownedEnd.0" navigableOwnedEnd="//notification_messages/@ownedEnd.0 //notification_messages/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//notification" association="//notification_messages">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//messages" aggregation="shared" association="//notification_messages">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="notification_client" visibility="public" memberEnd="//notification_client/@ownedEnd.1 //notification_client/@ownedEnd.0" navigableOwnedEnd="//notification_client/@ownedEnd.0 //notification_client/@ownedEnd.1">
+    <ownedEnd name="" visibility="public" type="//notification" association="//notification_client">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//client" aggregation="shared" association="//notification_client">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="notification_doctor" visibility="public" memberEnd="//notification_doctor/@ownedEnd.1 //notification_doctor/notification" navigableOwnedEnd="//notification_doctor/notification //notification_doctor/@ownedEnd.1">
+    <ownedEnd name="notification" visibility="public" type="//notification" association="//notification_doctor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedEnd>
+    <ownedEnd name="" visibility="public" type="//doctor" aggregation="shared" association="//notification_doctor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Integer" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="String" visibility="public"/>
+</uml:Model>

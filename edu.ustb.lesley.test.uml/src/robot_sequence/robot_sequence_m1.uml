@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="Robot Sequence" visibility="public">
+  <packagedElement xsi:type="uml:Interaction" name="Interaction" visibility="public" isReentrant="true">
+    <ownedComment body=" deplier = fold, replier=extend , saisir=grasp, lacher=drop, rapporteObjet=BringBack"/>
+    <lifeline name="Robot_" visibility="public" coveredBy="//Interaction/@fragment.3 //Interaction/@fragment.22 //Interaction/@fragment.48 //Interaction/@fragment.33 //Interaction/@fragment.31 //Interaction/@fragment.24 //Interaction/@fragment.28 //Interaction/@fragment.6 //Interaction/@fragment.38 //Interaction/@fragment.41 //Interaction/@fragment.10 //Interaction/@fragment.36 //Interaction/@fragment.51 //Interaction/@fragment.19 //Interaction/@fragment.2 //Interaction/@fragment.0"/>
+    <lifeline name="Bras" visibility="public" coveredBy="//Interaction/@fragment.5 //Interaction/@fragment.7 //Interaction/@fragment.8 //Interaction/@fragment.9 //Interaction/@fragment.11 //Interaction/@fragment.12 //Interaction/@fragment.14 //Interaction/@fragment.17 //Interaction/@fragment.18 //Interaction/@fragment.20 //Interaction/@fragment.21 //Interaction/@fragment.23 //Interaction/@fragment.25 //Interaction/@fragment.26 //Interaction/@fragment.27 //Interaction/@fragment.29 //Interaction/@fragment.30 //Interaction/@fragment.32 //Interaction/@fragment.34 //Interaction/@fragment.35 //Interaction/@fragment.37 //Interaction/@fragment.39 //Interaction/@fragment.40 //Interaction/@fragment.43 //Interaction/@fragment.46 //Interaction/@fragment.47 //Interaction/@fragment.49 //Interaction/@fragment.50"/>
+    <lifeline name="Pince" visibility="public" coveredBy="//Interaction/@fragment.15 //Interaction/@fragment.44 //Interaction/@fragment.45 //Interaction/@fragment.42 //Interaction/@fragment.16 //Interaction/@fragment.13"/>
+    <lifeline name="Main" visibility="public" coveredBy="//Interaction/@fragment.4 //Interaction/@fragment.1"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Robot_" finish="//Interaction/@fragment.3" start="//Interaction/@fragment.2">
+      <generalOrdering name="EZbJG8" visibility="public" before="//Interaction/@fragment.10"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.19"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.38"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.36"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.48"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.6"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.24"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.22"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.28"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.41"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.51"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.33"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.31"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Main" message="//Interaction/rapporterObjet()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" message="//Interaction/rapporterObjet()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" message="//Interaction/reply"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Main" message="//Interaction/reply"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Bras" finish="//Interaction/@fragment.8" start="//Interaction/@fragment.7"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.5" message="//Interaction/deplier()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/deplier()"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Bras"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Bras" finish="//Interaction/@fragment.12" start="//Interaction/@fragment.11"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/EZbJG8" message="//Interaction/saisir%20l'objet"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/saisir%20l'objet"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Bras"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Pince" finish="//Interaction/@fragment.16" start="//Interaction/@fragment.15"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/saisir()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Pince" message="//Interaction/saisir()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Pince" message="//Interaction/reply.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/reply.1"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Bras" finish="//Interaction/@fragment.21" start="//Interaction/@fragment.20"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.1" message="//Interaction/call_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/call_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/reply_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.7" message="//Interaction/reply_"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Bras" finish="//Interaction/@fragment.26" start="//Interaction/@fragment.25"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.6" message="//Interaction/call"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/call"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Bras"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Bras" finish="//Interaction/@fragment.30" start="//Interaction/@fragment.29">
+      <generalOrdering name="7AygGq" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.8" message="//Interaction/saisir().1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/saisir().1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/reply.2"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.12" message="//Interaction/reply.2"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Bras" finish="//Interaction/@fragment.35" start="//Interaction/@fragment.34"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.11" message="//Interaction/replier()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/replier()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/reply.3"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.3" message="//Interaction/reply.3"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Bras" finish="//Interaction/@fragment.40" start="//Interaction/@fragment.39">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.43"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.46"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.2" message="//Interaction/lacher()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/lacher()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/reply.4"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.9" message="//Interaction/reply.4"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Pince" finish="//Interaction/@fragment.45" start="//Interaction/@fragment.44"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" toAfter="//Interaction/@fragment.37/@generalOrdering.0" message="//Interaction/lacher().1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Pince" message="//Interaction/lacher().1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Pince" message="//Interaction/reply_.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" toAfter="//Interaction/@fragment.37/@generalOrdering.1" message="//Interaction/reply_.1"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Bras" finish="//Interaction/@fragment.50" start="//Interaction/@fragment.49">
+      <generalOrdering name="9no7ln" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.4" message="//Interaction/depiler()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/depiler()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Bras" message="//Interaction/reply.5"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Robot_" toAfter="//Interaction/@fragment.0/@generalOrdering.10" message="//Interaction/reply.5"/>
+    <message name="rapporterObjet()" visibility="public" receiveEvent="//Interaction/@fragment.2" sendEvent="//Interaction/@fragment.1"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.4" sendEvent="//Interaction/@fragment.3"/>
+    <message name="deplier()" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.7" sendEvent="//Interaction/@fragment.6"/>
+    <message name="saisir l'objet" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.11" sendEvent="//Interaction/@fragment.10"/>
+    <message name="saisir()" visibility="public" receiveEvent="//Interaction/@fragment.15" sendEvent="//Interaction/@fragment.14"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.17" sendEvent="//Interaction/@fragment.16"/>
+    <message name="call_" visibility="public" receiveEvent="//Interaction/@fragment.20" sendEvent="//Interaction/@fragment.19"/>
+    <message name="reply_" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.22" sendEvent="//Interaction/@fragment.21"/>
+    <message name="call" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.25" sendEvent="//Interaction/@fragment.24"/>
+    <message name="saisir()" visibility="public" receiveEvent="//Interaction/@fragment.29" sendEvent="//Interaction/@fragment.28"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.31" sendEvent="//Interaction/@fragment.30"/>
+    <message name="replier()" visibility="public" receiveEvent="//Interaction/@fragment.34" sendEvent="//Interaction/@fragment.33"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.36" sendEvent="//Interaction/@fragment.35"/>
+    <message name="lacher()" visibility="public" receiveEvent="//Interaction/@fragment.39" sendEvent="//Interaction/@fragment.38"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.41" sendEvent="//Interaction/@fragment.40"/>
+    <message name="lacher()" visibility="public" receiveEvent="//Interaction/@fragment.44" sendEvent="//Interaction/@fragment.43"/>
+    <message name="reply_" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.46" sendEvent="//Interaction/@fragment.45"/>
+    <message name="depiler()" visibility="public" receiveEvent="//Interaction/@fragment.49" sendEvent="//Interaction/@fragment.48"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.51" sendEvent="//Interaction/@fragment.50"/>
+    <message name="LdKOxN()" visibility="public"/>
+  </packagedElement>
+</uml:Model>

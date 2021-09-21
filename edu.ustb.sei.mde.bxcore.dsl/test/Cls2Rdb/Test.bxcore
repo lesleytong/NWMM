@@ -1,0 +1,174 @@
+import "/TestXMU/model/SimpleClass.ecore" as uml
+import "/TestXMU/model/SimpleRDBMS.ecore" as rdbms
+
+pattern ClassModel = uml m:ClassModel
+
+function ClassModelToRdbmsModel =
+	align ClassModel rdbms m:RDBMSModel with {true}
+		match -> {
+			replace ClassModel rdbms m:RDBMSModel
+			| PackageToSchema (m->m) (m->m) 
+			} 
+		unmatchS -> {
+			begin
+				delete m@source;
+			end 
+		}
+		unmatchV -> {
+			begin
+				enforce ClassModel;
+			end
+		}
+
+pattern Package = uml m:ClassModel{lp:packages=p:Package{ln:name=n:EString}}
+function PackageToSchema =
+	align Package rdbms m:RDBMSModel{ls:schemas=s:Schema{ln:name=n:EString}}
+		with {
+			n@source.equals(n@view)
+		} 
+		match -> {
+			replace Package rdbms m:RDBMSModel{ls:schemas=s:Schema{ln:name=n:EString}} {replace (n) (n)}
+			| ClassToTable (p->p) (s->s)
+			| AssociationToForeignKey (p->p) (s->s)
+			}
+		unmatchS -> {
+			begin
+				delete lp@source;
+				delete ln@source;
+				delete p@source;
+			end 
+		}
+		unmatchV -> {
+			begin
+				enforce Package {n=n@view}; 
+			end
+		}
+
+index c2t <uml [c:Class], rdbms [t:Table,k:Key]>
+
+bigul DeriveKeyName (String cn) (String tn, String kn) 
+	get {
+		tn = cn;
+		kn = cn+'_key';
+	}
+	put {
+		cn = tn;
+	}
+
+pattern Class = uml p:Package{
+	lc:classes=c:Class{ln:name=n:EString}
+} [!n@context.contains('_')]
+
+function ClassToTable = 
+	align Class rdbms s:Schema{lt:tables=t:Table{ln:name=n:EString, lk:key=k:Key{lkn:name=kn:EString}}} [!n@context.contains('_')]
+		with {
+			n@source.equals(n@view)
+		} 
+		match -> {
+			index c2t<c|t,k> in replace Class rdbms s:Schema{lt:tables=t:Table{ln:name=n:EString,lk:key=k:Key{lkn:name=kn:EString}}} {DeriveKeyName (n) (n,kn)}
+			| AttributeToColumn (c->c) (t->t)
+		}  
+		unmatchS -> {
+			begin 
+				delete lc@source;
+				delete ln@source;
+				delete c@source;
+			end
+		}
+		unmatchV -> { 
+			begin
+				enforce Class {n=n@view};
+			end
+		}
+		
+pattern Attribute = uml c:Class{la:attributes=a:Attribute{ln:name=n:EString}}
+function AttributeToColumn =
+	align Attribute rdbms t:Table{lc:columns=c:Column{ln:name=n:EString}}
+		with n@source.equals(n@view)
+		match -> replace Attribute rdbms t:Table{lc:columns=c:Column{ln:name=n:EString}} {replace (n) (n)}
+		unmatchS -> {
+			begin
+				delete la@source;
+				delete ln@source;
+				delete a@source;
+			end
+		}
+		unmatchV -> { 
+			begin
+				enforce Attribute {n=n@view};
+			end
+		}
+	 
+pattern Association = uml p:Package{
+	la:associations=a:Association{
+		ln:name=an:EString,
+		ls:source=sc:Class{lsn:name=sn:EString},
+		lt:target=tc:Class{ltn:name=tn:EString}
+	}
+}
+pattern ForeignKey = rdbms s : Schema {
+	lst : tables = st : Table {
+		lstn : name = stn : EString , 
+		lsk : key = sk:Key,
+		lfk : foreignKeys = fk : ForeignKey {
+			lkn : name = kn : EString, 
+			lr : referTo = tk : Key {} 
+		} 
+	}, 
+	ltt : tables = tt : Table { 
+		lttn : name = ttn : EString , 
+		ltk : key = tk 
+	}
+}
+
+bigul AssociationNameConversion (String an, String sn, String tn) (String fkn, String stn, String ttn)
+	get {
+		stn = sn;
+		ttn = tn;
+		fkn = sn+'_'+an+'_'+tn
+	}
+	put {
+		
+	}
+ 
+function AssociationToForeignKey = 
+	align Association ForeignKey 
+		with {
+			val c1 = (sn@source+'_'+an@source+'_'+tn@source).equals(kn@view) 
+			val c2 = sn@source.equals(stn@view)
+			val c3 = tn@source.equals(ttn@view)
+			return c1&&c2&&c3
+		}
+	match -> 
+		index c2t<sc|st,sk>, c2t<tc|tt,tk> in 
+			replace Association ForeignKey {AssociationNameConversion (an,sn,tn) (kn, stn, ttn)}
+	unmatchS -> {
+		begin
+			delete ln@source;
+			delete la@source;
+			delete a@source;
+		end
+	}
+	unmatchV-> { 
+		val sc = p@source.@classes.findFirst[c|@source:uml!Class(c).@name.equals(stn@view)];
+		val tc = p@source.@classes.findFirst[c|@source:uml!Class(c).@name.equals(ttn@view)];
+		val an = (kn@view.split('_')).^get(1);
+		
+		println('generate sc:'+(sc===null)+', generate tc:'+(tc===null));
+		
+		begin
+			if(sc===null&&tc===null)
+			 	enforce Association {sn=stn@view, tn=ttn@view, an=an};
+			 else if(sc!==null&&tc===null) {
+			 	val lsn = @source:uml!Class(sc).@name;
+			 	enforce Association {sc=sc, lsn=lsn, sn=stn@view, tn=ttn@view, an=an};
+			 } else if(sc===null&&tc!==null) {
+			 	val ltn = @source:uml!Class(tc).@name;
+			 	enforce Association {sn=stn@view, tc=tc, ltn=ltn, tn=ttn@view, an=an};
+			 } else {
+			 	val lsn = @source:uml!Class(sc).@name;
+				val ltn = @source:uml!Class(tc).@name;
+				enforce Association {sc=sc, lsn=lsn, sn=stn@view, tc=tc, ltn=ltn, tn=ttn@view, an=an};
+			 }
+		end 
+	}

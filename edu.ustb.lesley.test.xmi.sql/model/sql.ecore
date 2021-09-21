@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="sql" nsURI="http://uniandes.edu.co/sqlCrud" nsPrefix="sql">
+  <eClassifiers xsi:type="ecore:EClass" name="DataBase">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="Tables" upperBound="-1"
+        eType="#//Table" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Table">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="columns" upperBound="-1"
+        eType="#//column" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryKey" eType="#//primaryKey"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="foreignkeys" upperBound="-1"
+        eType="#//foreignKey" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="column">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//DataType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="primaryKey">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="foreignKey">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reftable" eType="#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//column"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="DataType">
+    <eLiterals name="VARCHAR255" literal="varchar(255)"/>
+    <eLiterals name="VARCHAR" value="1" literal="varchar"/>
+    <eLiterals name="INT" value="2" literal="int"/>
+    <eLiterals name="CHAR" value="3" literal="character"/>
+    <eLiterals name="BOOL" value="4" literal="boolean"/>
+    <eLiterals name="DATE" value="5" literal="date"/>
+    <eLiterals name="TIME" value="6" literal="time"/>
+    <eLiterals name="FLOAT" value="7" literal="float"/>
+    <eLiterals name="DECIMAL" value="8" literal="decimal"/>
+    <eLiterals name="NUMERIC" value="9" literal="numeric"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="my" nsURI="https://edu/ustb/lesley/my" nsPrefix="edu.ustb.lesley.my">
+  <eClassifiers xsi:type="ecore:EClass" name="ComparisonN">
+    <eOperations name="getDifferences" upperBound="-1" eType="#//DiffN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="matches" upperBound="-1"
+        eType="#//MatchN" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conflicts" upperBound="-1"
+        eType="#//ConflictN" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MatchN">
+    <eOperations name="getComparisonN" eType="#//ComparisonN"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="differences" upperBound="-1"
+        eType="#//DiffN" containment="true" eOpposite="#//DiffN/match"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base" eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="branches" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DiffN">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conflict" eType="#//ConflictN"
+        eOpposite="#//ConflictN/differences"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="match" lowerBound="1" eType="#//MatchN"
+        eOpposite="#//MatchN/differences"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//DifferenceKind"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="state" eType="#//DifferenceState"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ConflictN">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="differences" lowerBound="2"
+        upperBound="-1" eType="#//DiffN" eOpposite="#//DiffN/conflict"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="kind" eType="#//ConflictKind"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceAttachmentChange" eSuperTypes="#//DiffN">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resourceURI" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ResourceLocationChange" eSuperTypes="#//DiffN">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseLocation" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="changedLocation" lowerBound="1"
+        eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ReferenceChange" eSuperTypes="#//DiffN">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="reference" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EReference"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AttributeChange" eSuperTypes="#//DiffN">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaObject"
+        transient="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FeatureMapChange" eSuperTypes="#//DiffN">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" lowerBound="1"
+        eType="ecore:EClass platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EAttribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType platform:/plugin/org.eclipse.emf.ecore/model/Ecore.ecore#//EJavaObject"
+        transient="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EDataType" name="ConflictKind" instanceClassName="org.eclipse.emf.compare.ConflictKind"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DifferenceKind" instanceClassName="org.eclipse.emf.compare.DifferenceKind"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="DifferenceState" instanceClassName="org.eclipse.emf.compare.DifferenceState"/>
+</ecore:EPackage>

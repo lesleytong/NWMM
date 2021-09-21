@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Testuml
+Bundle-SymbolicName: edu.ustb.lesley.test.uml
+Bundle-Version: 1.0.0.qualifier
+Automatic-Module-Name: edu.ustb.lesley.testuml
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Require-Bundle: org.eclipse.emf.ecore,
+ org.eclipse.uml2.uml,
+ edu.ustb.sei.mde.bxcore.dsl,
+ edu.ustb.sei.mde.bxcore,
+ edu.ustb.lesley.compare

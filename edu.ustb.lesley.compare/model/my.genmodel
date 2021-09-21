@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edu.ustb.lesley.compare/src" modelPluginID="edu.ustb.lesley.compare"
+    modelName="My" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    usedGenPackages="platform:/plugin/org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>my.ecore</foreignModel>
+  <genPackages prefix="My" disposableProviderFactory="true" ecorePackage="my.ecore#/">
+    <genDataTypes ecoreDataType="my.ecore#//ConflictKind"/>
+    <genDataTypes ecoreDataType="my.ecore#//DifferenceKind"/>
+    <genDataTypes ecoreDataType="my.ecore#//DifferenceState"/>
+    <genClasses ecoreClass="my.ecore#//ComparisonN">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference my.ecore#//ComparisonN/matches"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference my.ecore#//ComparisonN/conflicts"/>
+      <genOperations ecoreOperation="my.ecore#//ComparisonN/getDifferences"/>
+    </genClasses>
+    <genClasses ecoreClass="my.ecore#//MatchN">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference my.ecore#//MatchN/differences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference my.ecore#//MatchN/base"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference my.ecore#//MatchN/branches"/>
+      <genOperations ecoreOperation="my.ecore#//MatchN/getComparisonN"/>
+    </genClasses>
+    <genClasses ecoreClass="my.ecore#//DiffN">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference my.ecore#//DiffN/conflict"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference my.ecore#//DiffN/match"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute my.ecore#//DiffN/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute my.ecore#//DiffN/state"/>
+    </genClasses>
+    <genClasses ecoreClass="my.ecore#//ConflictN">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference my.ecore#//ConflictN/differences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute my.ecore#//ConflictN/kind"/>
+    </genClasses>
+    <genClasses ecoreClass="my.ecore#//ResourceAttachmentChange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute my.ecore#//ResourceAttachmentChange/resourceURI"/>
+    </genClasses>
+    <genClasses ecoreClass="my.ecore#//ResourceLocationChange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute my.ecore#//ResourceLocationChange/baseLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute my.ecore#//ResourceLocationChange/changedLocation"/>
+    </genClasses>
+    <genClasses ecoreClass="my.ecore#//ReferenceChange">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference my.ecore#//ReferenceChange/reference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference my.ecore#//ReferenceChange/value"/>
+    </genClasses>
+    <genClasses ecoreClass="my.ecore#//AttributeChange">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference my.ecore#//AttributeChange/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute my.ecore#//AttributeChange/value"/>
+    </genClasses>
+    <genClasses ecoreClass="my.ecore#//FeatureMapChange">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference my.ecore#//FeatureMapChange/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute my.ecore#//FeatureMapChange/value"/>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Compare" ecorePackage="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceKind">
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceKind/ADD"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceKind/DELETE"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceKind/CHANGE"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceKind/MOVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceSource">
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceSource/LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceSource/RIGHT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceState">
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceState/UNRESOLVED"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceState/MERGED"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceState/DISCARDED"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//DifferenceState/MERGING"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ConflictKind">
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ConflictKind/REAL"/>
+      <genEnumLiterals ecoreEnumLiteral="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ConflictKind/PSEUDO"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//EIterable">
+      <genTypeParameters ecoreTypeParameter="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//EIterable/T"/>
+    </genDataTypes>
+    <genDataTypes ecoreDataType="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//IEqualityHelper"/>
+    <genDataTypes ecoreDataType="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diagnostic"/>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/matchedResources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/matches"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/conflicts"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/equivalences"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/threeWay"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/diagnostic"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/getDifferences"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/getDifferences.1">
+        <genParameters ecoreParameter="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/getDifferences.1/element"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/getMatch">
+        <genParameters ecoreParameter="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/getMatch/element"/>
+      </genOperations>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Comparison/getEqualityHelper"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//MatchResource">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//MatchResource/leftURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//MatchResource/rightURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//MatchResource/originURI"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//MatchResource/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//MatchResource/right"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//MatchResource/origin"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//MatchResource/comparison"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//MatchResource/locationChanges"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Match">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Match/submatches"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Match/differences"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Match/left"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Match/right"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Match/origin"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Match/getComparison"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Match/getAllSubmatches"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Match/getAllDifferences"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/match"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/requires"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/requiredBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/implies"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/impliedBy"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/refines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/refinedBy"/>
+      <genFeatures property="Readonly" notify="false" createChild="false" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/primeRefining"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/kind"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/state"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/equivalence"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/conflict"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/copyRightToLeft"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/copyLeftToRight"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Diff/discard"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ResourceAttachmentChange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ResourceAttachmentChange/resourceURI"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ResourceLocationChange">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ResourceLocationChange/baseLocation"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ResourceLocationChange/changedLocation"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ReferenceChange">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ReferenceChange/reference"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//ReferenceChange/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//AttributeChange">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//AttributeChange/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//AttributeChange/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//FeatureMapChange">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//FeatureMapChange/attribute"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//FeatureMapChange/value"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Conflict">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Conflict/kind"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Conflict/differences"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Conflict/getLeftDifferences"/>
+      <genOperations ecoreOperation="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Conflict/getRightDifferences"/>
+    </genClasses>
+    <genClasses ecoreClass="platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Equivalence">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference platform:/plugin/org.eclipse.emf.compare/model/compare.ecore#//Equivalence/differences"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

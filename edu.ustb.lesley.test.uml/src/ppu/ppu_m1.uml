@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="SysMLmodel" visibility="public">
+  <packagedElement xsi:type="uml:Class" name="0-10V" visibility="public" isActive="true">
+    <ownedOperation name="UjnIaO" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="1xCylinder" visibility="public">
+    <ownedAttribute name="SensBack" visibility="public" type="//BinarySensor/InductiveSensor" aggregation="composite" association="//@packagedElement.6"/>
+    <ownedAttribute name="SensFront" visibility="public" type="//BinarySensor/InductiveSensor" aggregation="composite" association="//@packagedElement.7"/>
+    <ownedAttribute name="Valveback" visibility="public" type="//Valve" aggregation="composite" association="//@packagedElement.9"/>
+    <ownedOperation name="Retract" visibility="public">
+      <ownedParameter name="return" visibility="public" type="//Boolean" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="Extend" visibility="public">
+      <ownedParameter name="return" visibility="public" type="//Boolean" direction="return" effect="create"/>
+    </ownedOperation>
+    <nestedClassifier xsi:type="uml:Class" name="2xCylinder" visibility="public">
+      <generalization general="//1xCylinder"/>
+      <ownedAttribute name="2xcylinder" visibility="public" type="//1xCylinder/2xCylinder" aggregation="shared" association="//@packagedElement.5"/>
+      <ownedAttribute name="valve_" visibility="public" type="//Valve" aggregation="composite" association="//@packagedElement.10"/>
+      <ownedAttribute name="Valvefront" visibility="public" type="//Valve" aggregation="composite" association="//@packagedElement.30"/>
+      <ownedOperation name="Retract" visibility="public">
+        <ownedParameter name="return" visibility="public" type="//Boolean" direction="return" effect="create"/>
+      </ownedOperation>
+      <ownedOperation name="Extend" visibility="public">
+        <ownedParameter name="return" visibility="public" type="//Boolean" direction="return" effect="create"/>
+      </ownedOperation>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="24V" visibility="public">
+    <ownedOperation name="jv15U3" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="BinarySensor" visibility="public">
+    <nestedClassifier xsi:type="uml:Class" name="InductiveSensor" visibility="public">
+      <generalization general="//BinarySensor"/>
+      <ownedAttribute xsi:type="uml:Port" name="SensValue" visibility="public" type="//EBoolean" aggregation="composite"/>
+    </nestedClassifier>
+    <nestedClassifier xsi:type="uml:Class" name="OpticalSensor" visibility="public">
+      <generalization general="//BinarySensor"/>
+    </nestedClassifier>
+    <nestedClassifier xsi:type="uml:Class" name="CapacitiveSensor" visibility="public">
+      <generalization general="//BinarySensor"/>
+    </nestedClassifier>
+    <nestedClassifier xsi:type="uml:Class" name="MicroSwitch" visibility="public">
+      <generalization general="//BinarySensor"/>
+      <ownedAttribute name="binarysensor" visibility="public" type="//BinarySensor" association="//@packagedElement.4"/>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//@packagedElement.4/microswitch //BinarySensor/MicroSwitch/binarysensor">
+    <ownedEnd name="microswitch" visibility="public" type="//BinarySensor/MicroSwitch" aggregation="composite" association="//@packagedElement.4"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//1xCylinder/2xCylinder/2xcylinder //@packagedElement.5/2xcylinder">
+    <ownedEnd name="2xcylinder" visibility="public" type="//1xCylinder/2xCylinder" association="//@packagedElement.5"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//1xCylinder/SensBack //@packagedElement.6/1xcylinder">
+    <ownedEnd name="1xcylinder" visibility="public" type="//1xCylinder" association="//@packagedElement.6"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//1xCylinder/SensFront //@packagedElement.7/1xcylinder">
+    <ownedEnd name="1xcylinder" visibility="public" type="//1xCylinder" association="//@packagedElement.7"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Valve" visibility="public">
+    <ownedAttribute xsi:type="uml:Port" name="ActuatorSignal" visibility="public" type="//Boolean" aggregation="composite"/>
+    <ownedAttribute xsi:type="uml:Port" name="HwOutput" visibility="public" type="//24V" aggregation="composite"/>
+    <ownedOperation name="k9r0nK" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//1xCylinder/Valveback //@packagedElement.9/1xcylinder">
+    <ownedEnd name="1xcylinder" visibility="public" type="//1xCylinder" association="//@packagedElement.9"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//1xCylinder/2xCylinder/valve_ //@packagedElement.10/2xcylinder">
+    <ownedEnd name="2xcylinder" visibility="public" type="//1xCylinder/2xCylinder" association="//@packagedElement.10"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="ProportionalCylinder" visibility="public">
+    <generalization general="//1xCylinder"/>
+    <ownedAttribute name="ValveBack" visibility="public" type="//ProportionalValve" aggregation="composite" association="//@packagedElement.27"/>
+    <ownedAttribute name="PressureSensor_" visibility="public" type="//PressureSensor" aggregation="composite" association="//@packagedElement.28"/>
+    <ownedOperation name="extend" visibility="public">
+      <ownedParameter name="SettingValue" visibility="public" type="//Real" effect="create"/>
+      <ownedParameter name="return" visibility="public" type="//Real" direction="return" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="ProportionalValve" visibility="public">
+    <ownedAttribute xsi:type="uml:Port" name="SettingValue" visibility="public" type="//Real" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="AnalogueSensorVoltage" visibility="public">
+    <ownedAttribute xsi:type="uml:Port" name="SensValue" visibility="public" type="//Real" aggregation="composite"/>
+    <ownedAttribute xsi:type="uml:Port" name="HwInput" visibility="public" type="//0-10V" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Motor" visibility="public">
+    <ownedAttribute xsi:type="uml:Port" name="ActuatorSignalForward" visibility="public" type="//Boolean" aggregation="composite"/>
+    <ownedAttribute xsi:type="uml:Port" name="SettingValue" visibility="public" type="//Real" aggregation="composite"/>
+    <ownedAttribute xsi:type="uml:Port" name="HwActuatorSignalForward" visibility="public" type="//24V" aggregation="composite"/>
+    <ownedAttribute xsi:type="uml:Port" name="HwSettingValue" visibility="public" type="//0-10V" aggregation="composite"/>
+    <ownedAttribute xsi:type="uml:Port" name="HwActuatorSignalRewind" visibility="public" type="//24V" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Potentiometer" visibility="public">
+    <generalization general="//AnalogueSensorVoltage"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="PressureSensor" visibility="public">
+    <generalization general="//AnalogueSensorVoltage"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="PulseTachometer" visibility="public">
+    <ownedAttribute xsi:type="uml:Port" name="SensValue" visibility="public" type="//Integer" aggregation="composite"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Workpiece" visibility="public">
+    <nestedClassifier xsi:type="uml:Class" name="Workpiece(A)" visibility="public">
+      <generalization general="//Workpiece"/>
+      <ownedAttribute name="WSType" visibility="public" type="//EWorkpiece(A)"/>
+      <ownedOperation name="3uRZaC" visibility="public"/>
+    </nestedClassifier>
+    <nestedClassifier xsi:type="uml:Class" name="Workpiece(F)" visibility="public">
+      <generalization general="//Workpiece"/>
+      <ownedAttribute name="WSType" visibility="public" type="//EWorkpiece(F)"/>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Enumeration" name="EWorkpiece(A)" visibility="public">
+    <ownedLiteral name="Aluminium" visibility="public" classifier="//EWorkpiece(A)"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Enumeration" name="EWorkpiece(F)" visibility="public">
+    <ownedLiteral name="Aluminium" visibility="public" classifier="//EWorkpiece(F)"/>
+    <ownedLiteral name="BlackPlastic" visibility="public" classifier="//EWorkpiece(F)"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Slide" visibility="public">
+    <ownedAttribute xsi:type="uml:Port" name="input" visibility="public" type="//Workpiece" aggregation="composite"/>
+    <ownedOperation name="BkbzVh" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Turntable" visibility="public">
+    <ownedAttribute name="Motor" visibility="public" type="//Motor" aggregation="composite" association="//StampingPlant/@packagedElement.4"/>
+    <ownedAttribute name="pos0" visibility="public" type="//BinarySensor/MicroSwitch" aggregation="composite" association="//StampingPlant/@packagedElement.13"/>
+    <ownedAttribute name="pos90" visibility="public" type="//BinarySensor/MicroSwitch" aggregation="composite" association="//StampingPlant/@packagedElement.14"/>
+    <ownedOperation name="TurnTo" visibility="public">
+      <ownedParameter name="return" visibility="public" type="//Boolean" direction="return" effect="create"/>
+      <ownedParameter name="destination" visibility="public" type="//Real" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="D1USPT" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="VacuGripper" visibility="public">
+    <ownedAttribute name="VTakeIn" visibility="public" type="//Valve" aggregation="composite" association="//@packagedElement.24"/>
+    <ownedAttribute name="VRelease_" visibility="public" type="//Valve" aggregation="composite" association="//@packagedElement.25"/>
+    <ownedAttribute name="WPTaken" visibility="public" type="//BinarySensor/MicroSwitch" aggregation="composite" association="//@packagedElement.26"/>
+    <ownedOperation name="TakeIn" visibility="public">
+      <ownedParameter name="return" visibility="public" type="//Boolean" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="Release" visibility="public">
+      <ownedParameter name="return" visibility="public" type="//Boolean" direction="return" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//VacuGripper/VTakeIn //@packagedElement.24/@ownedEnd.0">
+    <ownedEnd name="" visibility="public" type="//VacuGripper" association="//@packagedElement.24"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//VacuGripper/VRelease_ //@packagedElement.25/@ownedEnd.0">
+    <ownedEnd name="" visibility="public" type="//VacuGripper" association="//@packagedElement.25"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//VacuGripper/WPTaken //@packagedElement.26/@ownedEnd.0">
+    <ownedEnd name="" visibility="public" type="//VacuGripper" association="//@packagedElement.26"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//ProportionalCylinder/ValveBack //@packagedElement.27/proportionalcylinder">
+    <ownedEnd name="proportionalcylinder" visibility="public" type="//ProportionalCylinder" association="//@packagedElement.27"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//ProportionalCylinder/PressureSensor_ //@packagedElement.28/proportionalcylinder">
+    <ownedEnd name="proportionalcylinder" visibility="public" type="//ProportionalCylinder" association="//@packagedElement.28"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Package" name="StampingPlant" visibility="public">
+    <packagedElement xsi:type="uml:Class" name="Crane" visibility="public">
+      <generalization general="//StampingPlant/Stack_Crane"/>
+      <ownedAttribute name="MaxTransDuration" visibility="public" type="//StampingPlant/Crane/SpeedCrane" aggregation="composite" association="//StampingPlant/@packagedElement.1"/>
+      <ownedAttribute name="VacuGripper" visibility="public" type="//VacuGripper" aggregation="composite" association="//StampingPlant/@packagedElement.2"/>
+      <ownedAttribute name="Turntable" visibility="public" type="//Turntable" aggregation="composite" association="//StampingPlant/@packagedElement.3"/>
+      <ownedAttribute name="Lifter" visibility="public" type="//1xCylinder" aggregation="composite" association="//StampingPlant/@packagedElement.5"/>
+      <ownedOperation name="Transport" visibility="public">
+        <ownedParameter name="return" visibility="public" type="//EBoolean.1" direction="return" effect="create"/>
+        <ownedParameter name="source" visibility="public" type="//Real" effect="create"/>
+        <ownedParameter name="destination" visibility="public" type="//Real" effect="create"/>
+      </ownedOperation>
+      <ownedOperation name="ACT_PickUpWP" visibility="public"/>
+      <ownedOperation name="ACT_PutDownWP" visibility="public"/>
+      <ownedOperation name="ACT_ToSlidePosition" visibility="public"/>
+      <ownedOperation name="ACT_ToStackPosition" visibility="public"/>
+      <nestedClassifier xsi:type="uml:Class" name="SpeedCrane" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//StampingPlant/Crane/MaxTransDuration //StampingPlant/@packagedElement.1/crane">
+      <ownedEnd name="crane" visibility="public" type="//StampingPlant/Crane" association="//StampingPlant/@packagedElement.1"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//StampingPlant/Crane/VacuGripper //StampingPlant/@packagedElement.2/crane">
+      <ownedEnd name="crane" visibility="public" type="//StampingPlant/Crane" association="//StampingPlant/@packagedElement.2"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//StampingPlant/Crane/Turntable //StampingPlant/@packagedElement.3/crane">
+      <ownedEnd name="crane" visibility="public" type="//StampingPlant/Crane" association="//StampingPlant/@packagedElement.3"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//Turntable/Motor //StampingPlant/@packagedElement.4/turntable">
+      <ownedEnd name="turntable" visibility="public" type="//Turntable" association="//StampingPlant/@packagedElement.4"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//StampingPlant/Crane/Lifter //StampingPlant/@packagedElement.5/crane">
+      <ownedEnd name="crane" visibility="public" type="//StampingPlant/Crane" association="//StampingPlant/@packagedElement.5"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="StampingPlant" visibility="public">
+      <ownedAttribute name="Crane" visibility="public" type="//StampingPlant/Crane" aggregation="composite" association="//StampingPlant/@packagedElement.10"/>
+      <ownedAttribute name="Slide" visibility="public" type="//Slide" aggregation="composite" association="//StampingPlant/@packagedElement.11"/>
+      <ownedAttribute name="Stack" visibility="public" type="//StampingPlant/Stack" aggregation="composite" association="//StampingPlant/@packagedElement.12"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Stack" visibility="public">
+      <generalization general="//StampingPlant/Stack_Crane"/>
+      <ownedAttribute name="Separator" visibility="public" type="//1xCylinder" aggregation="composite" association="//StampingPlant/@packagedElement.8"/>
+      <ownedAttribute name="WPSeparated" visibility="public" type="//BinarySensor/MicroSwitch" aggregation="composite" association="//StampingPlant/@packagedElement.9"/>
+      <ownedOperation name="Separate" visibility="public">
+        <ownedParameter name="return" visibility="public" type="//Boolean" direction="return" effect="create"/>
+      </ownedOperation>
+      <ownedOperation name="ACT_ProvideWP" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//StampingPlant/Stack/Separator //StampingPlant/@packagedElement.8/stack">
+      <ownedEnd name="stack" visibility="public" type="//StampingPlant/Stack" association="//StampingPlant/@packagedElement.8"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//StampingPlant/Stack/WPSeparated //StampingPlant/@packagedElement.9/stack">
+      <ownedEnd name="stack" visibility="public" type="//StampingPlant/Stack" association="//StampingPlant/@packagedElement.9"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//StampingPlant/StampingPlant/Crane //StampingPlant/@packagedElement.10/stampingplant">
+      <ownedEnd name="stampingplant" visibility="public" type="//StampingPlant/StampingPlant" association="//StampingPlant/@packagedElement.10"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//StampingPlant/StampingPlant/Slide //StampingPlant/@packagedElement.11/stampingplant">
+      <ownedEnd name="stampingplant" visibility="public" type="//StampingPlant/StampingPlant" association="//StampingPlant/@packagedElement.11"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//StampingPlant/StampingPlant/Stack //StampingPlant/@packagedElement.12/stampingplant">
+      <ownedEnd name="stampingplant" visibility="public" type="//StampingPlant/StampingPlant" association="//StampingPlant/@packagedElement.12"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//Turntable/pos0 //StampingPlant/@packagedElement.13/turntable">
+      <ownedEnd name="turntable" visibility="public" type="//Turntable" association="//StampingPlant/@packagedElement.13"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//Turntable/pos90 //StampingPlant/@packagedElement.14/turntable">
+      <ownedEnd name="turntable" visibility="public" type="//Turntable" association="//StampingPlant/@packagedElement.14"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Stack_Crane" visibility="public">
+      <ownedOperation name="ACT_Init" visibility="public"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" visibility="public" memberEnd="//1xCylinder/2xCylinder/Valvefront //@packagedElement.30/@ownedEnd.0">
+    <ownedEnd name="" visibility="public" type="//1xCylinder/2xCylinder" association="//@packagedElement.30"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Boolean" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="EBoolean" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Real" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="EBoolean" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Integer" visibility="public"/>
+</uml:Model>

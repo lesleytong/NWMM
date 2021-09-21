@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="BCMS" visibility="public" URI="" viewpoint="">
+  <packagedElement xsi:type="uml:Model" name="Domain Model" visibility="public">
+    <packagedElement xsi:type="uml:Association" name="routePoliceCars_route_routePlan" visibility="public" memberEnd="//Domain%20Model/RoutePlan/routePoliceCars //Domain%20Model/RoutePoliceCar_RouteFireTruck/routePlan"/>
+    <packagedElement xsi:type="uml:Association" name="crisis_allocate_policeCars" visibility="public" memberEnd="//Domain%20Model/PoliceCar_BCMSSystem_FireTruck/crisis //Domain%20Model/Crisis/policeCars"/>
+    <packagedElement xsi:type="uml:Class" name="BCMSSystem" visibility="public" isLeaf="true">
+      <generalization general="//Domain%20Model/BCMSSystem_CommunicationCompromiser"/>
+      <generalization general="//Domain%20Model/BCMSSystem_FireTruck"/>
+      <generalization general="//Domain%20Model/RoutePlan_BCMSSystem"/>
+      <generalization general="//Domain%20Model/TimeoutLog_RoutePlan_FScoordinator_BCMSSystem"/>
+      <ownedAttribute name="govermentAgency" visibility="private" type="//Domain%20Model/GovermentAgency">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="CommunicationCompromiser" visibility="public">
+      <generalization general="//Domain%20Model/BCMSSystem_CommunicationCompromiser"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="CommunicationInfrastructure" visibility="public">
+      <generalization general="//Domain%20Model/CommunicationInfrastructure_GovermentAgency"/>
+      <ownedAttribute name="communicationCompromisers" visibility="private" type="//Domain%20Model/CommunicationCompromiser">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Credential" visibility="public">
+      <ownedAttribute name="format_" visibility="private" type="//Domain%20Model/String"/>
+      <ownedAttribute name="user" visibility="private" type="//Domain%20Model/String"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Crisis" visibility="public">
+      <generalization general="//Domain%20Model/Crisis_PSCSystem"/>
+      <ownedAttribute name="id" visibility="private" type="//Domain%20Model/Integer"/>
+      <ownedAttribute name="location" visibility="private" type="//Domain%20Model/GPS"/>
+      <ownedAttribute name="startTime" visibility="private" type="//Domain%20Model/TimeExpression"/>
+      <ownedAttribute name="endTime" visibility="private" type="//Domain%20Model/TimeExpression"/>
+      <ownedAttribute name="status_" visibility="private" type="//Domain%20Model/Status"/>
+      <ownedAttribute name="description" visibility="private" type="//Domain%20Model/String"/>
+      <ownedAttribute name="policeCars" visibility="private" type="//Domain%20Model/PoliceCar" association="//Domain%20Model/crisis_allocate_policeCars">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute name="fireTrucks" visibility="private" type="//Domain%20Model/FireTruck">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="routePlans_develop_pSCSystem" visibility="public" memberEnd="//Domain%20Model/PSCSystem/routePlans //Domain%20Model/RoutePlan_BCMSSystem_TimeoutLog_PScoordinator/pSCSystem"/>
+    <packagedElement xsi:type="uml:Class" name="Fireman" visibility="public">
+      <generalization general="//Domain%20Model/Fireman_PoliceOfficer"/>
+      <generalization general="//Domain%20Model/PoliceOfficer_Fireman"/>
+      <generalization general="//Domain%20Model/TimeoutLog_FireTruck_Fireman"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="FireTruck" visibility="public">
+      <generalization general="//Domain%20Model/PoliceCar_FireTruck"/>
+      <generalization general="//Domain%20Model/TimeoutLog_FireTruck"/>
+      <generalization general="//Domain%20Model/BCMSSystem_FireTruck"/>
+      <ownedAttribute name="routeFireTruck" visibility="private" type="//Domain%20Model/RouteFireTruck" association="//Domain%20Model/fireTruck_follow_routeFireTruck">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="fireTruck_follow_routeFireTruck" visibility="public" memberEnd="//Domain%20Model/RouteFireTruck/fireTruck //Domain%20Model/FireTruck/routeFireTruck"/>
+    <packagedElement xsi:type="uml:Association" name="routePoliceCar_follow_policeCar" visibility="public" memberEnd="//Domain%20Model/PoliceCar/routePoliceCar //Domain%20Model/RoutePoliceCar/policeCar"/>
+    <packagedElement xsi:type="uml:Class" name="FScoordinator" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/PScoordinator_FScoordinator"/>
+      <generalization general="//Domain%20Model/FScoordinator_PScoordinator"/>
+      <generalization general="//Domain%20Model/Victim_FScoordinator"/>
+      <generalization general="//Domain%20Model/TimeoutLog_RoutePlan_FScoordinator"/>
+      <ownedAttribute name="fireTrucks" visibility="private" type="//Domain%20Model/FireTruck">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="FSCSystem" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/FSCSystem_PSCSystem"/>
+      <generalization general="//Domain%20Model/TimeoutLog_FireTruck_Fireman_FSCSystem"/>
+      <generalization general="//Domain%20Model/CommunicationInfrastructure_GovermentAgency_Crisis_PSCSystem_FSCSystem"/>
+      <ownedAttribute name="routePlan" visibility="private" type="//Domain%20Model/RoutePlan" aggregation="shared">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+      <ownedAttribute name="call" visibility="private" type="//Domain%20Model/PSCSystem" association="//Architecture%20Model/fSCSystem_call_pSCSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedAttribute>
+      <ownedOperation name="biometricBasedPSC" visibility="public" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="GovermentAgency" visibility="public">
+      <generalization general="//Domain%20Model/CommunicationInfrastructure_GovermentAgency"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="GPS" visibility="public">
+      <ownedAttribute name="x" visibility="private" type="//Domain%20Model/Integer"/>
+      <ownedAttribute name="y" visibility="private" type="//Domain%20Model/Integer"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="witnesses_interact_policeOfficers" visibility="public" memberEnd="//Domain%20Model/PoliceOfficer_Fireman/witnesses //Domain%20Model/Witness/policeOfficers"/>
+    <packagedElement xsi:type="uml:Association" name="victims_interact_firemen" visibility="public" memberEnd="//Domain%20Model/Fireman_PoliceOfficer/victims //Domain%20Model/Victim_FScoordinator/firemen"/>
+    <packagedElement xsi:type="uml:Association" name="policeCars_manage_pScoordinator" visibility="public" memberEnd="//Domain%20Model/PScoordinator/policeCars //Domain%20Model/PoliceCar_PSCSystem_TimeoutLog_PoliceOfficer/pScoordinator"/>
+    <packagedElement xsi:type="uml:Class" name="PoliceCar" visibility="public">
+      <generalization general="//Domain%20Model/PoliceCar_FireTruck"/>
+      <generalization general="//Domain%20Model/PoliceCar_PSCSystem"/>
+      <generalization general="//Domain%20Model/PoliceCar_BCMSSystem_FireTruck"/>
+      <ownedAttribute name="routePoliceCar" visibility="private" type="//Domain%20Model/RoutePoliceCar" association="//Domain%20Model/routePoliceCar_follow_policeCar">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PoliceOfficer" visibility="public">
+      <generalization general="//Domain%20Model/Fireman_PoliceOfficer"/>
+      <generalization general="//Domain%20Model/PoliceOfficer_Fireman"/>
+      <generalization general="//Domain%20Model/PoliceCar_PSCSystem_TimeoutLog_PoliceOfficer"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Enumeration" name="Position" visibility="public">
+      <ownedLiteral name="station" visibility="public" classifier="//Domain%20Model/Position"/>
+      <ownedLiteral name="inRouteToLocation" visibility="public" classifier="//Domain%20Model/Position"/>
+      <ownedLiteral name="atLocation" visibility="public" classifier="//Domain%20Model/Position"/>
+      <ownedLiteral name="inRouteFromLocation" visibility="public" classifier="//Domain%20Model/Position"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PScoordinator" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/PScoordinator_FScoordinator"/>
+      <generalization general="//Domain%20Model/FScoordinator_PScoordinator"/>
+      <generalization general="//Domain%20Model/TimeoutLog_PScoordinator"/>
+      <generalization general="//Domain%20Model/PScoordinator_Victim"/>
+      <ownedAttribute name="policeCars" visibility="private" type="//Domain%20Model/PoliceCar" association="//Domain%20Model/policeCars_manage_pScoordinator">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PSCSystem" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/FSCSystem_PSCSystem"/>
+      <generalization general="//Domain%20Model/PoliceCar_PSCSystem"/>
+      <generalization general="//Domain%20Model/Crisis_PSCSystem"/>
+      <ownedAttribute name="routePlans" visibility="private" type="//Domain%20Model/RoutePlan" aggregation="shared" association="//Domain%20Model/routePlans_develop_pSCSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="2"/>
+      </ownedAttribute>
+      <ownedAttribute name="noMoreRoutesLeftToBeProposed" visibility="private" type="//Domain%20Model/Boolean"/>
+      <ownedAttribute name="noMoreRoutesLeftToBeProposed" visibility="private" type="//Domain%20Model/Boolean"/>
+      <ownedAttribute name="call" visibility="private" type="//Domain%20Model/FSCSystem" association="//Architecture%20Model/pSCSystem_call_fSCSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedAttribute>
+      <ownedOperation name="biometricBasedFSC" visibility="public" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="timeoutLog_register_fSCSystem" visibility="public" memberEnd="//Domain%20Model/FSCSystem_PSCSystem/timeoutLog //Domain%20Model/TimeoutLog_RoutePlan_FScoordinator_BCMSSystem/fSCSystem"/>
+    <packagedElement xsi:type="uml:Association" name="timeoutLog_report_fScoordinator" visibility="public" memberEnd="//Domain%20Model/FScoordinator_PScoordinator/timeoutLog //Domain%20Model/TimeoutLog_FireTruck_Fireman_FSCSystem/fScoordinator"/>
+    <packagedElement xsi:type="uml:Class" name="Route" visibility="public" isAbstract="true">
+      <ownedAttribute name="ETA" visibility="private" type="//Domain%20Model/TimeExpression"/>
+      <ownedAttribute name="path" visibility="private" type="//Domain%20Model/String"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="RouteFireTruck" visibility="public">
+      <generalization general="//Domain%20Model/Route"/>
+      <generalization general="//Domain%20Model/RoutePoliceCar_RouteFireTruck"/>
+      <ownedAttribute name="fireTruck" visibility="private" type="//Domain%20Model/FireTruck" association="//Domain%20Model/fireTruck_follow_routeFireTruck">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="RoutePlan" visibility="public">
+      <generalization general="//Domain%20Model/RoutePlan_BCMSSystem"/>
+      <ownedAttribute name="information" visibility="private" type="//Domain%20Model/String"/>
+      <ownedAttribute name="routePoliceCars" visibility="private" type="//Domain%20Model/RoutePoliceCar" aggregation="composite" association="//Domain%20Model/routePoliceCars_route_routePlan">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute name="routeFireTrucks" visibility="private" type="//Domain%20Model/RouteFireTruck" aggregation="composite">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="RoutePoliceCar" visibility="public">
+      <generalization general="//Domain%20Model/Route"/>
+      <generalization general="//Domain%20Model/RoutePoliceCar_RouteFireTruck"/>
+      <ownedAttribute name="policeCar" visibility="private" type="//Domain%20Model/PoliceCar" association="//Domain%20Model/routePoliceCar_follow_policeCar">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Enumeration" name="Status" visibility="public">
+      <ownedLiteral name="active" visibility="public" classifier="//Domain%20Model/Status"/>
+      <ownedLiteral name="closed" visibility="public" classifier="//Domain%20Model/Status"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TimeoutLog" visibility="public">
+      <generalization general="//Domain%20Model/TimeoutLog_FireTruck"/>
+      <generalization general="//Domain%20Model/PoliceCar_PSCSystem_TimeoutLog"/>
+      <generalization general="//Domain%20Model/TimeoutLog_PScoordinator"/>
+      <ownedAttribute name="ocurrenceTime" visibility="private" type="//Domain%20Model/TimeExpression"/>
+      <ownedAttribute name="reason" visibility="private" type="//Domain%20Model/String"/>
+      <ownedOperation name="JJY08E" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="communicationInfrastructure_use_bCMSSystem" visibility="public" memberEnd="//Domain%20Model/BCMSSystem_CommunicationCompromiser/communicationInfrastructure //Domain%20Model/CommunicationInfrastructure_GovermentAgency_Crisis_PSCSystem_FSCSystem/bCMSSystem"/>
+    <packagedElement xsi:type="uml:Class" name="Victim" visibility="public">
+      <generalization general="//Domain%20Model/Victim_FScoordinator"/>
+      <generalization general="//Domain%20Model/PScoordinator_Victim"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Witness" visibility="public">
+      <ownedAttribute name="policeOfficers" visibility="private" type="//Domain%20Model/PoliceOfficer" association="//Domain%20Model/witnesses_interact_policeOfficers">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+      <ownedAttribute name="firemen" visibility="private" type="//Domain%20Model/Fireman">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PScoordinatorNoEncryption" visibility="public">
+      <generalization general="//Domain%20Model/PScoordinator"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="FScoordinatorNoEncryption" visibility="public">
+      <generalization general="//Domain%20Model/FScoordinator"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PSCSystemNoEncryption" visibility="public">
+      <generalization general="//Domain%20Model/PSCSystem"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="FSCSystemNoEncryption" visibility="public">
+      <generalization general="//Domain%20Model/FSCSystem"/>
+      <ownedOperation name="gWOPKh" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="FSCSystemNoEncryption_FSCSystem" visibility="public">
+      <ownedOperation name="biometricBasedAuthenticatePSC" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PSCSystemNoEncryption_PSCSystem" visibility="public">
+      <ownedOperation name="biometricBasedAuthenticateFSC" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="FScoordinatorNoEncryption_FScoordinator" visibility="public">
+      <ownedOperation name="receivePoliceCarArrived" visibility="public"/>
+      <ownedOperation name="receiveReplacedPoliceCar" visibility="public"/>
+      <ownedOperation name="receiveCloseCrisisPS" visibility="public"/>
+      <ownedOperation name="receivePScrisisDetails" visibility="public"/>
+      <ownedOperation name="receiveFireTrucksRouteProposal" visibility="public"/>
+      <ownedOperation name="receivePoliceCarDispatched" visibility="public"/>
+      <ownedOperation name="receivePScoordinatorCall" visibility="public"/>
+      <ownedOperation name="receiveNewETApoliceCar" visibility="public"/>
+      <ownedOperation name="receiveRecallPoliceCars" visibility="public"/>
+      <ownedOperation name="receivePScoordinatorCredentials" visibility="public"/>
+      <ownedOperation name="receiveDeployPoliceCars" visibility="public"/>
+      <ownedOperation name="receivePScoordinatorUncoordinatedRoute" visibility="public"/>
+      <ownedOperation name="receivePoliceCarObjectiveCompleted" visibility="public"/>
+      <ownedOperation name="receivePoliceCarBack" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PScoordinatorNoEncryption_PScoordinator" visibility="public">
+      <ownedOperation name="receiveFireTruckBack" visibility="public"/>
+      <ownedOperation name="receiveReplacedFireTruck" visibility="public"/>
+      <ownedOperation name="receiveFScoordinatorCredentials" visibility="public"/>
+      <ownedOperation name="receiveFireTruckDispatched" visibility="public"/>
+      <ownedOperation name="receiveFScoordinatorCall" visibility="public"/>
+      <ownedOperation name="receiveFScoordinatorRouteAgreement" visibility="public"/>
+      <ownedOperation name="receiveNewETAfireTruck" visibility="public"/>
+      <ownedOperation name="receiveDeployFireTrucks" visibility="public"/>
+      <ownedOperation name="receiveRecallFireTrucks" visibility="public"/>
+      <ownedOperation name="receiveFScrisisDetails" visibility="public"/>
+      <ownedOperation name="receiveFScoordinatorRouteDisagreement" visibility="public"/>
+      <ownedOperation name="receiveTruckDeliveredToCrisis" visibility="public"/>
+      <ownedOperation name="receiveCloseCrisisFS" visibility="public"/>
+      <ownedOperation name="receiveFireTruckObjectiveCompleted" visibility="public"/>
+      <ownedOperation name="receiveFireTruckArrived" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PScoordinator_FScoordinator_FScoordinatorNoEncryption_PScoordinatorNoEncryption" visibility="public">
+      <ownedOperation name="routeNegotiationTimeout" visibility="public" isAbstract="true"/>
+      <ownedOperation name="receiveRescheduleRoutePlan" visibility="public" isAbstract="true"/>
+      <ownedOperation name="standAloneResolution" visibility="public" isAbstract="true"/>
+      <ownedOperation name="online" visibility="public" isAbstract="true"/>
+      <ownedOperation name="OmW0B9" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PSCSystemNoEncryption_PSCSystem_PSCSystem" visibility="public">
+      <ownedOperation name="fireTruckDispatched" visibility="public"/>
+      <ownedOperation name="fireTruckObjectiveCompleted" visibility="public"/>
+      <ownedOperation name="agreementFSC" visibility="public"/>
+      <ownedOperation name="fireTruckArrived" visibility="public"/>
+      <ownedOperation name="policeCarArrivedPScoordinator" visibility="public"/>
+      <ownedOperation name="replacedFireTruck" visibility="public"/>
+      <ownedOperation name="policeCarObjectiveCompletedPScoordinator" visibility="public"/>
+      <ownedOperation name="proposeFireTrucksRoute" visibility="public"/>
+      <ownedOperation name="policeCarDispatchedPScoordinator" visibility="public"/>
+      <ownedOperation name="fireTrucks" visibility="public"/>
+      <ownedOperation name="crisisDetailsFSC" visibility="public"/>
+      <ownedOperation name="reqComFSC" visibility="public"/>
+      <ownedOperation name="synchFSC" visibility="public"/>
+      <ownedOperation name="callFScoordinator" visibility="public"/>
+      <ownedOperation name="newETAfireTruck" visibility="public"/>
+      <ownedOperation name="sendPScoordinatorCredentials" visibility="public"/>
+      <ownedOperation name="closeCrisisFS" visibility="public"/>
+      <ownedOperation name="newETApoliceCarPScoordinator" visibility="public"/>
+      <ownedOperation name="rescheduleRoutePlanFSC" visibility="public"/>
+      <ownedOperation name="policeCarBackPScoordinator" visibility="public"/>
+      <ownedOperation name="rescheduleRoutePlanPScoordinator" visibility="public"/>
+      <ownedOperation name="closeCrisisPScoordinator" visibility="public"/>
+      <ownedOperation name="replacedPoliceCarPScoordinator" visibility="public"/>
+      <ownedOperation name="deployPoliceCars" visibility="public"/>
+      <ownedOperation name="fireTruckBack" visibility="public"/>
+      <ownedOperation name="disagreementFSC" visibility="public"/>
+      <ownedOperation name="sendPSCrisisDetails" visibility="public"/>
+      <ownedOperation name="crisisCompleteFSC" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="FSCSystemNoEncryption_FSCSystem_FSCSystem" visibility="public">
+      <ownedOperation name="rescheduleRoutePlanPSC" visibility="public"/>
+      <ownedOperation name="policeCarBack" visibility="public"/>
+      <ownedOperation name="replacedFireTruckFSCoordinator" visibility="public"/>
+      <ownedOperation name="crisisDetailsPSC" visibility="public"/>
+      <ownedOperation name="policeCarDispatched" visibility="public"/>
+      <ownedOperation name="closeCrisisPS" visibility="public"/>
+      <ownedOperation name="fireTruckDispatchedFScoordinator" visibility="public"/>
+      <ownedOperation name="synchPSC" visibility="public"/>
+      <ownedOperation name="fireTruckBackFScoordinator" visibility="public"/>
+      <ownedOperation name="newETApoliceCar" visibility="public"/>
+      <ownedOperation name="sendFSCrisisDetails" visibility="public"/>
+      <ownedOperation name="disagreeFireTrucksRoute" visibility="public"/>
+      <ownedOperation name="deployFireTrucks" visibility="public"/>
+      <ownedOperation name="rescheduleRoutePlanFScoordinator" visibility="public"/>
+      <ownedOperation name="agreeFireTrucksRoute" visibility="public"/>
+      <ownedOperation name="policeCars" visibility="public"/>
+      <ownedOperation name="callPScoordinator" visibility="public"/>
+      <ownedOperation name="replacedPoliceCar" visibility="public"/>
+      <ownedOperation name="closeCrisisFScoordinator" visibility="public"/>
+      <ownedOperation name="fireTruckObjectiveCompletedFScoordinator" visibility="public"/>
+      <ownedOperation name="reqComPSC" visibility="public"/>
+      <ownedOperation name="fireTrucksRoute" visibility="public"/>
+      <ownedOperation name="policeCarArrived" visibility="public"/>
+      <ownedOperation name="fireTruckArrivedFScoordinator" visibility="public"/>
+      <ownedOperation name="policeCarObjectiveCompleted" visibility="public"/>
+      <ownedOperation name="newETAfireTruckFSCoordinator" visibility="public"/>
+      <ownedOperation name="sendFScoordinatorCredentials" visibility="public"/>
+      <ownedOperation name="crisisCompletePSC" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PSCSystem_FSCSystem_FSCSystemNoEncryption_PSCSystemNoEncryption_PSCSystem_FSCSystem" visibility="public">
+      <ownedOperation name="comRestored" visibility="public" isAbstract="true"/>
+      <ownedOperation name="comTimeout" visibility="public" isAbstract="true"/>
+      <ownedOperation name="recallFireTrucks" visibility="public" isAbstract="true"/>
+      <ownedOperation name="recallPoliceCars" visibility="public" isAbstract="true"/>
+      <ownedOperation name="reportReasonsTimeout" visibility="public" isAbstract="true"/>
+      <ownedOperation name="uncoordinatedRoute" visibility="public" isAbstract="true"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PScoordinator_FScoordinator" visibility="public" isAbstract="true">
+      <ownedAttribute name="credential" visibility="private" type="//Domain%20Model/Credential"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PoliceCar_FireTruck" visibility="public" isAbstract="true">
+      <ownedAttribute name="position" visibility="private" type="//Domain%20Model/Position"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="CommunicationInfrastructure_GovermentAgency" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/CommunicationInfrastructure_GovermentAgency_Crisis_PSCSystem"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="BCMSSystem_CommunicationCompromiser" visibility="public" isAbstract="true">
+      <ownedAttribute name="communicationInfrastructure" visibility="private" type="//Domain%20Model/CommunicationInfrastructure" association="//Domain%20Model/communicationInfrastructure_use_bCMSSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="FScoordinator_PScoordinator" visibility="public" isAbstract="true">
+      <ownedAttribute name="timeoutLog" visibility="private" type="//Domain%20Model/TimeoutLog" association="//Domain%20Model/timeoutLog_report_fScoordinator">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TimeoutLog_FireTruck" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/TimeoutLog_FireTruck_Fireman"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="FSCSystem_PSCSystem" visibility="public" isAbstract="true">
+      <ownedAttribute name="timeoutLog" visibility="private" type="//Domain%20Model/TimeoutLog" aggregation="shared" association="//Domain%20Model/timeoutLog_register_fSCSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TimeoutLog_RoutePlan" visibility="public">
+      <generalization general="//Domain%20Model/TimeoutLog_RoutePlan_FScoordinator"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PoliceCar_PSCSystem" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/PoliceCar_PSCSystem_TimeoutLog"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Victim_FScoordinator" visibility="public" isAbstract="true">
+      <ownedAttribute name="firemen" visibility="private" type="//Domain%20Model/Fireman" association="//Domain%20Model/victims_interact_firemen">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Fireman_PoliceOfficer" visibility="public" isAbstract="true">
+      <ownedAttribute name="victims" visibility="private" type="//Domain%20Model/Victim" association="//Domain%20Model/victims_interact_firemen">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PoliceOfficer_Fireman" visibility="public" isAbstract="true">
+      <ownedAttribute name="witnesses" visibility="private" type="//Domain%20Model/Witness" association="//Domain%20Model/witnesses_interact_policeOfficers">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="BCMSSystem_FireTruck" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/PoliceCar_BCMSSystem_FireTruck"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Crisis_PSCSystem" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/CommunicationInfrastructure_GovermentAgency_Crisis_PSCSystem"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="RoutePoliceCar_RouteFireTruck" visibility="public" isAbstract="true">
+      <ownedAttribute name="routePlan" visibility="private" type="//Domain%20Model/RoutePlan" association="//Domain%20Model/routePoliceCars_route_routePlan">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PoliceCar_PSCSystem_TimeoutLog" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/PoliceCar_PSCSystem_TimeoutLog_PoliceOfficer"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TimeoutLog_FireTruck_Fireman" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/TimeoutLog_FireTruck_Fireman_FSCSystem"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TimeoutLog_PScoordinator" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/RoutePlan_BCMSSystem_TimeoutLog_PScoordinator"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="RoutePlan_BCMSSystem" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/RoutePlan_BCMSSystem_TimeoutLog_PScoordinator"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PScoordinator_Victim" visibility="public" isAbstract="true">
+      <ownedAttribute name="policeOfficers" visibility="private" type="//Domain%20Model/PoliceOfficer">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="*"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="CommunicationInfrastructure_GovermentAgency_Crisis_PSCSystem" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/CommunicationInfrastructure_GovermentAgency_Crisis_PSCSystem_FSCSystem"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TimeoutLog_FireTruck_Fireman_FSCSystem" visibility="public" isAbstract="true">
+      <ownedAttribute name="fScoordinator" visibility="private" type="//Domain%20Model/FScoordinator" association="//Domain%20Model/timeoutLog_report_fScoordinator">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PoliceCar_PSCSystem_TimeoutLog_PoliceOfficer" visibility="public" isAbstract="true">
+      <ownedAttribute name="pScoordinator" visibility="private" type="//Domain%20Model/PScoordinator" association="//Domain%20Model/policeCars_manage_pScoordinator">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="RoutePlan_BCMSSystem_TimeoutLog_PScoordinator" visibility="public" isAbstract="true">
+      <ownedAttribute name="pSCSystem" visibility="private" type="//Domain%20Model/PSCSystem" association="//Domain%20Model/routePlans_develop_pSCSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TimeoutLog_RoutePlan_FScoordinator" visibility="public" isAbstract="true">
+      <generalization general="//Domain%20Model/TimeoutLog_RoutePlan_FScoordinator_BCMSSystem"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PoliceCar_BCMSSystem_FireTruck" visibility="public" isAbstract="true">
+      <ownedAttribute name="crisis" visibility="private" type="//Domain%20Model/Crisis" association="//Domain%20Model/crisis_allocate_policeCars">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="CommunicationInfrastructure_GovermentAgency_Crisis_PSCSystem_FSCSystem" visibility="public" isAbstract="true">
+      <ownedAttribute name="bCMSSystem" visibility="private" type="//Domain%20Model/BCMSSystem" association="//Domain%20Model/communicationInfrastructure_use_bCMSSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PSCSystem_FSCSystem_PSCSystem_FSCSystem" visibility="public">
+      <ownedAttribute name="routeAgreement" visibility="private" type="//Domain%20Model/Boolean"/>
+      <ownedAttribute name="closeAgreement" visibility="private" type="//Domain%20Model/Boolean"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="TimeoutLog_RoutePlan_FScoordinator_BCMSSystem" visibility="public" isAbstract="true">
+      <ownedAttribute name="fSCSystem" visibility="private" type="//Domain%20Model/FSCSystem" association="//Domain%20Model/timeoutLog_register_fSCSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" name="" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" name="" visibility="public" value="1"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xsi:type="uml:PrimitiveType" name="String" visibility="public"/>
+    <packagedElement xsi:type="uml:PrimitiveType" name="Boolean" visibility="public"/>
+    <packagedElement xsi:type="uml:PrimitiveType" name="Integer" visibility="public"/>
+    <packagedElement xsi:type="uml:Class" name="TimeExpression" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Model" name="Architecture Model" visibility="public">
+    <packagedElement xsi:type="uml:Association" name="pSCSystem_call_fSCSystem" visibility="public" memberEnd="//Architecture%20Model/pSCSystem_call_fSCSystem/pSCSystem //Domain%20Model/PSCSystem/call">
+      <ownedEnd name="pSCSystem" visibility="private" type="//Domain%20Model/PSCSystem" association="//Architecture%20Model/pSCSystem_call_fSCSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="fSCSystem_call_pSCSystem" visibility="public" memberEnd="//Architecture%20Model/fSCSystem_call_pSCSystem/fSCSystem //Domain%20Model/FSCSystem/call">
+      <ownedEnd name="fSCSystem" visibility="private" type="//Domain%20Model/FSCSystem" association="//Architecture%20Model/fSCSystem_call_pSCSystem">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+</uml:Model>

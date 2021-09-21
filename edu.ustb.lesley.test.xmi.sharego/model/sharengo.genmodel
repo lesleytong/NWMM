@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/edu.ustb.lesley.test.xmi.sharego/src" modelPluginID="edu.ustb.lesley.test.xmi.sharego"
+    modelName="Sharengo" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>../../edu.ustb.lesley.test.ecore/ecore/sharengo.ecore</foreignModel>
+  <genPackages prefix="Sharego" disposableProviderFactory="true" ecorePackage="sharengo.ecore#/">
+    <genClasses image="false" ecoreClass="sharengo.ecore#//ModelElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sharengo.ecore#//ModelElement/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sharengo.ecore#//Classifier"/>
+    <genClasses ecoreClass="sharengo.ecore#//Operation"/>
+    <genClasses ecoreClass="sharengo.ecore#//Service">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharengo.ecore#//Service/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="sharengo.ecore#//BusinessObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharengo.ecore#//BusinessObject/operations"/>
+    </genClasses>
+    <genClasses ecoreClass="sharengo.ecore#//ServiceOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharengo.ecore#//ServiceOperation/BOFlows"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharengo.ecore#//ServiceOperation/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="sharengo.ecore#//BusinessObjectOperation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference sharengo.ecore#//BusinessObjectOperation/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="sharengo.ecore#//BusinessRule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sharengo.ecore#//BusinessRule/expr"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="sharengo.ecore#//Flow">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sharengo.ecore#//Flow/source"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute sharengo.ecore#//Flow/target"/>
+    </genClasses>
+    <genClasses ecoreClass="sharengo.ecore#//Service2BusinessObjectFlow"/>
+  </genPackages>
+</genmodel:GenModel>

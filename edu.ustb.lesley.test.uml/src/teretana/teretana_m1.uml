@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="Teretana-Class diagram" visibility="public">
+  <packagedElement xsi:type="uml:Package" name="Teretana" visibility="public">
+    <packagedElement xsi:type="uml:Class" name="Zaposleni" visibility="public">
+      <ownedAttribute name="ZaposleniID" visibility="private" type="//Integer"/>
+      <ownedAttribute name="ImeZap" visibility="private" type="//String"/>
+      <ownedAttribute name="PrezimeZap" visibility="private" type="//String"/>
+      <ownedAttribute name="JMBGZ" visibility="private" type="//String"/>
+      <ownedAttribute name="KontaktZap" visibility="private" type="//String"/>
+      <ownedAttribute name="AdresaZap" visibility="private" type="//String"/>
+      <ownedAttribute name="GradZap" visibility="private" type="//String"/>
+      <ownedOperation name="sfeysS" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Korisnik" visibility="public">
+      <ownedAttribute name="KorisnikID" visibility="private" type="//Integer"/>
+      <ownedAttribute name="ImeKor_" visibility="private" type="//String"/>
+      <ownedAttribute name="PrezimeKor" visibility="private" type="//String"/>
+      <ownedAttribute name="JMBGK" visibility="private" type="//String"/>
+      <ownedAttribute name="KontaktKor" visibility="private" type="//String"/>
+      <ownedAttribute name="ClanarinaID" visibility="private" type="//Integer"/>
+      <ownedAttribute name="PersonalTID" visibility="private" type="//Integer"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="PersonalniTrener" visibility="public">
+      <ownedAttribute name="PersonalniTID" visibility="private" type="//Integer"/>
+      <ownedAttribute name="PrezimePer" visibility="private" type="//String"/>
+      <ownedAttribute name="Kontakt" visibility="private" type="//String"/>
+      <ownedAttribute name="JMBGP" visibility="private" type="//String"/>
+      <ownedAttribute name="AdresaPer" visibility="private" type="//String"/>
+      <ownedAttribute name="GradPer" visibility="private" type="//Integer"/>
+      <ownedAttribute name="CenaTreninga" visibility="private" type="//double"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Oprema" visibility="public">
+      <ownedAttribute name="NazivOpreme" visibility="private" type="//String"/>
+      <ownedAttribute name="starostOpreme" visibility="private" type="//String"/>
+      <ownedAttribute name="Stanje_" visibility="private" type="//Boolean"/>
+      <ownedOperation name="1k4q2U" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Clanarine" visibility="public">
+      <ownedAttribute name="ClanarinaID" visibility="private" type="//Integer"/>
+      <ownedAttribute name="BrojTreninga" visibility="private" type="//Integer"/>
+      <ownedAttribute name="DatumUplate" visibility="private" type="//DATE"/>
+      <ownedAttribute name="ZaposneliID" visibility="private" type="//Integer"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Suplementi" visibility="public">
+      <ownedAttribute name="SuplementID_" visibility="private" type="//Integer"/>
+      <ownedAttribute name="NazivSupl_" visibility="private" type="//String"/>
+      <ownedAttribute name="CenaSupl" visibility="private" type="//String"/>
+      <ownedAttribute name="VrstaSupl" visibility="private" type="//String"/>
+      <ownedAttribute name="ProizvodjacID" visibility="private"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Clanarine_Korisnik" visibility="public" memberEnd="//Teretana/Clanarine_Korisnik/korisnik //Teretana/Clanarine_Korisnik/clanarine" navigableOwnedEnd="//Teretana/Clanarine_Korisnik/korisnik //Teretana/Clanarine_Korisnik/clanarine">
+      <ownedEnd name="korisnik" visibility="public" type="//Teretana/Korisnik" association="//Teretana/Clanarine_Korisnik">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+      <ownedEnd name="clanarine" visibility="public" type="//Teretana/Clanarine" association="//Teretana/Clanarine_Korisnik">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="PersonalniTrener_Korisnik" visibility="public" memberEnd="//Teretana/PersonalniTrener_Korisnik/korisnik //Teretana/PersonalniTrener_Korisnik/personalniTrener" navigableOwnedEnd="//Teretana/PersonalniTrener_Korisnik/korisnik //Teretana/PersonalniTrener_Korisnik/personalniTrener">
+      <ownedEnd name="korisnik" visibility="public" type="//Teretana/Korisnik" association="//Teretana/PersonalniTrener_Korisnik">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+      <ownedEnd name="personalniTrener" visibility="public" type="//Teretana/PersonalniTrener" association="//Teretana/PersonalniTrener_Korisnik">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Clanarine_Zaposleni" visibility="public" memberEnd="//Teretana/Clanarine_Zaposleni/zaposleni //Teretana/Clanarine_Zaposleni/clanarine" navigableOwnedEnd="//Teretana/Clanarine_Zaposleni/zaposleni //Teretana/Clanarine_Zaposleni/clanarine">
+      <ownedEnd name="zaposleni" visibility="public" type="//Teretana/Zaposleni" association="//Teretana/Clanarine_Zaposleni">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="clanarine" visibility="public" type="//Teretana/Clanarine" association="//Teretana/Clanarine_Zaposleni">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Proizvodjac" visibility="public">
+      <ownedAttribute name="ProizvodjacID" visibility="private" type="//Integer"/>
+      <ownedOperation name="jlEpAg" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Proizvodjac_Suplementi" visibility="public" memberEnd="//Teretana/Proizvodjac_Suplementi/suplementi //Teretana/Proizvodjac_Suplementi/proizvodjac" navigableOwnedEnd="//Teretana/Proizvodjac_Suplementi/suplementi //Teretana/Proizvodjac_Suplementi/proizvodjac">
+      <ownedEnd name="suplementi" visibility="public" type="//Teretana/Suplementi" association="//Teretana/Proizvodjac_Suplementi">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+      <ownedEnd name="proizvodjac" visibility="public" type="//Teretana/Proizvodjac" association="//Teretana/Proizvodjac_Suplementi">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="GrupniTrening" visibility="public">
+      <ownedAttribute name="NazivGr_" visibility="private" type="//String"/>
+      <ownedAttribute name="DatumTreninga" visibility="private" type="//DATE"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Zaposleni_GrupniTrening" visibility="public">
+      <ownedAttribute name="ZaposleniID" visibility="private" type="//Integer"/>
+      <ownedAttribute name="GrupniID" visibility="private" type="//Integer"/>
+      <ownedOperation name="Wk1Umk" visibility="public"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Zaposleni_GrupniTrening_Grupni Trening" visibility="public" memberEnd="//Teretana/Zaposleni_GrupniTrening_Grupni%20Trening/grupni%20Trening //Teretana/Zaposleni_GrupniTrening_Grupni%20Trening/zaposleni_GrupniTrening" navigableOwnedEnd="//Teretana/Zaposleni_GrupniTrening_Grupni%20Trening/grupni%20Trening //Teretana/Zaposleni_GrupniTrening_Grupni%20Trening/zaposleni_GrupniTrening">
+      <ownedEnd name="grupni Trening" visibility="public" type="//Teretana/GrupniTrening" association="//Teretana/Zaposleni_GrupniTrening_Grupni%20Trening">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="zaposleni_GrupniTrening" visibility="public" type="//Teretana/Zaposleni_GrupniTrening" association="//Teretana/Zaposleni_GrupniTrening_Grupni%20Trening">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Zaposleni_GrupniTrening_Zaposleni" visibility="public" memberEnd="//Teretana/Zaposleni_GrupniTrening_Zaposleni/zaposleni //Teretana/Zaposleni_GrupniTrening_Zaposleni/zaposleni_GrupniTrening" navigableOwnedEnd="//Teretana/Zaposleni_GrupniTrening_Zaposleni/zaposleni //Teretana/Zaposleni_GrupniTrening_Zaposleni/zaposleni_GrupniTrening">
+      <ownedEnd name="zaposleni" visibility="public" type="//Teretana/Zaposleni" association="//Teretana/Zaposleni_GrupniTrening_Zaposleni">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="zaposleni_GrupniTrening" visibility="public" type="//Teretana/Zaposleni_GrupniTrening" association="//Teretana/Zaposleni_GrupniTrening_Zaposleni">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Oprema_Zaposleni" visibility="public">
+      <ownedAttribute name="OpremaID" visibility="private" type="//Integer"/>
+      <ownedAttribute name="ZaposleniID" visibility="private" type="//Integer"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Zaposleni_Oprema_Zaposleni" visibility="public" memberEnd="//Teretana/Zaposleni_Oprema_Zaposleni/oprema_Zaposleni //Teretana/Zaposleni_Oprema_Zaposleni/zaposleni" navigableOwnedEnd="//Teretana/Zaposleni_Oprema_Zaposleni/oprema_Zaposleni //Teretana/Zaposleni_Oprema_Zaposleni/zaposleni">
+      <ownedEnd name="oprema_Zaposleni" visibility="public" type="//Teretana/Oprema_Zaposleni" association="//Teretana/Zaposleni_Oprema_Zaposleni">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+      <ownedEnd name="zaposleni" visibility="public" type="//Teretana/Zaposleni" association="//Teretana/Zaposleni_Oprema_Zaposleni">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Oprema_Zaposleni_Oprema" visibility="public" memberEnd="//Teretana/Oprema_Zaposleni_Oprema/oprema //Teretana/Oprema_Zaposleni_Oprema/oprema_Zaposleni" navigableOwnedEnd="//Teretana/Oprema_Zaposleni_Oprema/oprema //Teretana/Oprema_Zaposleni_Oprema/oprema_Zaposleni">
+      <ownedEnd name="oprema" visibility="public" type="//Teretana/Oprema" association="//Teretana/Oprema_Zaposleni_Oprema">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="oprema_Zaposleni" visibility="public" type="//Teretana/Oprema_Zaposleni" association="//Teretana/Oprema_Zaposleni_Oprema">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="Korisnik_suplement" visibility="public">
+      <ownedAttribute name="KorisnikID" visibility="private" type="//Integer"/>
+      <ownedAttribute name="SuplementID" visibility="private" type="//Integer"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Korisnik_Korisnik_suplement" visibility="public" memberEnd="//Teretana/Korisnik_Korisnik_suplement/korisnik_suplement //Teretana/Korisnik_Korisnik_suplement/korisnik" navigableOwnedEnd="//Teretana/Korisnik_Korisnik_suplement/korisnik_suplement //Teretana/Korisnik_Korisnik_suplement/korisnik">
+      <ownedEnd name="korisnik_suplement" visibility="public" type="//Teretana/Korisnik_suplement" association="//Teretana/Korisnik_Korisnik_suplement">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+      <ownedEnd name="korisnik" visibility="public" type="//Teretana/Korisnik" association="//Teretana/Korisnik_Korisnik_suplement">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Korisnik_suplement_Suplementi" visibility="public" memberEnd="//Teretana/Korisnik_suplement_Suplementi/suplementi //Teretana/Korisnik_suplement_Suplementi/korisnik_suplement" navigableOwnedEnd="//Teretana/Korisnik_suplement_Suplementi/suplementi //Teretana/Korisnik_suplement_Suplementi/korisnik_suplement">
+      <ownedEnd name="suplementi" visibility="public" type="//Teretana/Suplementi" association="//Teretana/Korisnik_suplement_Suplementi">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="korisnik_suplement" visibility="public" type="//Teretana/Korisnik_suplement" association="//Teretana/Korisnik_suplement_Suplementi">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Class" name="GrupniTrening_Korisnik" visibility="public">
+      <ownedAttribute name="GrupniID" visibility="private" type="//Integer"/>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="GrupniTrening_GrupniTrening_Korisnik" visibility="public" memberEnd="//Teretana/GrupniTrening_GrupniTrening_Korisnik/grupniTrening_Korisnik //Teretana/GrupniTrening_GrupniTrening_Korisnik/grupniTrening" navigableOwnedEnd="//Teretana/GrupniTrening_GrupniTrening_Korisnik/grupniTrening_Korisnik //Teretana/GrupniTrening_GrupniTrening_Korisnik/grupniTrening">
+      <ownedEnd name="grupniTrening_Korisnik" visibility="public" type="//Teretana/GrupniTrening_Korisnik" association="//Teretana/GrupniTrening_GrupniTrening_Korisnik">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+      <ownedEnd name="grupniTrening" visibility="public" type="//Teretana/GrupniTrening" association="//Teretana/GrupniTrening_GrupniTrening_Korisnik">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="GrupniTrening_Korisnik_Korisnik" visibility="public" memberEnd="//Teretana/GrupniTrening_Korisnik_Korisnik/korisnik //Teretana/GrupniTrening_Korisnik_Korisnik/grupniTrening_Korisnik" navigableOwnedEnd="//Teretana/GrupniTrening_Korisnik_Korisnik/korisnik //Teretana/GrupniTrening_Korisnik_Korisnik/grupniTrening_Korisnik">
+      <ownedEnd name="korisnik" visibility="public" type="//Teretana/Korisnik" association="//Teretana/GrupniTrening_Korisnik_Korisnik">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="grupniTrening_Korisnik" visibility="public" type="//Teretana/GrupniTrening_Korisnik" association="//Teretana/GrupniTrening_Korisnik_Korisnik">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Interface" name="int" visibility="public"/>
+  <packagedElement xsi:type="uml:DataType" name="DATE" visibility="public"/>
+  <packagedElement xsi:type="uml:DataType" name="double" visibility="public"/>
+  <packagedElement xsi:type="uml:DataType" name="double2" visibility="public"/>
+  <packagedElement xsi:type="uml:Class" name="inte" visibility="public">
+    <ownedOperation name="FMRlEo" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Integer" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="String" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Boolean" visibility="public"/>
+</uml:Model>

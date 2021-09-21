@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="passport automation system-usecase diagram" visibility="public">
+  <packagedElement xsi:type="uml:UseCase" name="login" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="submit details" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="get details" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="verification" visibility="public">
+    <extend visibility="public" extendedCase="//verification"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="check status" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="stop verification" visibility="public">
+    <extend visibility="public" extendedCase="//stop%20verification"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="issue passport" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="Applicant_skv_" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="police_" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="Passport Administration_" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="Regional Administartion_" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="Actor_UseCase" visibility="public" memberEnd="//Actor_UseCase/useCase //Actor_UseCase/actor" navigableOwnedEnd="//Actor_UseCase/actor //Actor_UseCase/useCase">
+    <ownedEnd name="actor" visibility="public" type="//Applicant_skv_" association="//Actor_UseCase">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase" visibility="public" type="//login" association="//Actor_UseCase">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase2_Actor" visibility="public" memberEnd="//UseCase2_Actor/actor //UseCase2_Actor/useCase2" navigableOwnedEnd="//UseCase2_Actor/useCase2 //UseCase2_Actor/actor">
+    <ownedEnd name="useCase2" visibility="public" type="//submit%20details" association="//UseCase2_Actor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor" visibility="public" type="//Applicant_skv_" association="//UseCase2_Actor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase3_Actor" visibility="public" memberEnd="//UseCase3_Actor/actor //UseCase3_Actor/useCase3" navigableOwnedEnd="//UseCase3_Actor/useCase3 //UseCase3_Actor/actor">
+    <ownedEnd name="useCase3" visibility="public" type="//check%20status" association="//UseCase3_Actor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor" visibility="public" type="//Applicant_skv_" association="//UseCase3_Actor">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Actor2_UseCase" visibility="public" memberEnd="//Actor2_UseCase/useCase //Actor2_UseCase/actor2" navigableOwnedEnd="//Actor2_UseCase/actor2 //Actor2_UseCase/useCase">
+    <ownedEnd name="actor2" visibility="public" type="//police_" association="//Actor2_UseCase">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase" visibility="public" type="//login" association="//Actor2_UseCase">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase4_Actor2" visibility="public" memberEnd="//UseCase4_Actor2/actor2 //UseCase4_Actor2/useCase4" navigableOwnedEnd="//UseCase4_Actor2/useCase4 //UseCase4_Actor2/actor2">
+    <ownedEnd name="useCase4" visibility="public" type="//get%20details" association="//UseCase4_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor2" visibility="public" type="//police_" association="//UseCase4_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase5_Actor2" visibility="public" memberEnd="//UseCase5_Actor2/actor2 //UseCase5_Actor2/useCase5" navigableOwnedEnd="//UseCase5_Actor2/useCase5 //UseCase5_Actor2/actor2">
+    <ownedEnd name="useCase5" visibility="public" type="//verification" association="//UseCase5_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor2" visibility="public" type="//police_" association="//UseCase5_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase6_Actor2" visibility="public" memberEnd="//UseCase6_Actor2/actor2 //UseCase6_Actor2/useCase6" navigableOwnedEnd="//UseCase6_Actor2/useCase6 //UseCase6_Actor2/actor2">
+    <ownedEnd name="useCase6" visibility="public" type="//stop%20verification" association="//UseCase6_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor2" visibility="public" type="//police_" association="//UseCase6_Actor2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase_Actor3" visibility="public" memberEnd="//UseCase_Actor3/actor3 //UseCase_Actor3/useCase" navigableOwnedEnd="//UseCase_Actor3/useCase //UseCase_Actor3/actor3">
+    <ownedEnd name="useCase" visibility="public" type="//login" association="//UseCase_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor3" visibility="public" type="//Passport%20Administration_" association="//UseCase_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase_Actor4" visibility="public" memberEnd="//UseCase_Actor4/actor4 //UseCase_Actor4/useCase" navigableOwnedEnd="//UseCase_Actor4/useCase //UseCase_Actor4/actor4">
+    <ownedEnd name="useCase" visibility="public" type="//login" association="//UseCase_Actor4">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor4" visibility="public" type="//Regional%20Administartion_" association="//UseCase_Actor4">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase4_Actor3" visibility="public" memberEnd="//UseCase4_Actor3/actor3 //UseCase4_Actor3/useCase4" navigableOwnedEnd="//UseCase4_Actor3/useCase4 //UseCase4_Actor3/actor3">
+    <ownedEnd name="useCase4" visibility="public" type="//get%20details" association="//UseCase4_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor3" visibility="public" type="//Passport%20Administration_" association="//UseCase4_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase5_Actor3" visibility="public" memberEnd="//UseCase5_Actor3/actor3 //UseCase5_Actor3/useCase5" navigableOwnedEnd="//UseCase5_Actor3/useCase5 //UseCase5_Actor3/actor3">
+    <ownedEnd name="useCase5" visibility="public" type="//verification" association="//UseCase5_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor3" visibility="public" type="//Passport%20Administration_" association="//UseCase5_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase6_Actor3" visibility="public" memberEnd="//UseCase6_Actor3/actor3 //UseCase6_Actor3/useCase6" navigableOwnedEnd="//UseCase6_Actor3/useCase6 //UseCase6_Actor3/actor3">
+    <ownedEnd name="useCase6" visibility="public" type="//stop%20verification" association="//UseCase6_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor3" visibility="public" type="//Passport%20Administration_" association="//UseCase6_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UseCase7_Actor3" visibility="public" memberEnd="//UseCase7_Actor3/actor3 //UseCase7_Actor3/useCase7" navigableOwnedEnd="//UseCase7_Actor3/useCase7 //UseCase7_Actor3/actor3">
+    <ownedEnd name="useCase7" visibility="public" type="//issue%20passport" association="//UseCase7_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="actor3" visibility="public" type="//Passport%20Administration_" association="//UseCase7_Actor3">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Actor4_UseCase4" visibility="public" memberEnd="//Actor4_UseCase4/useCase4 //Actor4_UseCase4/actor4" navigableOwnedEnd="//Actor4_UseCase4/actor4 //Actor4_UseCase4/useCase4">
+    <ownedEnd name="actor4" visibility="public" type="//Regional%20Administartion_" association="//Actor4_UseCase4">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase4" visibility="public" type="//get%20details" association="//Actor4_UseCase4">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Actor4_UseCase5" visibility="public" memberEnd="//Actor4_UseCase5/useCase5 //Actor4_UseCase5/actor4" navigableOwnedEnd="//Actor4_UseCase5/actor4 //Actor4_UseCase5/useCase5">
+    <ownedEnd name="actor4" visibility="public" type="//Regional%20Administartion_" association="//Actor4_UseCase5">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase5" visibility="public" type="//verification" association="//Actor4_UseCase5">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Actor4_UseCase6" visibility="public" memberEnd="//Actor4_UseCase6/useCase6 //Actor4_UseCase6/actor4" navigableOwnedEnd="//Actor4_UseCase6/actor4 //Actor4_UseCase6/useCase6">
+    <ownedEnd name="actor4" visibility="public" type="//Regional%20Administartion_" association="//Actor4_UseCase6">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="useCase6" visibility="public" type="//stop%20verification" association="//Actor4_UseCase6">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

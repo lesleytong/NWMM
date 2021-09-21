@@ -1,0 +1,40 @@
+import "/TestXmu/model/SimpleClass.ecore" as uml
+import "/TestXmu/model/SimpleRDBMS.ecore" as rdbms
+
+import edu.ustb.sei.mde.graph.typedGraph.TypedNode
+import edu.ustb.sei.mde.bxcore.structures.Index
+import edu.ustb.sei.mde.graph.typedGraph.ValueNode
+import edu.ustb.sei.mde.graph.typedGraph.ValueEdge
+import edu.ustb.sei.mde.graph.typedGraph.TypedEdge
+
+pattern ClassModel = m : uml.ClassModel as ClassModel
+pattern RdbmsModel = m : rdbms.RDBMSModel as RdbmsModel
+
+pattern ModelPackage = m : uml.ClassModel{l:packages=p : uml.Package{ln:name=n:uml.EString}} as ModelPackage
+pattern ModelSchema = m : rdbms.RDBMSModel{l:schemas=s : rdbms.Schema{ln:name=n:rdbms.EString}} as ModelSchema
+
+pattern PackageClass = p:uml.Package{l:classes=c:uml.Class{ln:name=n:uml.EString}} as PackageClass
+pattern SchemaTable = p:rdbms.Schema{l:tables=t:rdbms.Table{ln:name=n:uml.EString}} as SchemaTable
+
+
+function Model<ClassModel, RdbmsModel> =
+	align<ClassModel,RdbmsModel> ModelPackage  ModelSchema with [{
+		val sn = source.getValue("n");
+		val vn = view.getValue("n");
+		
+		return sn===vn || (sn!==null && sn.equals(vn));
+	}]
+		match -> replace ModelPackage ModelSchema {replace (n) (n)} 
+		unmatchS -> {
+			val unmatchedPackage = source.first.getElementByIndexObject(source.second.getValue("p") as Index) as TypedNode;
+			val sourcePost = source.first.copy;
+			sourcePost.remove(unmatchedPackage);
+			return source.replaceFirst(sourcePost);
+		}
+		unmatchV -> {
+			return source.modification()
+				.addTypedNode("p", 'Package')
+				.addTypedEdge("m", "p", 'pacakges')
+				.addValueNode('n', 'EString')
+				.addValueEdge('p', 'n', 'name').get();
+		}

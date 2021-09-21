@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="ATM Withdrawal activity diagram" visibility="public">
+  <packagedElement xsi:type="uml:Activity" name="Activity" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Prompt%20the%20user%20to%20insert%20card" source="//Activity/InitialNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Insert%20card" source="//Activity/Prompt%20the%20user%20to%20insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Decision" source="//Activity/Insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Prompt%20the%20user%20to%20insert%20card" source="//Activity/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="CArd not valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Prompt%20user%20to%20enter%20the%20pin" source="//Activity/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Card is valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Enter%20the%20pin" source="//Activity/Prompt%20user%20to%20enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Decision2" source="//Activity/Enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Prompt%20user%20to%20enter%20the%20pin" source="//Activity/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid pin 1st and 2nd time. Reenter correct pin"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Eject%20the%20card" source="//Activity/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="INvalid pin 3rd time.Card is blocked. PLease contact bank"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/FlowFinal" source="//Activity/Eject%20the%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Display%20the%20transaction%20menu" source="//Activity/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/SElect%20account" source="//Activity/Display%20the%20transaction%20menu">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="withdrawal transaction is chosen"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Decision3" source="//Activity/SElect%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/savings%20account" source="//Activity/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/checking%20account" source="//Activity/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Merge" source="//Activity/savings%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Merge" source="//Activity/checking%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Enter%20the%20amount_" source="//Activity/Merge">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Decision4" source="//Activity/Enter%20the%20amount_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Enter%20the%20amount_" source="//Activity/Decision4">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Insufficient balance"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Make%20ATM%20log%20for%20transaction" source="//Activity/Decision4">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Drop%20the%20money" source="//Activity/Make%20ATM%20log%20for%20transaction">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Collect%20the%20money" source="//Activity/Drop%20the%20money">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Display%20the%20transaction%20menu" source="//Activity/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="yes"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Further%20transaction%3F_" source="//Activity/Collect%20the%20money">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Decision5" source="//Activity/Further%20transaction%3F_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Eject%20the%20card.1" source="//Activity/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="no"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/ActivityFinal" source="//Activity/Eject%20the%20card.1">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <ownedNode xsi:type="uml:InitialNode" name="InitialNode" visibility="public" outgoing="//Activity/ControlFlow"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt the user to insert card" visibility="public" incoming="//Activity/ControlFlow //Activity/ControlFlow.3" outgoing="//Activity/ControlFlow.1" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Insert card" visibility="public" incoming="//Activity/ControlFlow.1" outgoing="//Activity/ControlFlow.2" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision" visibility="public" incoming="//Activity/ControlFlow.2" outgoing="//Activity/ControlFlow.3 //Activity/ControlFlow.4"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt user to enter the pin" visibility="public" incoming="//Activity/ControlFlow.4 //Activity/ControlFlow.7" outgoing="//Activity/ControlFlow.5" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the pin" visibility="public" incoming="//Activity/ControlFlow.5" outgoing="//Activity/ControlFlow.6" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision2" visibility="public" incoming="//Activity/ControlFlow.6" outgoing="//Activity/ControlFlow.7 //Activity/ControlFlow.8 //Activity/ControlFlow.10"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card" visibility="public" incoming="//Activity/ControlFlow.8" outgoing="//Activity/ControlFlow.9" body="" language=""/>
+    <ownedNode xsi:type="uml:FlowFinalNode" name="FlowFinal" visibility="public" incoming="//Activity/ControlFlow.9"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Display the transaction menu" visibility="public" incoming="//Activity/ControlFlow.10 //Activity/ControlFlow.23" outgoing="//Activity/ControlFlow.11" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="SElect account" visibility="public" incoming="//Activity/ControlFlow.11" outgoing="//Activity/ControlFlow.12" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision3" visibility="public" incoming="//Activity/ControlFlow.12" outgoing="//Activity/ControlFlow.13 //Activity/ControlFlow.14"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="savings account" visibility="public" incoming="//Activity/ControlFlow.13" outgoing="//Activity/ControlFlow.15" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="checking account" visibility="public" incoming="//Activity/ControlFlow.14" outgoing="//Activity/ControlFlow.16" body="" language=""/>
+    <ownedNode xsi:type="uml:MergeNode" name="Merge" visibility="public" incoming="//Activity/ControlFlow.15 //Activity/ControlFlow.16" outgoing="//Activity/ControlFlow.17"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the amount_" visibility="public" incoming="//Activity/ControlFlow.17 //Activity/ControlFlow.19" outgoing="//Activity/ControlFlow.18" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision4" visibility="public" incoming="//Activity/ControlFlow.18" outgoing="//Activity/ControlFlow.19 //Activity/ControlFlow.20"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Make ATM log for transaction" visibility="public" incoming="//Activity/ControlFlow.20" outgoing="//Activity/ControlFlow.21" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Drop the money" visibility="public" incoming="//Activity/ControlFlow.21" outgoing="//Activity/ControlFlow.22" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Collect the money" visibility="public" incoming="//Activity/ControlFlow.22" outgoing="//Activity/ControlFlow.24" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision5" visibility="public" incoming="//Activity/ControlFlow.25" outgoing="//Activity/ControlFlow.23 //Activity/ControlFlow.26"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card" visibility="public" incoming="//Activity/ControlFlow.26" outgoing="//Activity/ControlFlow.27" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Further transaction?_" visibility="public" incoming="//Activity/ControlFlow.24" outgoing="//Activity/ControlFlow.25" body="" language=""/>
+    <ownedNode xsi:type="uml:ActivityFinalNode" name="ActivityFinal" visibility="public" incoming="//Activity/ControlFlow.27"/>
+    <ownedNode xsi:type="uml:DecisionNode" name="z7bcHB" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Activity" name="Activity2" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Prompt%20the%20user%20to%20insert%20card_" source="//Activity2/InitialNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Insert%20card" source="//Activity2/Prompt%20the%20user%20to%20insert%20card_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Prompt%20the%20user%20to%20insert%20card_" source="//Activity2/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="CArd not valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Decision" source="//Activity2/Insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Eject%20the%20card" source="//Activity2/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="INvalid pin 3rd time.Card is blocked. PLease contact bank"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/FlowFinal" source="//Activity2/Eject%20the%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Prompt%20user%20to%20enter%20the%20pin" source="//Activity2/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Card is valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Enter%20the%20pin" source="//Activity2/Prompt%20user%20to%20enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Prompt%20user%20to%20enter%20the%20pin" source="//Activity2/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid pin 1st and 2nd time. Reenter correct pin"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Decision2" source="//Activity2/Enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Display%20the%20transaction%20menu" source="//Activity2/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/SElect%20account_" source="//Activity2/Display%20the%20transaction%20menu">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Check balance is chosen"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Display%20the%20transaction%20menu" source="//Activity2/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="yes"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Decision3" source="//Activity2/SElect%20account_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/checking%20account" source="//Activity2/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/savings%20account" source="//Activity2/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Merge" source="//Activity2/savings%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Merge" source="//Activity2/checking%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Display%20available%20balance" source="//Activity2/Merge">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Decision5" source="//Activity2/Further%20transaction%3F">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Eject%20the%20card.1" source="//Activity2/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="no"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/ActivityFinal" source="//Activity2/Eject%20the%20card.1">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Do%20you%20want%20to%20print%20receipt%3F" source="//Activity2/Display%20available%20balance">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Decision4" source="//Activity2/Do%20you%20want%20to%20print%20receipt%3F">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Print%20receipt_" source="//Activity2/Decision4">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="yes"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Further%20transaction%3F" source="//Activity2/Print%20receipt_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity2/Further%20transaction%3F" source="//Activity2/Decision4">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="no"/>
+    </edge>
+    <ownedNode xsi:type="uml:InitialNode" name="InitialNode" visibility="public" outgoing="//Activity2/ControlFlow"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt the user to insert card_" visibility="public" incoming="//Activity2/ControlFlow //Activity2/ControlFlow.2" outgoing="//Activity2/ControlFlow.1" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Insert card" visibility="public" incoming="//Activity2/ControlFlow.1" outgoing="//Activity2/ControlFlow.3" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card" visibility="public" incoming="//Activity2/ControlFlow.4" outgoing="//Activity2/ControlFlow.5" body="" language=""/>
+    <ownedNode xsi:type="uml:FlowFinalNode" name="FlowFinal" visibility="public" incoming="//Activity2/ControlFlow.5"/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision" visibility="public" incoming="//Activity2/ControlFlow.3" outgoing="//Activity2/ControlFlow.2 //Activity2/ControlFlow.6"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt user to enter the pin" visibility="public" incoming="//Activity2/ControlFlow.6 //Activity2/ControlFlow.8" outgoing="//Activity2/ControlFlow.7" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the pin" visibility="public" incoming="//Activity2/ControlFlow.7" outgoing="//Activity2/ControlFlow.9" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision2" visibility="public" incoming="//Activity2/ControlFlow.9" outgoing="//Activity2/ControlFlow.8 //Activity2/ControlFlow.4 //Activity2/ControlFlow.10"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Display the transaction menu" visibility="public" incoming="//Activity2/ControlFlow.10 //Activity2/ControlFlow.12" outgoing="//Activity2/ControlFlow.11" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision3" visibility="public" incoming="//Activity2/ControlFlow.13" outgoing="//Activity2/ControlFlow.15 //Activity2/ControlFlow.14"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="savings account" visibility="public" incoming="//Activity2/ControlFlow.15" outgoing="//Activity2/ControlFlow.16" body="" language=""/>
+    <ownedNode xsi:type="uml:MergeNode" name="Merge" visibility="public" incoming="//Activity2/ControlFlow.16 //Activity2/ControlFlow.17" outgoing="//Activity2/ControlFlow.18"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="SElect account_" visibility="public" incoming="//Activity2/ControlFlow.11" outgoing="//Activity2/ControlFlow.13" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Display available balance" visibility="public" incoming="//Activity2/ControlFlow.18" outgoing="//Activity2/ControlFlow.22" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Do you want to print receipt?" visibility="public" incoming="//Activity2/ControlFlow.22" outgoing="//Activity2/ControlFlow.23" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Further transaction?" visibility="public" incoming="//Activity2/ControlFlow.25 //Activity2/ControlFlow.26" outgoing="//Activity2/ControlFlow.19" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="checking account" visibility="public" incoming="//Activity2/ControlFlow.14" outgoing="//Activity2/ControlFlow.17" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision5" visibility="public" incoming="//Activity2/ControlFlow.19" outgoing="//Activity2/ControlFlow.12 //Activity2/ControlFlow.20"/>
+    <ownedNode xsi:type="uml:ActivityFinalNode" name="ActivityFinal" visibility="public" incoming="//Activity2/ControlFlow.21"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card" visibility="public" incoming="//Activity2/ControlFlow.20" outgoing="//Activity2/ControlFlow.21" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision4" visibility="public" incoming="//Activity2/ControlFlow.23" outgoing="//Activity2/ControlFlow.24 //Activity2/ControlFlow.26"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Print receipt_" visibility="public" incoming="//Activity2/ControlFlow.24" outgoing="//Activity2/ControlFlow.25" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="m9lmTS" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Activity" name="Activity3" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Prompt%20the%20user%20to%20insert%20card" source="//Activity3/InitialNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Insert%20card" source="//Activity3/Prompt%20the%20user%20to%20insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Prompt%20the%20user%20to%20insert%20card" source="//Activity3/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="CArd not valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Decision" source="//Activity3/Insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Prompt%20user%20to%20enter%20the%20pin" source="//Activity3/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Card is valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Eject%20the%20card" source="//Activity3/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="INvalid pin 3rd time.Card is blocked. PLease contact bank"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/FlowFinal" source="//Activity3/Eject%20the%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Enter%20the%20pin" source="//Activity3/Prompt%20user%20to%20enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Prompt%20user%20to%20enter%20the%20pin" source="//Activity3/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid pin 1st and 2nd time. Reenter correct pin"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Decision2" source="//Activity3/Enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/savings%20account" source="//Activity3/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Merge" source="//Activity3/savings%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/SElect%20account" source="//Activity3/Display%20the%20transaction%20menu">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Transfer funds is chosen"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Decision3" source="//Activity3/SElect%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/checking%20account" source="//Activity3/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Merge" source="//Activity3/checking%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/select%20the%20to%20bank" source="//Activity3/Merge">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Prompt%20user%20to%20enter%20the%20Account%20number" source="//Activity3/select%20the%20to%20bank">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Enter%20the%20To%20Account%20Number%20" source="//Activity3/Prompt%20user%20to%20enter%20the%20Account%20number">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Prompt%20user%20to%20enter%20the%20Account%20number" source="//Activity3/Decision6">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Acc number invalid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Enter%20the%20amount%20to%20transfer" source="//Activity3/Decision6">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Check%20for%20sufficient%20balance" source="//Activity3/Enter%20the%20amount%20to%20transfer">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Decision7" source="//Activity3/Check%20for%20sufficient%20balance">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Check%20if%20amount%20is%20within%20transfer%20limit" source="//Activity3/Decision7">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="yes"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Enter%20the%20amount%20to%20transfer" source="//Activity3/Decision7">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="insufficient balance"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Decision8" source="//Activity3/Check%20if%20amount%20is%20within%20transfer%20limit">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Perfrom%20the%20transfer%20" source="//Activity3/Decision8">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Display%20Transfer%20complete%20message%20" source="//Activity3/Perfrom%20the%20transfer%20">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Enter%20the%20amount%20to%20transfer" source="//Activity3/Decision8">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Amount exceeded transfer limit"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Decision5" source="//Activity3/Do%20you%20want%20another%20transaction">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Display%20the%20transaction%20menu" source="//Activity3/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Perform another transaction"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Eject%20card%20" source="//Activity3/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="no"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Display%20the%20transaction%20menu" source="//Activity3/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/ActivityFinal" source="//Activity3/Eject%20card%20">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Do%20you%20want%20another%20transaction" source="//Activity3/Display%20Transfer%20complete%20message%20">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Decision6" source="//Activity3/Enter%20the%20To%20Account%20Number%20">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <ownedNode xsi:type="uml:InitialNode" name="InitialNode" visibility="public" outgoing="//Activity3/ControlFlow"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt the user to insert card" visibility="public" incoming="//Activity3/ControlFlow //Activity3/ControlFlow.2" outgoing="//Activity3/ControlFlow.1" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Insert card" visibility="public" incoming="//Activity3/ControlFlow.1" outgoing="//Activity3/ControlFlow.3" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision" visibility="public" incoming="//Activity3/ControlFlow.3" outgoing="//Activity3/ControlFlow.2 //Activity3/ControlFlow.4"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card" visibility="public" incoming="//Activity3/ControlFlow.5" outgoing="//Activity3/ControlFlow.6" body="" language=""/>
+    <ownedNode xsi:type="uml:FlowFinalNode" name="FlowFinal" visibility="public" incoming="//Activity3/ControlFlow.6"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt user to enter the pin" visibility="public" incoming="//Activity3/ControlFlow.4 //Activity3/ControlFlow.8" outgoing="//Activity3/ControlFlow.7" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the pin" visibility="public" incoming="//Activity3/ControlFlow.7" outgoing="//Activity3/ControlFlow.9" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision2" visibility="public" incoming="//Activity3/ControlFlow.9" outgoing="//Activity3/ControlFlow.8 //Activity3/ControlFlow.5 //Activity3/ControlFlow.32"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="savings account" visibility="public" incoming="//Activity3/ControlFlow.10" outgoing="//Activity3/ControlFlow.11" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Display the transaction menu" visibility="public" incoming="//Activity3/ControlFlow.32 //Activity3/ControlFlow.30" outgoing="//Activity3/ControlFlow.12" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision3" visibility="public" incoming="//Activity3/ControlFlow.13" outgoing="//Activity3/ControlFlow.10 //Activity3/ControlFlow.14"/>
+    <ownedNode xsi:type="uml:MergeNode" name="Merge" visibility="public" incoming="//Activity3/ControlFlow.11 //Activity3/ControlFlow.15" outgoing="//Activity3/ControlFlow.16"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="SElect account" visibility="public" incoming="//Activity3/ControlFlow.12" outgoing="//Activity3/ControlFlow.13" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="checking account" visibility="public" incoming="//Activity3/ControlFlow.14" outgoing="//Activity3/ControlFlow.15" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="select the to bank" visibility="public" incoming="//Activity3/ControlFlow.16" outgoing="//Activity3/ControlFlow.17" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt user to enter the Account number" visibility="public" incoming="//Activity3/ControlFlow.17 //Activity3/ControlFlow.19" outgoing="//Activity3/ControlFlow.18" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision6" visibility="public" incoming="//Activity3/ControlFlow.35" outgoing="//Activity3/ControlFlow.19 //Activity3/ControlFlow.20"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the To Account Number " visibility="public" incoming="//Activity3/ControlFlow.18" outgoing="//Activity3/ControlFlow.35" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the amount to transfer" visibility="public" incoming="//Activity3/ControlFlow.20 //Activity3/ControlFlow.24 //Activity3/ControlFlow.28" outgoing="//Activity3/ControlFlow.21" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Check for sufficient balance" visibility="public" incoming="//Activity3/ControlFlow.21" outgoing="//Activity3/ControlFlow.22" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision7" visibility="public" incoming="//Activity3/ControlFlow.22" outgoing="//Activity3/ControlFlow.23 //Activity3/ControlFlow.24"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Check if amount is within transfer limit" visibility="public" incoming="//Activity3/ControlFlow.23" outgoing="//Activity3/ControlFlow.25" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision8" visibility="public" incoming="//Activity3/ControlFlow.25" outgoing="//Activity3/ControlFlow.28 //Activity3/ControlFlow.26"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Perfrom the transfer " visibility="public" incoming="//Activity3/ControlFlow.26" outgoing="//Activity3/ControlFlow.27" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Display Transfer complete message " visibility="public" incoming="//Activity3/ControlFlow.27" outgoing="//Activity3/ControlFlow.34" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Do you want another transaction" visibility="public" incoming="//Activity3/ControlFlow.34" outgoing="//Activity3/ControlFlow.29" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision5" visibility="public" incoming="//Activity3/ControlFlow.29" outgoing="//Activity3/ControlFlow.30 //Activity3/ControlFlow.31"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject card " visibility="public" incoming="//Activity3/ControlFlow.31" outgoing="//Activity3/ControlFlow.33" body="" language=""/>
+    <ownedNode xsi:type="uml:ActivityFinalNode" name="ActivityFinal" visibility="public" incoming="//Activity3/ControlFlow.33"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Activity" name="Activity4" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Prompt%20the%20user%20to%20insert%20card" source="//Activity4/InitialNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Insert%20card" source="//Activity4/Prompt%20the%20user%20to%20insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Prompt%20the%20user%20to%20insert%20card" source="//Activity4/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="CArd not valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Decision" source="//Activity4/Insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Prompt%20user%20to%20enter%20the%20pin" source="//Activity4/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Card is valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Eject%20the%20card_" source="//Activity4/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="INvalid pin 3rd time.Card is blocked. PLease contact bank"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/FlowFinal" source="//Activity4/Eject%20the%20card_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Enter%20the%20pin" source="//Activity4/Prompt%20user%20to%20enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Prompt%20user%20to%20enter%20the%20pin" source="//Activity4/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid pin 1st and 2nd time. Reenter correct pin"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Decision2" source="//Activity4/Enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Display%20the%20transaction%20menu" source="//Activity4/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/savings%20account" source="//Activity4/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Merge" source="//Activity4/savings%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Make%20ATM%20log%20for%20transaction_" source="//Activity4/Decision4">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Drop%20the%20money" source="//Activity4/Make%20ATM%20log%20for%20transaction_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Collect%20the%20money" source="//Activity4/Drop%20the%20money">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Further%20transaction%3F" source="//Activity4/Collect%20the%20money">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Decision5" source="//Activity4/Further%20transaction%3F">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/SElect%20account" source="//Activity4/Display%20the%20transaction%20menu">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Deposit cash"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Display%20the%20transaction%20menu" source="//Activity4/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="yes"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Decision3" source="//Activity4/SElect%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/checking%20account" source="//Activity4/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Merge" source="//Activity4/checking%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Enter%20the%20amount" source="//Activity4/Merge">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Decision4" source="//Activity4/Enter%20the%20amount">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Enter%20the%20amount" source="//Activity4/Decision4">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Insufficient balance"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/Eject%20the%20card_.1" source="//Activity4/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="no"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity4/ActivityFinal" source="//Activity4/Eject%20the%20card_.1">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <ownedNode xsi:type="uml:InitialNode" name="InitialNode" visibility="public" outgoing="//Activity4/ControlFlow"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt the user to insert card" visibility="public" incoming="//Activity4/ControlFlow //Activity4/ControlFlow.2" outgoing="//Activity4/ControlFlow.1" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Insert card" visibility="public" incoming="//Activity4/ControlFlow.1" outgoing="//Activity4/ControlFlow.3" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision" visibility="public" incoming="//Activity4/ControlFlow.3" outgoing="//Activity4/ControlFlow.2 //Activity4/ControlFlow.4"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card_" visibility="public" incoming="//Activity4/ControlFlow.5" outgoing="//Activity4/ControlFlow.6" body="" language=""/>
+    <ownedNode xsi:type="uml:FlowFinalNode" name="FlowFinal" visibility="public" incoming="//Activity4/ControlFlow.6"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt user to enter the pin" visibility="public" incoming="//Activity4/ControlFlow.4 //Activity4/ControlFlow.8" outgoing="//Activity4/ControlFlow.7" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the pin" visibility="public" incoming="//Activity4/ControlFlow.7" outgoing="//Activity4/ControlFlow.9" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision2" visibility="public" incoming="//Activity4/ControlFlow.9" outgoing="//Activity4/ControlFlow.8 //Activity4/ControlFlow.5 //Activity4/ControlFlow.10"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="savings account" visibility="public" incoming="//Activity4/ControlFlow.11" outgoing="//Activity4/ControlFlow.12" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Make ATM log for transaction_" visibility="public" incoming="//Activity4/ControlFlow.13" outgoing="//Activity4/ControlFlow.14" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Drop the money" visibility="public" incoming="//Activity4/ControlFlow.14" outgoing="//Activity4/ControlFlow.15" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Collect the money" visibility="public" incoming="//Activity4/ControlFlow.15" outgoing="//Activity4/ControlFlow.16" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Further transaction?" visibility="public" incoming="//Activity4/ControlFlow.16" outgoing="//Activity4/ControlFlow.17" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Display the transaction menu" visibility="public" incoming="//Activity4/ControlFlow.10 //Activity4/ControlFlow.19" outgoing="//Activity4/ControlFlow.18" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision3" visibility="public" incoming="//Activity4/ControlFlow.20" outgoing="//Activity4/ControlFlow.11 //Activity4/ControlFlow.21"/>
+    <ownedNode xsi:type="uml:MergeNode" name="Merge" visibility="public" incoming="//Activity4/ControlFlow.12 //Activity4/ControlFlow.22" outgoing="//Activity4/ControlFlow.23"/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision4" visibility="public" incoming="//Activity4/ControlFlow.24" outgoing="//Activity4/ControlFlow.25 //Activity4/ControlFlow.13"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="SElect account" visibility="public" incoming="//Activity4/ControlFlow.18" outgoing="//Activity4/ControlFlow.20" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the amount" visibility="public" incoming="//Activity4/ControlFlow.23 //Activity4/ControlFlow.25" outgoing="//Activity4/ControlFlow.24" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="checking account" visibility="public" incoming="//Activity4/ControlFlow.21" outgoing="//Activity4/ControlFlow.22" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision5" visibility="public" incoming="//Activity4/ControlFlow.17" outgoing="//Activity4/ControlFlow.19 //Activity4/ControlFlow.26"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card_" visibility="public" incoming="//Activity4/ControlFlow.26" outgoing="//Activity4/ControlFlow.27" body="" language=""/>
+    <ownedNode xsi:type="uml:ActivityFinalNode" name="ActivityFinal" visibility="public" incoming="//Activity4/ControlFlow.27"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Activity" name="Activity5" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Prompt%20the%20user%20to%20insert%20card" source="//Activity5/InitialNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Insert%20card" source="//Activity5/Prompt%20the%20user%20to%20insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Prompt%20the%20user%20to%20insert%20card" source="//Activity5/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="CArd not valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Decision" source="//Activity5/Insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Prompt%20user%20to%20enter%20the%20pin" source="//Activity5/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Card is valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Eject%20the%20card" source="//Activity5/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="INvalid pin 3rd time.Card is blocked. PLease contact bank"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/FlowFinal" source="//Activity5/Eject%20the%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Enter%20the%20pin" source="//Activity5/Prompt%20user%20to%20enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Prompt%20user%20to%20enter%20the%20pin" source="//Activity5/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid pin 1st and 2nd time. Reenter correct pin"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Decision2" source="//Activity5/Enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Display%20the%20transaction%20menu" source="//Activity5/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Decision5" source="//Activity5/Further%20transaction%3F">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Enter%20the%20new%20pin" source="//Activity5/Display%20the%20transaction%20menu">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Change pin is chosen"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Display%20the%20transaction%20menu" source="//Activity5/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="yes"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Eject%20the%20card.1" source="//Activity5/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="no"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/ActivityFinal" source="//Activity5/Eject%20the%20card.1">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Re%20enter%20the%20new%20pin" source="//Activity5/Enter%20the%20new%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Check%20if%20new%20pin%20and%20re%20entered%20pin%20match" source="//Activity5/Re%20enter%20the%20new%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Decision3" source="//Activity5/Check%20if%20new%20pin%20and%20re%20entered%20pin%20match">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Re%20enter%20the%20new%20pin" source="//Activity5/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Pins dont match"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Display%20pin%20changed%20message" source="//Activity5/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Pins match"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity5/Further%20transaction%3F" source="//Activity5/Display%20pin%20changed%20message">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <ownedNode xsi:type="uml:InitialNode" name="InitialNode" visibility="public" outgoing="//Activity5/ControlFlow"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt the user to insert card" visibility="public" incoming="//Activity5/ControlFlow //Activity5/ControlFlow.2" outgoing="//Activity5/ControlFlow.1" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Insert card" visibility="public" incoming="//Activity5/ControlFlow.1" outgoing="//Activity5/ControlFlow.3" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision" visibility="public" incoming="//Activity5/ControlFlow.3" outgoing="//Activity5/ControlFlow.2 //Activity5/ControlFlow.4"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card" visibility="public" incoming="//Activity5/ControlFlow.5" outgoing="//Activity5/ControlFlow.6" body="" language=""/>
+    <ownedNode xsi:type="uml:FlowFinalNode" name="FlowFinal" visibility="public" incoming="//Activity5/ControlFlow.6"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt user to enter the pin" visibility="public" incoming="//Activity5/ControlFlow.4 //Activity5/ControlFlow.8" outgoing="//Activity5/ControlFlow.7" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the pin" visibility="public" incoming="//Activity5/ControlFlow.7" outgoing="//Activity5/ControlFlow.9" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision2" visibility="public" incoming="//Activity5/ControlFlow.9" outgoing="//Activity5/ControlFlow.8 //Activity5/ControlFlow.5 //Activity5/ControlFlow.10"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Further transaction?" visibility="public" incoming="//Activity5/ControlFlow.21" outgoing="//Activity5/ControlFlow.11" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Display the transaction menu" visibility="public" incoming="//Activity5/ControlFlow.10 //Activity5/ControlFlow.13" outgoing="//Activity5/ControlFlow.12" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the new pin" visibility="public" incoming="//Activity5/ControlFlow.12" outgoing="//Activity5/ControlFlow.16" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision5" visibility="public" incoming="//Activity5/ControlFlow.11" outgoing="//Activity5/ControlFlow.13 //Activity5/ControlFlow.14"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card" visibility="public" incoming="//Activity5/ControlFlow.14" outgoing="//Activity5/ControlFlow.15" body="" language=""/>
+    <ownedNode xsi:type="uml:ActivityFinalNode" name="ActivityFinal" visibility="public" incoming="//Activity5/ControlFlow.15"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Re enter the new pin" visibility="public" incoming="//Activity5/ControlFlow.16 //Activity5/ControlFlow.19" outgoing="//Activity5/ControlFlow.17" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision3" visibility="public" incoming="//Activity5/ControlFlow.18" outgoing="//Activity5/ControlFlow.19 //Activity5/ControlFlow.20"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Check if new pin and re entered pin match" visibility="public" incoming="//Activity5/ControlFlow.17" outgoing="//Activity5/ControlFlow.18" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Display pin changed message" visibility="public" incoming="//Activity5/ControlFlow.20" outgoing="//Activity5/ControlFlow.21" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="sDeNj8" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Activity" name="Activity6" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Prompt%20the%20user%20to%20insert%20card" source="//Activity6/InitialNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Insert%20card" source="//Activity6/Prompt%20the%20user%20to%20insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Prompt%20the%20user%20to%20insert%20card" source="//Activity6/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="CArd not valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Decision" source="//Activity6/Insert%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Prompt%20user%20to%20enter%20the%20pin" source="//Activity6/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Card is valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Eject%20the%20card_" source="//Activity6/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="INvalid pin 3rd time.Card is blocked. PLease contact bank"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/FlowFinal" source="//Activity6/Eject%20the%20card_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Enter%20the%20pin" source="//Activity6/Prompt%20user%20to%20enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Prompt%20user%20to%20enter%20the%20pin" source="//Activity6/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid pin 1st and 2nd time. Reenter correct pin"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Decision2" source="//Activity6/Enter%20the%20pin">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Display%20the%20transaction%20menu" source="//Activity6/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/savings%20account" source="//Activity6/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Merge" source="//Activity6/savings%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Confirm%20deposit%20amount" source="//Activity6/display%20cash%20deposited">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Further%20transaction%3F" source="//Activity6/Confirm%20deposit%20amount">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Decision5" source="//Activity6/Further%20transaction%3F">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/SElect%20account" source="//Activity6/Display%20the%20transaction%20menu">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Deposit cash is chosen"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Display%20the%20transaction%20menu" source="//Activity6/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="yes"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Decision3" source="//Activity6/SElect%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/checking%20account" source="//Activity6/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Merge" source="//Activity6/checking%20account">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Insert%20the%20cash_" source="//Activity6/Merge">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Eject%20the%20card" source="//Activity6/Decision5">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="no"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/ActivityFinal" source="//Activity6/Eject%20the%20card">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Verify%20if%20cash%20is%20valid" source="//Activity6/Insert%20the%20cash_">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Decision4" source="//Activity6/Verify%20if%20cash%20is%20valid">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Return%20the%20cash" source="//Activity6/Decision4">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Not valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/Insert%20the%20cash_" source="//Activity6/Return%20the%20cash">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Please insert valid cash"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity6/display%20cash%20deposited" source="//Activity6/Decision4">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <ownedNode xsi:type="uml:InitialNode" name="InitialNode" visibility="public" outgoing="//Activity6/ControlFlow"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt the user to insert card" visibility="public" incoming="//Activity6/ControlFlow //Activity6/ControlFlow.2" outgoing="//Activity6/ControlFlow.1" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Insert card" visibility="public" incoming="//Activity6/ControlFlow.1" outgoing="//Activity6/ControlFlow.3" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision" visibility="public" incoming="//Activity6/ControlFlow.3" outgoing="//Activity6/ControlFlow.2 //Activity6/ControlFlow.4"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card_" visibility="public" incoming="//Activity6/ControlFlow.5" outgoing="//Activity6/ControlFlow.6" body="" language=""/>
+    <ownedNode xsi:type="uml:FlowFinalNode" name="FlowFinal" visibility="public" incoming="//Activity6/ControlFlow.6"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Prompt user to enter the pin" visibility="public" incoming="//Activity6/ControlFlow.4 //Activity6/ControlFlow.8" outgoing="//Activity6/ControlFlow.7" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter the pin" visibility="public" incoming="//Activity6/ControlFlow.7" outgoing="//Activity6/ControlFlow.9" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision2" visibility="public" incoming="//Activity6/ControlFlow.9" outgoing="//Activity6/ControlFlow.8 //Activity6/ControlFlow.5 //Activity6/ControlFlow.10"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="savings account" visibility="public" incoming="//Activity6/ControlFlow.11" outgoing="//Activity6/ControlFlow.12" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Verify if cash is valid" visibility="public" incoming="//Activity6/ControlFlow.24" outgoing="//Activity6/ControlFlow.25" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="display cash deposited" visibility="public" incoming="//Activity6/ControlFlow.28" outgoing="//Activity6/ControlFlow.13" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Confirm deposit amount" visibility="public" incoming="//Activity6/ControlFlow.13" outgoing="//Activity6/ControlFlow.14" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Further transaction?" visibility="public" incoming="//Activity6/ControlFlow.14" outgoing="//Activity6/ControlFlow.15" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Display the transaction menu" visibility="public" incoming="//Activity6/ControlFlow.10 //Activity6/ControlFlow.17" outgoing="//Activity6/ControlFlow.16" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision3" visibility="public" incoming="//Activity6/ControlFlow.18" outgoing="//Activity6/ControlFlow.11 //Activity6/ControlFlow.19"/>
+    <ownedNode xsi:type="uml:MergeNode" name="Merge" visibility="public" incoming="//Activity6/ControlFlow.12 //Activity6/ControlFlow.20" outgoing="//Activity6/ControlFlow.21"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="SElect account" visibility="public" incoming="//Activity6/ControlFlow.16" outgoing="//Activity6/ControlFlow.18" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Insert the cash_" visibility="public" incoming="//Activity6/ControlFlow.21 //Activity6/ControlFlow.27" outgoing="//Activity6/ControlFlow.24" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="checking account" visibility="public" incoming="//Activity6/ControlFlow.19" outgoing="//Activity6/ControlFlow.20" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision5" visibility="public" incoming="//Activity6/ControlFlow.15" outgoing="//Activity6/ControlFlow.17 //Activity6/ControlFlow.22"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Eject the card" visibility="public" incoming="//Activity6/ControlFlow.22" outgoing="//Activity6/ControlFlow.23" body="" language=""/>
+    <ownedNode xsi:type="uml:ActivityFinalNode" name="ActivityFinal" visibility="public" incoming="//Activity6/ControlFlow.23"/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision4" visibility="public" incoming="//Activity6/ControlFlow.25" outgoing="//Activity6/ControlFlow.26 //Activity6/ControlFlow.28"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Return the cash" visibility="public" incoming="//Activity6/ControlFlow.26" outgoing="//Activity6/ControlFlow.27" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="tM9PLp" visibility="public"/>
+  </packagedElement>
+</uml:Model>

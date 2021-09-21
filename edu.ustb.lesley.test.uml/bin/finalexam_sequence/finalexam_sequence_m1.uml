@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="FinalExam-MG-Sequence1" visibility="public">
+  <packagedElement xsi:type="uml:Interaction" name="Interaction" visibility="public" isReentrant="true">
+    <lifeline name="Player" visibility="public" coveredBy="//Interaction/@fragment.1 //Interaction/@fragment.57 //Interaction/@fragment.60 //Interaction/@fragment.0 //Interaction/@fragment.2 //Interaction/@fragment.4"/>
+    <lifeline name="UI" visibility="public" coveredBy="//Interaction/@fragment.23 //Interaction/@fragment.46 //Interaction/@fragment.58 //Interaction/@fragment.43 //Interaction/@fragment.55 //Interaction/@fragment.5 //Interaction/@fragment.7 //Interaction/@fragment.33 //Interaction/@fragment.30 //Interaction/@fragment.3 //Interaction/@fragment.56 //Interaction/@fragment.36 //Interaction/@fragment.26 //Interaction/@fragment.59"/>
+    <lifeline name="GameLogic" visibility="public" coveredBy="//Interaction/@fragment.6 //Interaction/@fragment.8 //Interaction/@fragment.10 //Interaction/@fragment.11 //Interaction/@fragment.12 //Interaction/@fragment.17 //Interaction/@fragment.18 //Interaction/@fragment.21 //Interaction/@fragment.22 //Interaction/@fragment.24 //Interaction/@fragment.27 //Interaction/@fragment.29 //Interaction/@fragment.34 //Interaction/@fragment.35 //Interaction/@fragment.38 //Interaction/@fragment.39 //Interaction/@fragment.40 //Interaction/@fragment.41 //Interaction/@fragment.42 //Interaction/@fragment.44 //Interaction/@fragment.45 //Interaction/@fragment.48 //Interaction/@fragment.49 //Interaction/@fragment.52 //Interaction/@fragment.53 //Interaction/@fragment.54 //Interaction/@fragment.14 //Interaction/@fragment.51 //Interaction/@fragment.28 //Interaction/@fragment.25 //Interaction/@fragment.37 //Interaction/@fragment.9 //Interaction/@fragment.16 //Interaction/@fragment.13 //Interaction/@fragment.15 //Interaction/@fragment.50 //Interaction/@fragment.47 //Interaction/@fragment.32"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Player"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Player"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Player" finish="//Interaction/@fragment.1" start="//Interaction/@fragment.0">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.4"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.57"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.60"/>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/UI" start="//Interaction/@fragment.5">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.26"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.43"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.46"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.30"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.23"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.7"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.36"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.33"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Player" toAfter="//Interaction/@fragment.2/@generalOrdering.0" message="//Interaction/ClickBox()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" message="//Interaction/ClickBox()"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" start="//Interaction/@fragment.8">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.13"/>
+      <generalOrdering name="FR0GL0" visibility="public" before="//Interaction/@fragment.10"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.18"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.15"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" toAfter="//Interaction/@fragment.3/@generalOrdering.5" message="//Interaction/DiscoverBox()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/DiscoverBox()"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" finish="//Interaction/@fragment.12" start="//Interaction/@fragment.11"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" toAfter="//Interaction/@fragment.6/FR0GL0" message="//Interaction/StartStopwatch()_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/StartStopwatch()_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/returnContent()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" toAfter="//Interaction/@fragment.6/@generalOrdering.0" message="//Interaction/returnContent()"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" finish="//Interaction/@fragment.17" start="//Interaction/@fragment.16"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" toAfter="//Interaction/@fragment.6/@generalOrdering.3" message="//Interaction/ContinueDiscoverProcess()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/ContinueDiscoverProcess()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/NeighbouringBoxExposed"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" toAfter="//Interaction/@fragment.6/@generalOrdering.2" message="//Interaction/NeighbouringBoxExposed"/>
+    <fragment xsi:type="uml:CombinedFragment" visibility="public" interactionOperator="loop">
+      <operand visibility="public">
+        <guard name="Until Lose or Won" visibility="public"/>
+      </operand>
+    </fragment>
+    <fragment xsi:type="uml:CombinedFragment" visibility="public" interactionOperator="alt">
+      <operand visibility="public">
+        <guard name="if Content == Number" visibility="public"/>
+      </operand>
+      <operand visibility="public">
+        <guard name="if Content == blank" visibility="public"/>
+      </operand>
+      <operand visibility="public">
+        <guard name="if Content == Mine" visibility="public"/>
+      </operand>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" finish="//Interaction/@fragment.22">
+      <generalOrdering name="TSyE9c" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/returnNumber()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" toAfter="//Interaction/@fragment.3/@generalOrdering.4" message="//Interaction/returnNumber()"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" finish="//Interaction/@fragment.25"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/returnUpdatedState()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" toAfter="//Interaction/@fragment.3/@generalOrdering.0" message="//Interaction/returnUpdatedState()"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" finish="//Interaction/@fragment.29"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/returnGameOver()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" toAfter="//Interaction/@fragment.3/@generalOrdering.3" message="//Interaction/returnGameOver()"/>
+    <fragment xsi:type="uml:CombinedFragment" visibility="public" interactionOperator="opt">
+      <operand visibility="public">
+        <guard name="Mark Covered Box" visibility="public"/>
+      </operand>
+      <operand visibility="public">
+        <guard name="Mark Flagged Box" visibility="public"/>
+      </operand>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" finish="//Interaction/@fragment.35" start="//Interaction/@fragment.34">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.41"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.38"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" toAfter="//Interaction/@fragment.3/@generalOrdering.7" message="//Interaction/MarkBox()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/MarkBox()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/DisplayFlagonBox"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" toAfter="//Interaction/@fragment.3/@generalOrdering.6" message="//Interaction/DisplayFlagonBox"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" finish="//Interaction/@fragment.40" start="//Interaction/@fragment.39"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" toAfter="//Interaction/@fragment.32/@generalOrdering.1" message="//Interaction/DecrementMineCounter()_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/DecrementMineCounter()_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/returnFlagonBox()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" toAfter="//Interaction/@fragment.32/@generalOrdering.0" message="//Interaction/returnFlagonBox()"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" finish="//Interaction/@fragment.45" start="//Interaction/@fragment.44">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.48"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.51"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.53"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" toAfter="//Interaction/@fragment.3/@generalOrdering.1" message="//Interaction/MarkFlaggedBox()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/MarkFlaggedBox()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/DisplayOriginalState()_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" toAfter="//Interaction/@fragment.3/@generalOrdering.2" message="//Interaction/DisplayOriginalState()_"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" finish="//Interaction/@fragment.50" start="//Interaction/@fragment.49">
+      <generalOrdering name="aW8Vdv" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" toAfter="//Interaction/@fragment.42/@generalOrdering.0" message="//Interaction/restoreBoxState()_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/restoreBoxState()_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/returnOriginalState()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" toAfter="//Interaction/@fragment.42/@generalOrdering.1" message="//Interaction/returnOriginalState()"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/GameLogic" start="//Interaction/@fragment.54">
+      <generalOrdering name="FLtogo" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" toAfter="//Interaction/@fragment.42/@generalOrdering.2" message="//Interaction/IncrementMineCounter()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/GameLogic" message="//Interaction/IncrementMineCounter()"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/UI" finish="//Interaction/@fragment.56"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" message="//Interaction/DisplayUpdatedState()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Player" toAfter="//Interaction/@fragment.2/@generalOrdering.1" message="//Interaction/DisplayUpdatedState()"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/UI" finish="//Interaction/@fragment.59"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/UI" message="//Interaction/DisplayResult()"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Player" toAfter="//Interaction/@fragment.2/@generalOrdering.2" message="//Interaction/DisplayResult()"/>
+    <message name="ClickBox()" visibility="public" receiveEvent="//Interaction/@fragment.5" sendEvent="//Interaction/@fragment.4"/>
+    <message name="DiscoverBox()" visibility="public" receiveEvent="//Interaction/@fragment.8" sendEvent="//Interaction/@fragment.7"/>
+    <message name="StartStopwatch()_" visibility="public" receiveEvent="//Interaction/@fragment.11" sendEvent="//Interaction/@fragment.10"/>
+    <message name="returnContent()" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.13" sendEvent="//Interaction/@fragment.12"/>
+    <message name="ContinueDiscoverProcess()" visibility="public" receiveEvent="//Interaction/@fragment.16" sendEvent="//Interaction/@fragment.15"/>
+    <message name="NeighbouringBoxExposed" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.18" sendEvent="//Interaction/@fragment.17"/>
+    <message name="returnNumber()" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.23" sendEvent="//Interaction/@fragment.22"/>
+    <message name="returnUpdatedState()" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.26" sendEvent="//Interaction/@fragment.25"/>
+    <message name="returnGameOver()" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.30" sendEvent="//Interaction/@fragment.29"/>
+    <message name="MarkBox()" visibility="public" receiveEvent="//Interaction/@fragment.34" sendEvent="//Interaction/@fragment.33"/>
+    <message name="DisplayFlagonBox" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.36" sendEvent="//Interaction/@fragment.35"/>
+    <message name="DecrementMineCounter()_" visibility="public" receiveEvent="//Interaction/@fragment.39" sendEvent="//Interaction/@fragment.38"/>
+    <message name="returnFlagonBox()" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.41" sendEvent="//Interaction/@fragment.40"/>
+    <message name="MarkFlaggedBox()" visibility="public" receiveEvent="//Interaction/@fragment.44" sendEvent="//Interaction/@fragment.43"/>
+    <message name="DisplayOriginalState()_" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.46" sendEvent="//Interaction/@fragment.45"/>
+    <message name="restoreBoxState()_" visibility="public" receiveEvent="//Interaction/@fragment.49" sendEvent="//Interaction/@fragment.48"/>
+    <message name="returnOriginalState()" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.51" sendEvent="//Interaction/@fragment.50"/>
+    <message name="IncrementMineCounter()" visibility="public" receiveEvent="//Interaction/@fragment.54" sendEvent="//Interaction/@fragment.53"/>
+    <message name="DisplayUpdatedState()" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.57" sendEvent="//Interaction/@fragment.56"/>
+    <message name="DisplayResult()" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.60" sendEvent="//Interaction/@fragment.59"/>
+  </packagedElement>
+</uml:Model>

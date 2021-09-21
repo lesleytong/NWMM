@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="AION UseCase" visibility="public">
+  <packagedElement xsi:type="uml:Actor" name="User_" visibility="public"/>
+  <packagedElement xsi:type="uml:Component" name="Main Menu" visibility="public">
+    <ownedUseCase name="Company Menu" visibility="public">
+      <extensionPoint name="On Extend" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Employee Menu_" visibility="public">
+      <extensionPoint name="On Click" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Project Menu" visibility="public">
+      <extensionPoint name="Extend" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Contacts Menu" visibility="public">
+      <extend visibility="public" extendedCase="//Main%20Menu/Contacts%20Menu"/>
+      <extensionPoint name="On Click" visibility="public"/>
+    </ownedUseCase>
+    <nestedClassifier xsi:type="uml:UseCase" name="Partner Menu" visibility="public">
+      <extensionPoint name="On Click" visibility="public"/>
+    </nestedClassifier>
+    <packagedElement xsi:type="uml:Association" name="Company Menu_Company Menu" visibility="public" memberEnd="//Main%20Menu/Company%20Menu_Company%20Menu/company%20Menu.1 //Main%20Menu/Company%20Menu_Company%20Menu/company%20Menu" navigableOwnedEnd="//Main%20Menu/Company%20Menu_Company%20Menu/company%20Menu //Main%20Menu/Company%20Menu_Company%20Menu/company%20Menu.1">
+      <ownedEnd name="company Menu" visibility="public" type="//Main%20Menu/Company%20Menu" association="//Main%20Menu/Company%20Menu_Company%20Menu">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="company Menu" visibility="public" type="//Company%20Menu" association="//Main%20Menu/Company%20Menu_Company%20Menu">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Partner Menu_Partners Page" visibility="public" memberEnd="//Main%20Menu/Partner%20Menu_Partners%20Page/partners%20Page //Main%20Menu/Partner%20Menu_Partners%20Page/partner%20Menu" navigableOwnedEnd="//Main%20Menu/Partner%20Menu_Partners%20Page/partner%20Menu //Main%20Menu/Partner%20Menu_Partners%20Page/partners%20Page">
+      <ownedEnd name="partner Menu" visibility="public" type="//Main%20Menu/Partner%20Menu" association="//Main%20Menu/Partner%20Menu_Partners%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="partners Page" visibility="public" type="//Partners%20Page" association="//Main%20Menu/Partner%20Menu_Partners%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Contacts Menu_Partners Page2" visibility="public" memberEnd="//Main%20Menu/Contacts%20Menu_Partners%20Page2/partners%20Page2 //Main%20Menu/Contacts%20Menu_Partners%20Page2/contacts%20Menu" navigableOwnedEnd="//Main%20Menu/Contacts%20Menu_Partners%20Page2/contacts%20Menu //Main%20Menu/Contacts%20Menu_Partners%20Page2/partners%20Page2">
+      <ownedEnd name="contacts Menu" visibility="public" type="//Main%20Menu/Contacts%20Menu" association="//Main%20Menu/Contacts%20Menu_Partners%20Page2">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="partners Page2" visibility="public" type="//Contacts%20Page" association="//Main%20Menu/Contacts%20Menu_Partners%20Page2">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Employee Menu_Employee Page" visibility="public" memberEnd="//Main%20Menu/Employee%20Menu_Employee%20Page/employee%20Page //Main%20Menu/Employee%20Menu_Employee%20Page/employee%20Menu" navigableOwnedEnd="//Main%20Menu/Employee%20Menu_Employee%20Page/employee%20Menu //Main%20Menu/Employee%20Menu_Employee%20Page/employee%20Page">
+      <ownedEnd name="employee Menu" visibility="public" type="//Main%20Menu/Employee%20Menu_" association="//Main%20Menu/Employee%20Menu_Employee%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="employee Page" visibility="public" type="//Employee%20Page" association="//Main%20Menu/Employee%20Menu_Employee%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Project Menu_Project Menu" visibility="public" memberEnd="//Main%20Menu/Project%20Menu_Project%20Menu/project%20Menu.1 //Main%20Menu/Project%20Menu_Project%20Menu/project%20Menu" navigableOwnedEnd="//Main%20Menu/Project%20Menu_Project%20Menu/project%20Menu //Main%20Menu/Project%20Menu_Project%20Menu/project%20Menu.1">
+      <ownedEnd name="project Menu" visibility="public" type="//Main%20Menu/Project%20Menu" association="//Main%20Menu/Project%20Menu_Project%20Menu">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="project Menu" visibility="public" type="//Project%20Menu" association="//Main%20Menu/Project%20Menu_Project%20Menu">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Company Menu" visibility="public">
+    <ownedUseCase name="Departments" visibility="public">
+      <extensionPoint name="On Click" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Positions" visibility="public">
+      <extensionPoint name="On Click" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Activity Types" visibility="public">
+      <extensionPoint name="On Click" visibility="public"/>
+    </ownedUseCase>
+    <nestedClassifier xsi:type="uml:UseCase" name="Operations" visibility="public">
+      <extend visibility="public" extendedCase="//Company%20Menu/Operations"/>
+      <extensionPoint name="On Click" visibility="public"/>
+    </nestedClassifier>
+    <packagedElement xsi:type="uml:Association" name="Departments_Departments Page" visibility="public" memberEnd="//Company%20Menu/Departments_Departments%20Page/departments%20Page //Company%20Menu/Departments_Departments%20Page/departments" navigableOwnedEnd="//Company%20Menu/Departments_Departments%20Page/departments //Company%20Menu/Departments_Departments%20Page/departments%20Page">
+      <ownedEnd name="departments" visibility="public" type="//Company%20Menu/Departments" association="//Company%20Menu/Departments_Departments%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="departments Page" visibility="public" type="//Departments%20Page" association="//Company%20Menu/Departments_Departments%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Positions_Positions Page" visibility="public" memberEnd="//Company%20Menu/Positions_Positions%20Page/positions%20Page //Company%20Menu/Positions_Positions%20Page/positions" navigableOwnedEnd="//Company%20Menu/Positions_Positions%20Page/positions //Company%20Menu/Positions_Positions%20Page/positions%20Page">
+      <ownedEnd name="positions" visibility="public" type="//Company%20Menu/Positions" association="//Company%20Menu/Positions_Positions%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="positions Page" visibility="public" type="//Positions%20Page" association="//Company%20Menu/Positions_Positions%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Activity Types_Activity Types Page" visibility="public" memberEnd="//Company%20Menu/Activity%20Types_Activity%20Types%20Page/activity%20Types%20Page //Company%20Menu/Activity%20Types_Activity%20Types%20Page/activity%20Types" navigableOwnedEnd="//Company%20Menu/Activity%20Types_Activity%20Types%20Page/activity%20Types //Company%20Menu/Activity%20Types_Activity%20Types%20Page/activity%20Types%20Page">
+      <ownedEnd name="activity Types" visibility="public" type="//Company%20Menu/Activity%20Types" association="//Company%20Menu/Activity%20Types_Activity%20Types%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="activity Types Page" visibility="public" type="//Activity%20Types%20Page" association="//Company%20Menu/Activity%20Types_Activity%20Types%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Departments Page" visibility="public">
+    <ownedUseCase name="Departments List" visibility="public">
+      <extensionPoint name="On Click" visibility="public"/>
+      <extensionPoint name="ExtPoint2" visibility="public"/>
+      <extensionPoint name="ExtPoint3" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Add Department" visibility="public">
+      <extend visibility="public" extendedCase="//Departments%20Page/Departments%20List" extensionLocation="//Departments%20Page/Departments%20List/On%20Click"/>
+    </ownedUseCase>
+    <ownedUseCase name="Remove Department" visibility="public">
+      <extend visibility="public" extendedCase="//Departments%20Page/Departments%20List" extensionLocation="//Departments%20Page/Departments%20List/On%20Click"/>
+    </ownedUseCase>
+    <ownedUseCase name="Edit Department" visibility="public">
+      <extend visibility="public" extendedCase="//Departments%20Page/Departments%20List" extensionLocation="//Departments%20Page/Departments%20List/ExtPoint2"/>
+      <extend visibility="public" extendedCase="//Departments%20Page/Edit%20Department"/>
+    </ownedUseCase>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Positions Page" visibility="public">
+    <ownedUseCase name="Positions List" visibility="public">
+      <extensionPoint name="ExtPoint" visibility="public"/>
+      <extensionPoint name="ExtPoint2" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Add Position" visibility="public">
+      <extend visibility="public" extendedCase="//Positions%20Page/Positions%20List" extensionLocation="//Positions%20Page/Positions%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Remove Position" visibility="public">
+      <extend visibility="public" extendedCase="//Positions%20Page/Positions%20List" extensionLocation="//Positions%20Page/Positions%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Edit Position_" visibility="public">
+      <extend visibility="public" extendedCase="//Positions%20Page/Positions%20List" extensionLocation="//Positions%20Page/Positions%20List/ExtPoint2"/>
+    </ownedUseCase>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Activity Types Page" visibility="public">
+    <ownedUseCase name="Activity Types List" visibility="public">
+      <extensionPoint name="ExtPoint" visibility="public"/>
+      <extensionPoint name="ExtPoint2" visibility="public"/>
+      <extensionPoint name="ExtPoint3" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Add Activity Types" visibility="public">
+      <extend visibility="public" extendedCase="//Activity%20Types%20Page/Activity%20Types%20List" extensionLocation="//Activity%20Types%20Page/Activity%20Types%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Remove Activity Types" visibility="public">
+      <extend visibility="public" extendedCase="//Activity%20Types%20Page/Activity%20Types%20List" extensionLocation="//Activity%20Types%20Page/Activity%20Types%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Edit Activity Types" visibility="public">
+      <extend visibility="public" extendedCase="//Activity%20Types%20Page/Activity%20Types%20List" extensionLocation="//Activity%20Types%20Page/Activity%20Types%20List/ExtPoint2"/>
+    </ownedUseCase>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Departments Controler" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="Departments Page_Departments Controler" visibility="public" memberEnd="//Departments%20Page_Departments%20Controler/departments%20Controler //Departments%20Page_Departments%20Controler/departments%20Page" navigableOwnedEnd="//Departments%20Page_Departments%20Controler/departments%20Page //Departments%20Page_Departments%20Controler/departments%20Controler">
+    <ownedEnd name="departments Page" visibility="public" type="//Departments%20Page" association="//Departments%20Page_Departments%20Controler">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="departments Controler" visibility="public" type="//Departments%20Controler" association="//Departments%20Page_Departments%20Controler">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Positions Controler" visibility="public"/>
+  <packagedElement xsi:type="uml:Component" name="ActivityTypes Controler" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="Positions Page_Positions Controler" visibility="public" memberEnd="//Positions%20Page_Positions%20Controler/positions%20Controler //Positions%20Page_Positions%20Controler/positions%20Page" navigableOwnedEnd="//Positions%20Page_Positions%20Controler/positions%20Page //Positions%20Page_Positions%20Controler/positions%20Controler">
+    <ownedEnd name="positions Page" visibility="public" type="//Positions%20Page" association="//Positions%20Page_Positions%20Controler">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="positions Controler" visibility="public" type="//Positions%20Controler" association="//Positions%20Page_Positions%20Controler">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Activity Types Page_ActivityTypes Controler" visibility="public" memberEnd="//Activity%20Types%20Page_ActivityTypes%20Controler/activityTypes%20Controler //Activity%20Types%20Page_ActivityTypes%20Controler/activity%20Types%20Page" navigableOwnedEnd="//Activity%20Types%20Page_ActivityTypes%20Controler/activity%20Types%20Page //Activity%20Types%20Page_ActivityTypes%20Controler/activityTypes%20Controler">
+    <ownedEnd name="activity Types Page" visibility="public" type="//Activity%20Types%20Page" association="//Activity%20Types%20Page_ActivityTypes%20Controler">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="activityTypes Controler" visibility="public" type="//ActivityTypes%20Controler" association="//Activity%20Types%20Page_ActivityTypes%20Controler">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Partners Page" visibility="public">
+    <ownedUseCase name="Partners List" visibility="public">
+      <extensionPoint name="ExtPoint" visibility="public"/>
+      <extensionPoint name="ExtPoint2" visibility="public"/>
+      <extensionPoint name="ExtPoint3" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Add Partners" visibility="public">
+      <extend visibility="public" extendedCase="//Partners%20Page/Partners%20List" extensionLocation="//Partners%20Page/Partners%20List/ExtPoint"/>
+      <extensionPoint name="On Click" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Remove Partners_" visibility="public">
+      <extend visibility="public" extendedCase="//Partners%20Page/Partners%20List" extensionLocation="//Partners%20Page/Partners%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Edit Partners" visibility="public">
+      <extensionPoint name="On Click" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Partner Details" visibility="public"/>
+    <packagedElement xsi:type="uml:Association" name="Edit Partners_Edit Partner Tabs" visibility="public" memberEnd="//Partners%20Page/Edit%20Partners_Edit%20Partner%20Tabs/edit%20Partner%20Tabs //Partners%20Page/Edit%20Partners_Edit%20Partner%20Tabs/edit%20Partners" navigableOwnedEnd="//Partners%20Page/Edit%20Partners_Edit%20Partner%20Tabs/edit%20Partners //Partners%20Page/Edit%20Partners_Edit%20Partner%20Tabs/edit%20Partner%20Tabs">
+      <ownedEnd name="edit Partners" visibility="public" type="//Partners%20Page/Edit%20Partners" association="//Partners%20Page/Edit%20Partners_Edit%20Partner%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="edit Partner Tabs" visibility="public" type="//Partner%20Tabs" association="//Partners%20Page/Edit%20Partners_Edit%20Partner%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Add Partners_Partner Tabs" visibility="public" memberEnd="//Partners%20Page/Add%20Partners_Partner%20Tabs/partner%20Tabs //Partners%20Page/Add%20Partners_Partner%20Tabs/add%20Partners" navigableOwnedEnd="//Partners%20Page/Add%20Partners_Partner%20Tabs/add%20Partners //Partners%20Page/Add%20Partners_Partner%20Tabs/partner%20Tabs">
+      <ownedEnd name="add Partners" visibility="public" type="//Partners%20Page/Add%20Partners" association="//Partners%20Page/Add%20Partners_Partner%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="partner Tabs" visibility="public" type="//Partner%20Tabs" association="//Partners%20Page/Add%20Partners_Partner%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Partner Details_Partner Tabs" visibility="public" memberEnd="//Partners%20Page/Partner%20Details_Partner%20Tabs/partner%20Tabs //Partners%20Page/Partner%20Details_Partner%20Tabs/partner%20Details" navigableOwnedEnd="//Partners%20Page/Partner%20Details_Partner%20Tabs/partner%20Details //Partners%20Page/Partner%20Details_Partner%20Tabs/partner%20Tabs">
+      <ownedEnd name="partner Details" visibility="public" type="//Partners%20Page/Partner%20Details" association="//Partners%20Page/Partner%20Details_Partner%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="partner Tabs" visibility="public" type="//Partner%20Tabs" association="//Partners%20Page/Partner%20Details_Partner%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Contacts Page" visibility="public">
+    <ownedUseCase name="Contacts List" visibility="public">
+      <extensionPoint name="ExtPoint" visibility="public"/>
+      <extensionPoint name="ExtPoint2" visibility="public"/>
+      <extensionPoint name="ExtPoint3" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Add Contacts" visibility="public"/>
+    <ownedUseCase name="Remove Contacts" visibility="public">
+      <extend visibility="public" extendedCase="//Contacts%20Page/Contacts%20List" extensionLocation="//Contacts%20Page/Contacts%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Edit Contacts" visibility="public">
+      <extend visibility="public" extendedCase="//Contacts%20Page/Contacts%20List" extensionLocation="//Contacts%20Page/Contacts%20List/ExtPoint2"/>
+    </ownedUseCase>
+    <ownedUseCase name="Contact Details_" visibility="public">
+      <extend visibility="public" extendedCase="//Contacts%20Page/Contacts%20List" extensionLocation="//Contacts%20Page/Contacts%20List/ExtPoint3"/>
+    </ownedUseCase>
+    <packagedElement xsi:type="uml:Association" name="Edit Contacts_Edit Partner Tabs2" visibility="public" memberEnd="//Contacts%20Page/Edit%20Contacts_Edit%20Partner%20Tabs2/edit%20Partner%20Tabs2 //Contacts%20Page/Edit%20Contacts_Edit%20Partner%20Tabs2/edit%20Contacts" navigableOwnedEnd="//Contacts%20Page/Edit%20Contacts_Edit%20Partner%20Tabs2/edit%20Contacts //Contacts%20Page/Edit%20Contacts_Edit%20Partner%20Tabs2/edit%20Partner%20Tabs2">
+      <ownedEnd name="edit Contacts" visibility="public" type="//Contacts%20Page/Edit%20Contacts" association="//Contacts%20Page/Edit%20Contacts_Edit%20Partner%20Tabs2">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="edit Partner Tabs2" visibility="public" type="//Contacts%20Tabs" association="//Contacts%20Page/Edit%20Contacts_Edit%20Partner%20Tabs2">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Add Contacts_Contacts Tabs" visibility="public" memberEnd="//Contacts%20Page/Add%20Contacts_Contacts%20Tabs/contacts%20Tabs //Contacts%20Page/Add%20Contacts_Contacts%20Tabs/add%20Contacts" navigableOwnedEnd="//Contacts%20Page/Add%20Contacts_Contacts%20Tabs/add%20Contacts //Contacts%20Page/Add%20Contacts_Contacts%20Tabs/contacts%20Tabs">
+      <ownedEnd name="add Contacts" visibility="public" type="//Contacts%20Page/Add%20Contacts" association="//Contacts%20Page/Add%20Contacts_Contacts%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="contacts Tabs" visibility="public" type="//Contacts%20Tabs" association="//Contacts%20Page/Add%20Contacts_Contacts%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Contact Details_Contacts Tabs" visibility="public" memberEnd="//Contacts%20Page/Contact%20Details_Contacts%20Tabs/contacts%20Tabs //Contacts%20Page/Contact%20Details_Contacts%20Tabs/contact%20Details" navigableOwnedEnd="//Contacts%20Page/Contact%20Details_Contacts%20Tabs/contact%20Details //Contacts%20Page/Contact%20Details_Contacts%20Tabs/contacts%20Tabs">
+      <ownedEnd name="contact Details" visibility="public" type="//Contacts%20Page/Contact%20Details_" association="//Contacts%20Page/Contact%20Details_Contacts%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="contacts Tabs" visibility="public" type="//Contacts%20Tabs" association="//Contacts%20Page/Contact%20Details_Contacts%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Employee Page" visibility="public">
+    <ownedUseCase name="Employee List" visibility="public">
+      <extensionPoint name="ExtPoint" visibility="public"/>
+      <extensionPoint name="ExtPoint2" visibility="public"/>
+      <extensionPoint name="ExtPoint3" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Add Employee" visibility="public"/>
+    <ownedUseCase name="Remove Employee" visibility="public">
+      <extend visibility="public" extendedCase="//Employee%20Page/Employee%20List" extensionLocation="//Employee%20Page/Employee%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Edit Employee" visibility="public">
+      <extend visibility="public" extendedCase="//Employee%20Page/Employee%20List" extensionLocation="//Employee%20Page/Employee%20List/ExtPoint2"/>
+      <extend visibility="public" extendedCase="//Employee%20Page/Edit%20Employee"/>
+    </ownedUseCase>
+    <ownedUseCase name="Employee Details" visibility="public">
+      <extend visibility="public" extendedCase="//Employee%20Page/Employee%20List" extensionLocation="//Employee%20Page/Employee%20List/ExtPoint3"/>
+    </ownedUseCase>
+    <packagedElement xsi:type="uml:Association" name="Edit Employee_Edit Employee Page" visibility="public" memberEnd="//Employee%20Page/Edit%20Employee_Edit%20Employee%20Page/edit%20Employee%20Page //Employee%20Page/Edit%20Employee_Edit%20Employee%20Page/edit%20Employee" navigableOwnedEnd="//Employee%20Page/Edit%20Employee_Edit%20Employee%20Page/edit%20Employee //Employee%20Page/Edit%20Employee_Edit%20Employee%20Page/edit%20Employee%20Page">
+      <ownedEnd name="edit Employee" visibility="public" type="//Employee%20Page/Edit%20Employee" association="//Employee%20Page/Edit%20Employee_Edit%20Employee%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="edit Employee Page" visibility="public" type="//Employee%20Tabs" association="//Employee%20Page/Edit%20Employee_Edit%20Employee%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Add Employee_Employee Tabs" visibility="public" memberEnd="//Employee%20Page/Add%20Employee_Employee%20Tabs/employee%20Tabs //Employee%20Page/Add%20Employee_Employee%20Tabs/add%20Employee" navigableOwnedEnd="//Employee%20Page/Add%20Employee_Employee%20Tabs/add%20Employee //Employee%20Page/Add%20Employee_Employee%20Tabs/employee%20Tabs">
+      <ownedEnd name="add Employee" visibility="public" type="//Employee%20Page/Add%20Employee" association="//Employee%20Page/Add%20Employee_Employee%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="employee Tabs" visibility="public" type="//Employee%20Tabs" association="//Employee%20Page/Add%20Employee_Employee%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Employee Details_Employee Tabs" visibility="public" memberEnd="//Employee%20Page/Employee%20Details_Employee%20Tabs/employee%20Tabs //Employee%20Page/Employee%20Details_Employee%20Tabs/employee%20Details" navigableOwnedEnd="//Employee%20Page/Employee%20Details_Employee%20Tabs/employee%20Details //Employee%20Page/Employee%20Details_Employee%20Tabs/employee%20Tabs">
+      <ownedEnd name="employee Details" visibility="public" type="//Employee%20Page/Employee%20Details" association="//Employee%20Page/Employee%20Details_Employee%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="employee Tabs" visibility="public" type="//Employee%20Tabs" association="//Employee%20Page/Employee%20Details_Employee%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Internal Project Page" visibility="public">
+    <ownedUseCase name="Project List" visibility="public">
+      <extensionPoint name="ExtPoint" visibility="public"/>
+      <extensionPoint name="ExtPoint2" visibility="public"/>
+      <extensionPoint name="ExtPoint3" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Add Project" visibility="public">
+      <extend visibility="public" extendedCase="//Internal%20Project%20Page/Project%20List" extensionLocation="//Internal%20Project%20Page/Project%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Remove Project" visibility="public">
+      <extend visibility="public" extendedCase="//Internal%20Project%20Page/Project%20List" extensionLocation="//Internal%20Project%20Page/Project%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Edit Project" visibility="public">
+      <extend visibility="public" extendedCase="//Internal%20Project%20Page/Project%20List" extensionLocation="//Internal%20Project%20Page/Project%20List/ExtPoint2"/>
+    </ownedUseCase>
+    <ownedUseCase name="Project Details" visibility="public"/>
+    <packagedElement xsi:type="uml:Association" name="Add Project_Add Employee Page2" visibility="public" memberEnd="//Internal%20Project%20Page/Add%20Project_Add%20Employee%20Page2/add%20Employee%20Page2 //Internal%20Project%20Page/Add%20Project_Add%20Employee%20Page2/add%20Project" navigableOwnedEnd="//Internal%20Project%20Page/Add%20Project_Add%20Employee%20Page2/add%20Project //Internal%20Project%20Page/Add%20Project_Add%20Employee%20Page2/add%20Employee%20Page2">
+      <ownedEnd name="add Project" visibility="public" type="//Internal%20Project%20Page/Add%20Project" association="//Internal%20Project%20Page/Add%20Project_Add%20Employee%20Page2">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="add Employee Page2" visibility="public" type="//Project%20Tabs" association="//Internal%20Project%20Page/Add%20Project_Add%20Employee%20Page2">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Edit Project_Project Tabs" visibility="public" memberEnd="//Internal%20Project%20Page/Edit%20Project_Project%20Tabs/project%20Tabs //Internal%20Project%20Page/Edit%20Project_Project%20Tabs/edit%20Project" navigableOwnedEnd="//Internal%20Project%20Page/Edit%20Project_Project%20Tabs/edit%20Project //Internal%20Project%20Page/Edit%20Project_Project%20Tabs/project%20Tabs">
+      <ownedEnd name="edit Project" visibility="public" type="//Internal%20Project%20Page/Edit%20Project" association="//Internal%20Project%20Page/Edit%20Project_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="project Tabs" visibility="public" type="//Project%20Tabs" association="//Internal%20Project%20Page/Edit%20Project_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Project Details_Project Tabs" visibility="public" memberEnd="//Internal%20Project%20Page/Project%20Details_Project%20Tabs/project%20Tabs //Internal%20Project%20Page/Project%20Details_Project%20Tabs/project%20Details" navigableOwnedEnd="//Internal%20Project%20Page/Project%20Details_Project%20Tabs/project%20Details //Internal%20Project%20Page/Project%20Details_Project%20Tabs/project%20Tabs">
+      <ownedEnd name="project Details" visibility="public" type="//Internal%20Project%20Page/Project%20Details" association="//Internal%20Project%20Page/Project%20Details_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="project Tabs" visibility="public" type="//Project%20Tabs" association="//Internal%20Project%20Page/Project%20Details_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Project Menu" visibility="public">
+    <ownedUseCase name="Internal Projects" visibility="public">
+      <extensionPoint name="On Click" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="External Projects" visibility="public">
+      <extend visibility="public" extendedCase="//Project%20Menu/External%20Projects"/>
+      <extensionPoint name="On Click" visibility="public"/>
+    </ownedUseCase>
+    <packagedElement xsi:type="uml:Association" name="Departments_Departments Page" visibility="public" memberEnd="//Project%20Menu/Departments_Departments%20Page/departments%20Page //Project%20Menu/Departments_Departments%20Page/departments" navigableOwnedEnd="//Project%20Menu/Departments_Departments%20Page/departments //Project%20Menu/Departments_Departments%20Page/departments%20Page">
+      <ownedEnd name="departments" visibility="public" type="//Project%20Menu/Internal%20Projects" association="//Project%20Menu/Departments_Departments%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="departments Page" visibility="public" type="//Departments%20Page" association="//Project%20Menu/Departments_Departments%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Positions_Positions Page" visibility="public" memberEnd="//Project%20Menu/Positions_Positions%20Page/positions%20Page //Project%20Menu/Positions_Positions%20Page/positions" navigableOwnedEnd="//Project%20Menu/Positions_Positions%20Page/positions //Project%20Menu/Positions_Positions%20Page/positions%20Page">
+      <ownedEnd name="positions" visibility="public" type="//Project%20Menu/External%20Projects" association="//Project%20Menu/Positions_Positions%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="positions Page" visibility="public" type="//Positions%20Page" association="//Project%20Menu/Positions_Positions%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Internal Projects_Internal Project Page" visibility="public" memberEnd="//Project%20Menu/Internal%20Projects_Internal%20Project%20Page/internal%20Project%20Page //Project%20Menu/Internal%20Projects_Internal%20Project%20Page/internal%20Projects" navigableOwnedEnd="//Project%20Menu/Internal%20Projects_Internal%20Project%20Page/internal%20Projects //Project%20Menu/Internal%20Projects_Internal%20Project%20Page/internal%20Project%20Page">
+      <ownedEnd name="internal Projects" visibility="public" type="//Project%20Menu/Internal%20Projects" association="//Project%20Menu/Internal%20Projects_Internal%20Project%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="internal Project Page" visibility="public" type="//Internal%20Project%20Page" association="//Project%20Menu/Internal%20Projects_Internal%20Project%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="External Projects_External Project Page" visibility="public" memberEnd="//Project%20Menu/External%20Projects_External%20Project%20Page/external%20Project%20Page //Project%20Menu/External%20Projects_External%20Project%20Page/external%20Projects" navigableOwnedEnd="//Project%20Menu/External%20Projects_External%20Project%20Page/external%20Projects //Project%20Menu/External%20Projects_External%20Project%20Page/external%20Project%20Page">
+      <ownedEnd name="external Projects" visibility="public" type="//Project%20Menu/External%20Projects" association="//Project%20Menu/External%20Projects_External%20Project%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="external Project Page" visibility="public" type="//External%20Project%20Page" association="//Project%20Menu/External%20Projects_External%20Project%20Page">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="External Project Page" visibility="public">
+    <ownedUseCase name="Project List" visibility="public">
+      <extensionPoint name="ExtPoint" visibility="public"/>
+      <extensionPoint name="ExtPoint2" visibility="public"/>
+      <extensionPoint name="ExtPoint3" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Add Project" visibility="public"/>
+    <ownedUseCase name="Remove Project" visibility="public">
+      <extend visibility="public" extendedCase="//External%20Project%20Page/Project%20List" extensionLocation="//External%20Project%20Page/Project%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Edit Project" visibility="public">
+      <extend visibility="public" extendedCase="//External%20Project%20Page/Project%20List" extensionLocation="//External%20Project%20Page/Project%20List/ExtPoint2"/>
+    </ownedUseCase>
+    <ownedUseCase name="Project Details" visibility="public">
+      <extend visibility="public" extendedCase="//External%20Project%20Page/Project%20List" extensionLocation="//External%20Project%20Page/Project%20List/ExtPoint3"/>
+    </ownedUseCase>
+    <packagedElement xsi:type="uml:Association" name="Add Project_Project Tabs" visibility="public" memberEnd="//External%20Project%20Page/Add%20Project_Project%20Tabs/project%20Tabs //External%20Project%20Page/Add%20Project_Project%20Tabs/add%20Project" navigableOwnedEnd="//External%20Project%20Page/Add%20Project_Project%20Tabs/add%20Project //External%20Project%20Page/Add%20Project_Project%20Tabs/project%20Tabs">
+      <ownedEnd name="add Project" visibility="public" type="//External%20Project%20Page/Add%20Project" association="//External%20Project%20Page/Add%20Project_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="project Tabs" visibility="public" type="//Project%20Tabs" association="//External%20Project%20Page/Add%20Project_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Edit Project_Project Tabs" visibility="public" memberEnd="//External%20Project%20Page/Edit%20Project_Project%20Tabs/project%20Tabs //External%20Project%20Page/Edit%20Project_Project%20Tabs/edit%20Project" navigableOwnedEnd="//External%20Project%20Page/Edit%20Project_Project%20Tabs/edit%20Project //External%20Project%20Page/Edit%20Project_Project%20Tabs/project%20Tabs">
+      <ownedEnd name="edit Project" visibility="public" type="//External%20Project%20Page/Edit%20Project" association="//External%20Project%20Page/Edit%20Project_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="project Tabs" visibility="public" type="//Project%20Tabs" association="//External%20Project%20Page/Edit%20Project_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xsi:type="uml:Association" name="Project Details_Project Tabs" visibility="public" memberEnd="//External%20Project%20Page/Project%20Details_Project%20Tabs/project%20Tabs //External%20Project%20Page/Project%20Details_Project%20Tabs/project%20Details" navigableOwnedEnd="//External%20Project%20Page/Project%20Details_Project%20Tabs/project%20Details //External%20Project%20Page/Project%20Details_Project%20Tabs/project%20Tabs">
+      <ownedEnd name="project Details" visibility="public" type="//External%20Project%20Page/Project%20Details" association="//External%20Project%20Page/Project%20Details_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="project Tabs" visibility="public" type="//Project%20Tabs" association="//External%20Project%20Page/Project%20Details_Project%20Tabs">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Partner Tabs" visibility="public">
+    <ownedUseCase name="Partner Locations" visibility="public"/>
+    <ownedUseCase name="Partner General Data_" visibility="public"/>
+    <nestedClassifier xsi:type="uml:UseCase" name="Partner Bank Data_" visibility="public"/>
+    <nestedClassifier xsi:type="uml:UseCase" name="Partner Social Media" visibility="public">
+      <extend visibility="public" extendedCase="//Partner%20Tabs/Partner%20Social%20Media"/>
+    </nestedClassifier>
+    <packagedElement xsi:type="uml:Association" name="Partner Locations_Edit Partners" visibility="public" memberEnd="//Partner%20Tabs/Partner%20Locations_Edit%20Partners/edit%20Partners //Partner%20Tabs/Partner%20Locations_Edit%20Partners/partner%20Locations" navigableOwnedEnd="//Partner%20Tabs/Partner%20Locations_Edit%20Partners/partner%20Locations //Partner%20Tabs/Partner%20Locations_Edit%20Partners/edit%20Partners">
+      <ownedEnd name="partner Locations" visibility="public" type="//Partner%20Tabs/Partner%20Locations" association="//Partner%20Tabs/Partner%20Locations_Edit%20Partners">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="edit Partners" visibility="public" type="//Partners%20Page/Edit%20Partners" association="//Partner%20Tabs/Partner%20Locations_Edit%20Partners">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Contacts Tabs" visibility="public">
+    <ownedUseCase name="Contact Locations" visibility="public"/>
+    <ownedUseCase name="Contacts General Data" visibility="public"/>
+    <packagedElement xsi:type="uml:Association" name="Partner Locations_Edit Partners" visibility="public" memberEnd="//Contacts%20Tabs/Partner%20Locations_Edit%20Partners/partner%20Locations //Contacts%20Tabs/Partner%20Locations_Edit%20Partners/edit%20Partners" navigableOwnedEnd="//Contacts%20Tabs/Partner%20Locations_Edit%20Partners/partner%20Locations //Contacts%20Tabs/Partner%20Locations_Edit%20Partners/edit%20Partners">
+      <ownedEnd name="partner Locations" visibility="public" type="//Contacts%20Tabs/Contact%20Locations" association="//Contacts%20Tabs/Partner%20Locations_Edit%20Partners">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+      <ownedEnd name="edit Partners" visibility="public" type="//Partners%20Page/Edit%20Partners" association="//Contacts%20Tabs/Partner%20Locations_Edit%20Partners">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Employee Tabs" visibility="public">
+    <ownedUseCase name="Employee General Data" visibility="public"/>
+    <ownedUseCase name="Employee Bank Data" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Project Tabs" visibility="public">
+    <ownedUseCase name="Project General Data" visibility="public"/>
+    <ownedUseCase name="Project Lcations" visibility="public"/>
+    <nestedClassifier xsi:type="uml:UseCase" name="Project Roles_" visibility="public"/>
+    <nestedClassifier xsi:type="uml:UseCase" name="Project Phases" visibility="public"/>
+    <nestedClassifier xsi:type="uml:UseCase" name="Commmercial Data" visibility="public"/>
+    <nestedClassifier xsi:type="uml:UseCase" name="Project Employees" visibility="public"/>
+    <nestedClassifier xsi:type="uml:UseCase" name="Project Contacts" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Component" name="Operations Controler" visibility="public"/>
+  <packagedElement xsi:type="uml:Component" name="Operations Page" visibility="public">
+    <ownedUseCase name="Operations List" visibility="public">
+      <extensionPoint name="ExtPoint" visibility="public"/>
+      <extensionPoint name="ExtPoint2" visibility="public"/>
+      <extensionPoint name="ExtPoint3" visibility="public"/>
+    </ownedUseCase>
+    <ownedUseCase name="Add Operation" visibility="public">
+      <extend visibility="public" extendedCase="//Operations%20Page/Operations%20List" extensionLocation="//Operations%20Page/Operations%20List/ExtPoint"/>
+      <extend visibility="public" extendedCase="//Operations%20Page/Add%20Operation"/>
+    </ownedUseCase>
+    <ownedUseCase name="Remove Operation" visibility="public">
+      <extend visibility="public" extendedCase="//Operations%20Page/Operations%20List" extensionLocation="//Operations%20Page/Operations%20List/ExtPoint"/>
+    </ownedUseCase>
+    <ownedUseCase name="Edit Operation" visibility="public">
+      <extend visibility="public" extendedCase="//Operations%20Page/Operations%20List" extensionLocation="//Operations%20Page/Operations%20List/ExtPoint2"/>
+    </ownedUseCase>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Activity Types Page_ActivityTypes Controler2" visibility="public" memberEnd="//Activity%20Types%20Page_ActivityTypes%20Controler2/activityTypes%20Controler //Activity%20Types%20Page_ActivityTypes%20Controler2/activity%20Types%20Page" navigableOwnedEnd="//Activity%20Types%20Page_ActivityTypes%20Controler2/activity%20Types%20Page //Activity%20Types%20Page_ActivityTypes%20Controler2/activityTypes%20Controler">
+    <ownedEnd name="activity Types Page" visibility="public" type="//Operations%20Page" association="//Activity%20Types%20Page_ActivityTypes%20Controler2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="activityTypes Controler" visibility="public" type="//Operations%20Controler" association="//Activity%20Types%20Page_ActivityTypes%20Controler2">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

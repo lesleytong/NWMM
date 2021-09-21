@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated my -->
+      <package
+            uri="https://edu/ustb/lesley/my"
+            class="my.MyPackage"
+            genModel="model/my.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated my -->
+      <package
+            uri="http://www.eclipse.org/emf/compare"
+            class="compare.ComparePackage"
+            genModel="model/my.genmodel"/>
+   </extension>
+
+</plugin>

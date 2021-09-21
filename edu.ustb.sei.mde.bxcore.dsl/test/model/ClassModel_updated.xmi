@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<simpleClass:ClassModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:simpleClass="http://www.ustb.edu.cn/sei/mde/xmu/simpleClass" xsi:schemaLocation="http://www.ustb.edu.cn/sei/mde/xmu/simpleClass SimpleClass.ecore">
+  <packages name="p1">
+    <classes name="c1">
+      <attributes name="a3"/>
+    </classes>
+    <classes name="c3">
+      <attributes name="a2"/>
+    </classes>
+  </packages>
+</simpleClass:ClassModel>
