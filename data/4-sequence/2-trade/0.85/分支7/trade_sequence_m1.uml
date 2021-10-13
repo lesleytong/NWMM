@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="foreign trading system-sequence" visibility="public">
+  <packagedElement xsi:type="uml:Interaction" name="Interaction" visibility="public" isReentrant="true">
+    <lifeline name="Trader_PS" visibility="public" coveredBy="//Interaction/@fragment.1 //Interaction/@fragment.3 //Interaction/@fragment.4 //Interaction/@fragment.6 //Interaction/@fragment.7 //Interaction/@fragment.8 //Interaction/@fragment.18 //Interaction/@fragment.19 //Interaction/@fragment.24 //Interaction/@fragment.25 //Interaction/@fragment.26 //Interaction/@fragment.31 //Interaction/@fragment.32 //Interaction/@fragment.55 //Interaction/@fragment.58 //Interaction/@fragment.60 //Interaction/@fragment.61 //Interaction/@fragment.70 //Interaction/@fragment.77 //Interaction/@fragment.5 //Interaction/@fragment.49 //Interaction/@fragment.63 //Interaction/@fragment.0 //Interaction/@fragment.30 //Interaction/@fragment.20 //Interaction/@fragment.2"/>
+    <lifeline name="administrator_PS" visibility="public" coveredBy="//Interaction/@fragment.9 //Interaction/@fragment.14 //Interaction/@fragment.40 //Interaction/@fragment.65 //Interaction/@fragment.38 //Interaction/@fragment.51 //Interaction/@fragment.48 //Interaction/@fragment.29 //Interaction/@fragment.23 //Interaction/@fragment.54 //Interaction/@fragment.59 //Interaction/@fragment.15 //Interaction/@fragment.37 //Interaction/@fragment.21 //Interaction/@fragment.53 //Interaction/@fragment.22 //Interaction/@fragment.39 //Interaction/@fragment.52 //Interaction/@fragment.28 //Interaction/@fragment.73 //Interaction/@fragment.11 //Interaction/@fragment.64 //Interaction/@fragment.34 //Interaction/@fragment.17 //Interaction/@fragment.13 //Interaction/@fragment.27 //Interaction/@fragment.78 //Interaction/@fragment.16 //Interaction/@fragment.76 //Interaction/@fragment.36 //Interaction/@fragment.57 //Interaction/@fragment.69 //Interaction/@fragment.50 //Interaction/@fragment.71 //Interaction/@fragment.72 //Interaction/@fragment.41 //Interaction/@fragment.35 //Interaction/@fragment.62 //Interaction/@fragment.10 //Interaction/@fragment.12 //Interaction/@fragment.66 //Interaction/@fragment.33 //Interaction/@fragment.79 //Interaction/@fragment.56"/>
+    <lifeline name="database_PS" visibility="public" coveredBy="//Interaction/@fragment.42 //Interaction/@fragment.43 //Interaction/@fragment.46 //Interaction/@fragment.68 //Interaction/@fragment.74 //Interaction/@fragment.45 //Interaction/@fragment.47 //Interaction/@fragment.75 //Interaction/@fragment.44 //Interaction/@fragment.67"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Trader_PS" finish="//Interaction/@fragment.1" start="//Interaction/@fragment.0">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.49"/>
+    </fragment>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Trader_PS" finish="//Interaction/@fragment.4" start="//Interaction/@fragment.3">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.77"/>
+    </fragment>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Trader_PS" finish="//Interaction/@fragment.7" start="//Interaction/@fragment.6">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.55"/>
+    </fragment>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.10" start="//Interaction/@fragment.9"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.13" start="//Interaction/@fragment.12"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.16" start="//Interaction/@fragment.15">
+      <generalOrdering name="fhpwMI" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Trader_PS" finish="//Interaction/@fragment.19" start="//Interaction/@fragment.18"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.22" start="//Interaction/@fragment.21">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.59"/>
+    </fragment>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Trader_PS" finish="//Interaction/@fragment.25" start="//Interaction/@fragment.24">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.63"/>
+      <generalOrdering name="FoCznV" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.28" start="//Interaction/@fragment.27"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Trader_PS" finish="//Interaction/@fragment.31" start="//Interaction/@fragment.30">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.70"/>
+    </fragment>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.34" start="//Interaction/@fragment.33">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.73"/>
+    </fragment>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.37" start="//Interaction/@fragment.36"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.40" start="//Interaction/@fragment.39">
+      <generalOrdering name="tTZrfD" visibility="public" before="//Interaction/@fragment.66"/>
+    </fragment>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/database_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/database_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/database_PS" finish="//Interaction/@fragment.68" start="//Interaction/@fragment.67"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/database_PS"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/database_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/database_PS" finish="//Interaction/@fragment.75" start="//Interaction/@fragment.74"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.51" start="//Interaction/@fragment.50"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS" toAfter="//Interaction/@fragment.2/@generalOrdering.0" message="//Interaction/login"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS" message="//Interaction/login"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.53"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.57" start="//Interaction/@fragment.56"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS" toAfter="//Interaction/@fragment.8/@generalOrdering.0" message="//Interaction/place%20order"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS" message="//Interaction/place%20order"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Trader_PS" finish="//Interaction/@fragment.61" start="//Interaction/@fragment.60">
+      <generalOrdering name="JZr47N" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS" toAfter="//Interaction/@fragment.23/@generalOrdering.0" message="//Interaction/bill"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS" message="//Interaction/bill"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.65" start="//Interaction/@fragment.64"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS" toAfter="//Interaction/@fragment.26/@generalOrdering.0" message="//Interaction/pay"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS" message="//Interaction/pay"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS" toAfter="//Interaction/@fragment.41/tTZrfD" message="//Interaction/update%20order"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/database_PS" message="//Interaction/update%20order"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/database_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.72" start="//Interaction/@fragment.71">
+      <generalOrdering name="7j6yYJ" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS" toAfter="//Interaction/@fragment.32/@generalOrdering.0" message="//Interaction/logout"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS" message="//Interaction/logout"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS" toAfter="//Interaction/@fragment.35/@generalOrdering.0" message="//Interaction/update%20account%20details_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/database_PS" message="//Interaction/update%20account%20details_"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/database_PS"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/administrator_PS" finish="//Interaction/@fragment.79" start="//Interaction/@fragment.78"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Trader_PS" toAfter="//Interaction/@fragment.5/@generalOrdering.0" message="//Interaction/sourcing"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS" message="//Interaction/sourcing"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/administrator_PS"/>
+    <message name="login" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.50" sendEvent="//Interaction/@fragment.49"/>
+    <message name="place order" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.56" sendEvent="//Interaction/@fragment.55"/>
+    <message name="bill" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.60" sendEvent="//Interaction/@fragment.59"/>
+    <message name="pay" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.64" sendEvent="//Interaction/@fragment.63"/>
+    <message name="update order" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.67" sendEvent="//Interaction/@fragment.66"/>
+    <message name="logout" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.71" sendEvent="//Interaction/@fragment.70"/>
+    <message name="update account details_" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.74" sendEvent="//Interaction/@fragment.73"/>
+    <message name="sourcing" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.78" sendEvent="//Interaction/@fragment.77"/>
+  </packagedElement>
+</uml:Model>

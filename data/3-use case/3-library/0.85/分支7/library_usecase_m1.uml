@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="library-usecase" visibility="public">
+  <packagedElement xsi:type="uml:UseCase" name="ISSUE THE BOOK IF AVALIABLE" visibility="public">
+    <extend visibility="public" extendedCase="//ISSUE%20THE%20BOOK%20IF%20AVALIABLE"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Actor" name="BORROWER_CM_" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="STUDENT_CM_" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="FACULTY_CM_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="LOGIN_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="REQUEST BOOK" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="SEARCH BOOK" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="SEACH THE BOOK AVAILABILITY" visibility="public">
+    <extend visibility="public" extendedCase="//SEACH%20THE%20BOOK%20AVAILABILITY"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="ENTER_ID" visibility="public">
+    <extend visibility="public" extendedCase="//ENTER_ID"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="ENTER PASSWORD" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="INVALID ID_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="RETURN BOOK" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="CHECK VALIDITY" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="PAYFINE " visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="UPDATE DETAILS_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="NO FINE" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="BOOK" visibility="public">
+    <extend visibility="public" extendedCase="//BOOK"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="MAGAZINE" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="LIBRARIAN_CM_" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="DATABASE_CM_" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="BORROWER_CM_STUDENT_CM" visibility="public" memberEnd="//BORROWER_CM_STUDENT_CM/sTUDENT_CM //BORROWER_CM_STUDENT_CM/bORROWER_CM" navigableOwnedEnd="//BORROWER_CM_STUDENT_CM/bORROWER_CM //BORROWER_CM_STUDENT_CM/sTUDENT_CM">
+    <ownedEnd name="bORROWER_CM" visibility="public" type="//BORROWER_CM_" association="//BORROWER_CM_STUDENT_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="sTUDENT_CM" visibility="public" type="//STUDENT_CM_" association="//BORROWER_CM_STUDENT_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="BORROWER_CM_FACULTY_CM" visibility="public" memberEnd="//BORROWER_CM_FACULTY_CM/fACULTY_CM //BORROWER_CM_FACULTY_CM/bORROWER_CM" navigableOwnedEnd="//BORROWER_CM_FACULTY_CM/bORROWER_CM //BORROWER_CM_FACULTY_CM/fACULTY_CM">
+    <ownedEnd name="bORROWER_CM" visibility="public" type="//BORROWER_CM_" association="//BORROWER_CM_FACULTY_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="fACULTY_CM" visibility="public" type="//FACULTY_CM_" association="//BORROWER_CM_FACULTY_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="BORROWER_CM_LOGIN" visibility="public" memberEnd="//BORROWER_CM_LOGIN/lOGIN //BORROWER_CM_LOGIN/bORROWER_CM" navigableOwnedEnd="//BORROWER_CM_LOGIN/bORROWER_CM //BORROWER_CM_LOGIN/lOGIN">
+    <ownedEnd name="bORROWER_CM" visibility="public" type="//BORROWER_CM_" association="//BORROWER_CM_LOGIN">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="lOGIN" visibility="public" type="//LOGIN_" association="//BORROWER_CM_LOGIN">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="BORROWER_CM_SEARCH BOOK" visibility="public" memberEnd="//BORROWER_CM_SEARCH%20BOOK/sEARCH%20BOOK //BORROWER_CM_SEARCH%20BOOK/bORROWER_CM" navigableOwnedEnd="//BORROWER_CM_SEARCH%20BOOK/bORROWER_CM //BORROWER_CM_SEARCH%20BOOK/sEARCH%20BOOK">
+    <ownedEnd name="bORROWER_CM" visibility="public" type="//BORROWER_CM_" association="//BORROWER_CM_SEARCH%20BOOK">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="sEARCH BOOK" visibility="public" type="//SEARCH%20BOOK" association="//BORROWER_CM_SEARCH%20BOOK">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="BORROWER_CM_REQUEST BOOK" visibility="public" memberEnd="//BORROWER_CM_REQUEST%20BOOK/rEQUEST%20BOOK //BORROWER_CM_REQUEST%20BOOK/bORROWER_CM" navigableOwnedEnd="//BORROWER_CM_REQUEST%20BOOK/bORROWER_CM //BORROWER_CM_REQUEST%20BOOK/rEQUEST%20BOOK">
+    <ownedEnd name="bORROWER_CM" visibility="public" type="//BORROWER_CM_" association="//BORROWER_CM_REQUEST%20BOOK">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="rEQUEST BOOK" visibility="public" type="//REQUEST%20BOOK" association="//BORROWER_CM_REQUEST%20BOOK">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="BORROWER_CM_RETURN BOOK" visibility="public" memberEnd="//BORROWER_CM_RETURN%20BOOK/rETURN%20BOOK //BORROWER_CM_RETURN%20BOOK/bORROWER_CM" navigableOwnedEnd="//BORROWER_CM_RETURN%20BOOK/bORROWER_CM //BORROWER_CM_RETURN%20BOOK/rETURN%20BOOK">
+    <ownedEnd name="bORROWER_CM" visibility="public" type="//BORROWER_CM_" association="//BORROWER_CM_RETURN%20BOOK">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="rETURN BOOK" visibility="public" type="//RETURN%20BOOK" association="//BORROWER_CM_RETURN%20BOOK">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="BORROWER_CM_PAYFINE " visibility="public" memberEnd="//BORROWER_CM_PAYFINE%20/pAYFINE%20 //BORROWER_CM_PAYFINE%20/bORROWER_CM" navigableOwnedEnd="//BORROWER_CM_PAYFINE%20/bORROWER_CM //BORROWER_CM_PAYFINE%20/pAYFINE%20">
+    <ownedEnd name="bORROWER_CM" visibility="public" type="//BORROWER_CM_" association="//BORROWER_CM_PAYFINE%20">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="pAYFINE " visibility="public" type="//PAYFINE%20" association="//BORROWER_CM_PAYFINE%20">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="LOGIN_ENTER PASSWORD" visibility="public" memberEnd="//LOGIN_ENTER%20PASSWORD/eNTER%20PASSWORD //LOGIN_ENTER%20PASSWORD/lOGIN" navigableOwnedEnd="//LOGIN_ENTER%20PASSWORD/lOGIN //LOGIN_ENTER%20PASSWORD/eNTER%20PASSWORD">
+    <ownedEnd name="lOGIN" visibility="public" type="//LOGIN_" association="//LOGIN_ENTER%20PASSWORD">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="eNTER PASSWORD" visibility="public" type="//ENTER%20PASSWORD" association="//LOGIN_ENTER%20PASSWORD">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="LOGIN_INVALID ID" visibility="public" memberEnd="//LOGIN_INVALID%20ID/iNVALID%20ID //LOGIN_INVALID%20ID/lOGIN" navigableOwnedEnd="//LOGIN_INVALID%20ID/lOGIN //LOGIN_INVALID%20ID/iNVALID%20ID">
+    <ownedEnd name="lOGIN" visibility="public" type="//LOGIN_" association="//LOGIN_INVALID%20ID">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="iNVALID ID" visibility="public" type="//INVALID%20ID_" association="//LOGIN_INVALID%20ID">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="SEARCH BOOK_MAGAZINE" visibility="public" memberEnd="//SEARCH%20BOOK_MAGAZINE/mAGAZINE //SEARCH%20BOOK_MAGAZINE/sEARCH%20BOOK" navigableOwnedEnd="//SEARCH%20BOOK_MAGAZINE/sEARCH%20BOOK //SEARCH%20BOOK_MAGAZINE/mAGAZINE">
+    <ownedEnd name="sEARCH BOOK" visibility="public" type="//SEARCH%20BOOK" association="//SEARCH%20BOOK_MAGAZINE">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="mAGAZINE" visibility="public" type="//MAGAZINE" association="//SEARCH%20BOOK_MAGAZINE">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="LOGIN_ENTER_ID" visibility="public" memberEnd="//LOGIN_ENTER_ID/eNTER_ID //LOGIN_ENTER_ID/lOGIN" navigableOwnedEnd="//LOGIN_ENTER_ID/lOGIN //LOGIN_ENTER_ID/eNTER_ID">
+    <ownedEnd name="lOGIN" visibility="public" type="//LOGIN_" association="//LOGIN_ENTER_ID">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="eNTER_ID" visibility="public" type="//ENTER_ID" association="//LOGIN_ENTER_ID">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="SEARCH BOOK_BOOK" visibility="public" memberEnd="//SEARCH%20BOOK_BOOK/bOOK //SEARCH%20BOOK_BOOK/sEARCH%20BOOK" navigableOwnedEnd="//SEARCH%20BOOK_BOOK/sEARCH%20BOOK //SEARCH%20BOOK_BOOK/bOOK">
+    <ownedEnd name="sEARCH BOOK" visibility="public" type="//SEARCH%20BOOK" association="//SEARCH%20BOOK_BOOK">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="bOOK" visibility="public" type="//BOOK" association="//SEARCH%20BOOK_BOOK">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="LIBRARIAN_CM_SEACH THE BOOK AVAILABILITY" visibility="public" memberEnd="//LIBRARIAN_CM_SEACH%20THE%20BOOK%20AVAILABILITY/sEACH%20THE%20BOOK%20AVAILABILITY //LIBRARIAN_CM_SEACH%20THE%20BOOK%20AVAILABILITY/lIBRARIAN_CM" navigableOwnedEnd="//LIBRARIAN_CM_SEACH%20THE%20BOOK%20AVAILABILITY/lIBRARIAN_CM //LIBRARIAN_CM_SEACH%20THE%20BOOK%20AVAILABILITY/sEACH%20THE%20BOOK%20AVAILABILITY">
+    <ownedEnd name="lIBRARIAN_CM" visibility="public" type="//LIBRARIAN_CM_" association="//LIBRARIAN_CM_SEACH%20THE%20BOOK%20AVAILABILITY">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="sEACH THE BOOK AVAILABILITY" visibility="public" type="//SEACH%20THE%20BOOK%20AVAILABILITY" association="//LIBRARIAN_CM_SEACH%20THE%20BOOK%20AVAILABILITY">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="LIBRARIAN_CM_ISSUE THE BOOK IF AVALIABLE" visibility="public" memberEnd="//LIBRARIAN_CM_ISSUE%20THE%20BOOK%20IF%20AVALIABLE/iSSUE%20THE%20BOOK%20IF%20AVALIABLE //LIBRARIAN_CM_ISSUE%20THE%20BOOK%20IF%20AVALIABLE/lIBRARIAN_CM" navigableOwnedEnd="//LIBRARIAN_CM_ISSUE%20THE%20BOOK%20IF%20AVALIABLE/lIBRARIAN_CM //LIBRARIAN_CM_ISSUE%20THE%20BOOK%20IF%20AVALIABLE/iSSUE%20THE%20BOOK%20IF%20AVALIABLE">
+    <ownedEnd name="lIBRARIAN_CM" visibility="public" type="//LIBRARIAN_CM_" association="//LIBRARIAN_CM_ISSUE%20THE%20BOOK%20IF%20AVALIABLE">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="iSSUE THE BOOK IF AVALIABLE" visibility="public" type="//ISSUE%20THE%20BOOK%20IF%20AVALIABLE" association="//LIBRARIAN_CM_ISSUE%20THE%20BOOK%20IF%20AVALIABLE">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="SEACH THE BOOK AVAILABILITY_DATABASE_CM" visibility="public" memberEnd="//SEACH%20THE%20BOOK%20AVAILABILITY_DATABASE_CM/dATABASE_CM //SEACH%20THE%20BOOK%20AVAILABILITY_DATABASE_CM/sEACH%20THE%20BOOK%20AVAILABILITY" navigableOwnedEnd="//SEACH%20THE%20BOOK%20AVAILABILITY_DATABASE_CM/sEACH%20THE%20BOOK%20AVAILABILITY //SEACH%20THE%20BOOK%20AVAILABILITY_DATABASE_CM/dATABASE_CM">
+    <ownedEnd name="sEACH THE BOOK AVAILABILITY" visibility="public" type="//SEACH%20THE%20BOOK%20AVAILABILITY" association="//SEACH%20THE%20BOOK%20AVAILABILITY_DATABASE_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="dATABASE_CM" visibility="public" type="//DATABASE_CM_" association="//SEACH%20THE%20BOOK%20AVAILABILITY_DATABASE_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="RETURN BOOK_DATABASE_CM" visibility="public" memberEnd="//RETURN%20BOOK_DATABASE_CM/dATABASE_CM //RETURN%20BOOK_DATABASE_CM/rETURN%20BOOK" navigableOwnedEnd="//RETURN%20BOOK_DATABASE_CM/rETURN%20BOOK //RETURN%20BOOK_DATABASE_CM/dATABASE_CM">
+    <ownedEnd name="rETURN BOOK" visibility="public" type="//RETURN%20BOOK" association="//RETURN%20BOOK_DATABASE_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="dATABASE_CM" visibility="public" type="//DATABASE_CM_" association="//RETURN%20BOOK_DATABASE_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="CHECK VALIDITY_LIBRARIAN_CM" visibility="public" memberEnd="//CHECK%20VALIDITY_LIBRARIAN_CM/lIBRARIAN_CM //CHECK%20VALIDITY_LIBRARIAN_CM/cHECK%20VALIDITY" navigableOwnedEnd="//CHECK%20VALIDITY_LIBRARIAN_CM/cHECK%20VALIDITY //CHECK%20VALIDITY_LIBRARIAN_CM/lIBRARIAN_CM">
+    <ownedEnd name="cHECK VALIDITY" visibility="public" type="//CHECK%20VALIDITY" association="//CHECK%20VALIDITY_LIBRARIAN_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="lIBRARIAN_CM" visibility="public" type="//LIBRARIAN_CM_" association="//CHECK%20VALIDITY_LIBRARIAN_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="PAYFINE _LIBRARIAN_CM" visibility="public" memberEnd="//PAYFINE%20_LIBRARIAN_CM/lIBRARIAN_CM //PAYFINE%20_LIBRARIAN_CM/pAYFINE%20" navigableOwnedEnd="//PAYFINE%20_LIBRARIAN_CM/pAYFINE%20 //PAYFINE%20_LIBRARIAN_CM/lIBRARIAN_CM">
+    <ownedEnd name="pAYFINE " visibility="public" type="//PAYFINE%20" association="//PAYFINE%20_LIBRARIAN_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="lIBRARIAN_CM" visibility="public" type="//LIBRARIAN_CM_" association="//PAYFINE%20_LIBRARIAN_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UPDATE DETAILS_DATABASE_CM" visibility="public" memberEnd="//UPDATE%20DETAILS_DATABASE_CM/dATABASE_CM //UPDATE%20DETAILS_DATABASE_CM/uPDATE%20DETAILS" navigableOwnedEnd="//UPDATE%20DETAILS_DATABASE_CM/uPDATE%20DETAILS //UPDATE%20DETAILS_DATABASE_CM/dATABASE_CM">
+    <ownedEnd name="uPDATE DETAILS" visibility="public" type="//UPDATE%20DETAILS_" association="//UPDATE%20DETAILS_DATABASE_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="dATABASE_CM" visibility="public" type="//DATABASE_CM_" association="//UPDATE%20DETAILS_DATABASE_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="UPDATE DETAILS_LIBRARIAN_CM" visibility="public" memberEnd="//UPDATE%20DETAILS_LIBRARIAN_CM/lIBRARIAN_CM //UPDATE%20DETAILS_LIBRARIAN_CM/uPDATE%20DETAILS" navigableOwnedEnd="//UPDATE%20DETAILS_LIBRARIAN_CM/uPDATE%20DETAILS //UPDATE%20DETAILS_LIBRARIAN_CM/lIBRARIAN_CM">
+    <ownedEnd name="uPDATE DETAILS" visibility="public" type="//UPDATE%20DETAILS_" association="//UPDATE%20DETAILS_LIBRARIAN_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="lIBRARIAN_CM" visibility="public" type="//LIBRARIAN_CM_" association="//UPDATE%20DETAILS_LIBRARIAN_CM">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="PAYFINE _NO FINE" visibility="public" memberEnd="//PAYFINE%20_NO%20FINE/nO%20FINE //PAYFINE%20_NO%20FINE/pAYFINE%20" navigableOwnedEnd="//PAYFINE%20_NO%20FINE/pAYFINE%20 //PAYFINE%20_NO%20FINE/nO%20FINE">
+    <ownedEnd name="pAYFINE " visibility="public" type="//PAYFINE%20" association="//PAYFINE%20_NO%20FINE">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="nO FINE" visibility="public" type="//NO%20FINE" association="//PAYFINE%20_NO%20FINE">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>

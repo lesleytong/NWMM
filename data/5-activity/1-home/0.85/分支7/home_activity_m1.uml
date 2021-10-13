@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="home automation activity" visibility="public">
+  <packagedElement xsi:type="uml:Activity" name="Activity" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Login" source="//Activity/InitialNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Login" source="//Activity/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="no"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Decision" source="//Activity/Login">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Authentication"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Authentication" source="//Activity/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Yes"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Mobile%20WiFi" source="//Activity/Authentication">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Wifi%20Router" source="//Activity/Mobile%20WiFi">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/ESP%2032" source="//Activity/Wifi%20Router">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Appliances" source="//Activity/Cloud">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Dimmer%20circuit" source="//Activity/Appliances">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Device%20ON%2FOFF" source="//Activity/Dimmer%20circuit">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Realtime%20Feedback" source="//Activity/Device%20ON%2FOFF">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Device%20ON%2FOFF" source="//Activity/Realtime%20Feedback">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/ActivityFinal" source="//Activity/Realtime%20Feedback">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Cloud" source="//Activity/ESP%2032">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Login" visibility="public" incoming="//Activity/ControlFlow //Activity/ControlFlow.1" outgoing="//Activity/ControlFlow.2" body="" language=""/>
+    <ownedNode xsi:type="uml:InitialNode" name="InitialNode" visibility="public" outgoing="//Activity/ControlFlow"/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision" visibility="public" incoming="//Activity/ControlFlow.2" outgoing="//Activity/ControlFlow.1 //Activity/ControlFlow.3"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Authentication" visibility="public" incoming="//Activity/ControlFlow.3" outgoing="//Activity/ControlFlow.4" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Mobile WiFi" visibility="public" incoming="//Activity/ControlFlow.4" outgoing="//Activity/ControlFlow.5" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Wifi Router" visibility="public" incoming="//Activity/ControlFlow.5" outgoing="//Activity/ControlFlow.6" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="ESP 32" visibility="public" incoming="//Activity/ControlFlow.6" outgoing="//Activity/ControlFlow.13" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Cloud" visibility="public" incoming="//Activity/ControlFlow.13" outgoing="//Activity/ControlFlow.7" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Appliances" visibility="public" incoming="//Activity/ControlFlow.7" outgoing="//Activity/ControlFlow.8" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Dimmer circuit" visibility="public" incoming="//Activity/ControlFlow.8" outgoing="//Activity/ControlFlow.9" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Device ON/OFF" visibility="public" incoming="//Activity/ControlFlow.9 //Activity/ControlFlow.11" outgoing="//Activity/ControlFlow.10" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Realtime Feedback" visibility="public" incoming="//Activity/ControlFlow.10" outgoing="//Activity/ControlFlow.11 //Activity/ControlFlow.12" body="" language=""/>
+    <ownedNode xsi:type="uml:ActivityFinalNode" name="ActivityFinal" visibility="public" incoming="//Activity/ControlFlow.12"/>
+  </packagedElement>
+</uml:Model>

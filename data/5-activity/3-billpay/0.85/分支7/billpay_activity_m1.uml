@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="BillPay-Activity-Diagram" visibility="public">
+  <packagedElement xsi:type="uml:Activity" name="Activity" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Valid%20User%20name" source="//Activity/Home%20page">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow2" visibility="public" target="//Activity/DecisionNode" source="//Activity/Valid%20User%20name">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow4" visibility="public" target="//Activity/Valid%20User%20name" source="//Activity/DecisionNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid Information"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Home%20page" source="//Activity/InitialNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Valid%20Password" source="//Activity/DecisionNode">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/DecisionNode2" source="//Activity/Payee%20account%20details">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Payee%20account%20details" source="//Activity/DecisionNode2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Amount" source="//Activity/DecisionNode2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Decision" source="//Activity/Amount">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Amount" source="//Activity/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/ActivityFinal" source="//Activity/Notification%20Message">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Decision2" source="//Activity/Valid%20Password">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Valid%20Password" source="//Activity/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Transfer" source="//Activity/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Account%20from%20to%20transfer" source="//Activity/Transfer">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Payee%20account%20details" source="//Activity/Account%20from%20to%20transfer">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Inside%20account%20transfer" source="//Activity/Payee%20account%20details">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/External%20account%20transfer" source="//Activity/Payee%20account%20details">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Enter%20Email%20%2FPhone" source="//Activity/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Enter%20Email%20%2FPhone" source="//Activity/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid "/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Decision3" source="//Activity/Enter%20Email%20%2FPhone">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity/Notification%20Message" source="//Activity/Decision3">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Home page" visibility="public" incoming="//Activity/ControlFlow.1" outgoing="//Activity/ControlFlow" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Valid User name" visibility="public" incoming="//Activity/ControlFlow //Activity/ControlFlow4" outgoing="//Activity/ControlFlow2" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="DecisionNode" visibility="public" incoming="//Activity/ControlFlow2" outgoing="//Activity/ControlFlow4 //Activity/ControlFlow.2"/>
+    <ownedNode xsi:type="uml:DecisionNode" name="DecisionNode2" visibility="public" incoming="//Activity/ControlFlow.3" outgoing="//Activity/ControlFlow.4 //Activity/ControlFlow.5"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Notification Message" visibility="public" incoming="//Activity/ControlFlow.19" outgoing="//Activity/ControlFlow.8" body="" language=""/>
+    <ownedNode xsi:type="uml:InitialNode" name="InitialNode" visibility="public" outgoing="//Activity/ControlFlow.1"/>
+    <ownedNode xsi:type="uml:ActivityFinalNode" name="ActivityFinal" visibility="public" incoming="//Activity/ControlFlow.8"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Valid Password" visibility="public" incoming="//Activity/ControlFlow.2 //Activity/ControlFlow.10" outgoing="//Activity/ControlFlow.9" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Payee account details" visibility="public" incoming="//Activity/ControlFlow.4 //Activity/ControlFlow.13" outgoing="//Activity/ControlFlow.3 //Activity/ControlFlow.14 //Activity/ControlFlow.15" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Amount" visibility="public" incoming="//Activity/ControlFlow.5 //Activity/ControlFlow.7" outgoing="//Activity/ControlFlow.6" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision" visibility="public" incoming="//Activity/ControlFlow.6" outgoing="//Activity/ControlFlow.7 //Activity/ControlFlow.16"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Enter Email /Phone" visibility="public" incoming="//Activity/ControlFlow.16 //Activity/ControlFlow.17" outgoing="//Activity/ControlFlow.18" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision2" visibility="public" incoming="//Activity/ControlFlow.9" outgoing="//Activity/ControlFlow.10 //Activity/ControlFlow.11"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Transfer" visibility="public" incoming="//Activity/ControlFlow.11" outgoing="//Activity/ControlFlow.12" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Account from to transfer" visibility="public" incoming="//Activity/ControlFlow.12" outgoing="//Activity/ControlFlow.13" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Inside account transfer" visibility="public" incoming="//Activity/ControlFlow.14" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="External account transfer" visibility="public" incoming="//Activity/ControlFlow.15" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision3" visibility="public" incoming="//Activity/ControlFlow.18" outgoing="//Activity/ControlFlow.17 //Activity/ControlFlow.19"/>
+    <ownedNode xsi:type="uml:DecisionNode" name="KvmlLA" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Activity" name="Activity2" visibility="public" isReentrant="true"/>
+  <packagedElement xsi:type="uml:Activity" name="Activity3" visibility="public" isReentrant="true">
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Decision" source="//Activity3/Valid%20Login%20ID%2FPassword">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Valid%20Login%20ID%2FPassword" source="//Activity3/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Not Valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Home%20page" source="//Activity3/Decision">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Valid%20Login%20ID%2FPassword" source="//Activity3/Main%20Page">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Bill%20Pay" source="//Activity3/Home%20page">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Decision2" source="//Activity3/Add%20payee%20detail">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Payee%20Information" source="//Activity3/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Select%20Account" source="//Activity3/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Payee%20Account%20Details" source="//Activity3/Decision2">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Valid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Add%20payee%20detail" source="//Activity3/Payee%20Account%20Details">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Add%20payee%20detail" source="//Activity3/Payee%20Information">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="Invalid"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Confirmation%20Message" source="//Activity3/Bill%20Pay">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <edge xsi:type="uml:ControlFlow" name="ControlFlow" visibility="public" target="//Activity3/Add%20payee%20detail" source="//Activity3/Bill%20Pay">
+      <guard xsi:type="uml:LiteralString" visibility="public" value="true"/>
+    </edge>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Main Page" visibility="public" outgoing="//Activity3/ControlFlow.3" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Valid Login ID/Password" visibility="public" incoming="//Activity3/ControlFlow.1 //Activity3/ControlFlow.3" outgoing="//Activity3/ControlFlow" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Home page" visibility="public" incoming="//Activity3/ControlFlow.2" outgoing="//Activity3/ControlFlow.4" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision" visibility="public" incoming="//Activity3/ControlFlow" outgoing="//Activity3/ControlFlow.1 //Activity3/ControlFlow.2"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Bill Pay" visibility="public" incoming="//Activity3/ControlFlow.4" outgoing="//Activity3/ControlFlow.12 //Activity3/ControlFlow.11" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Add payee detail" visibility="public" incoming="//Activity3/ControlFlow.12 //Activity3/ControlFlow.9 //Activity3/ControlFlow.10" outgoing="//Activity3/ControlFlow.5" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Payee Information" visibility="public" incoming="//Activity3/ControlFlow.6" outgoing="//Activity3/ControlFlow.10" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Payee Account Details" visibility="public" incoming="//Activity3/ControlFlow.8" outgoing="//Activity3/ControlFlow.9" body="" language=""/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Select Account" visibility="public" incoming="//Activity3/ControlFlow.7" body="" language=""/>
+    <ownedNode xsi:type="uml:DecisionNode" name="Decision2" visibility="public" incoming="//Activity3/ControlFlow.5" outgoing="//Activity3/ControlFlow.6 //Activity3/ControlFlow.7 //Activity3/ControlFlow.8"/>
+    <ownedNode xsi:type="uml:OpaqueAction" name="Confirmation Message" visibility="public" incoming="//Activity3/ControlFlow.11" body="" language=""/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Activity" name="Activity4" visibility="public" isReentrant="true"/>
+</uml:Model>

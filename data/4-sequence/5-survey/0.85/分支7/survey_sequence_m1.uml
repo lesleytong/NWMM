@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="Survey-Sequence-Diagram" visibility="public">
+  <packagedElement xsi:type="uml:Interaction" name="Interaction" visibility="public" isReentrant="true">
+    <ownedComment/>
+    <nestedClassifier xsi:type="uml:Collaboration" name="collaboration" visibility="public">
+      <ownedAttribute name="Global intelligence" visibility="public" type="//Actor"/>
+    </nestedClassifier>
+    <lifeline name="Successful login_" visibility="public" coveredBy="//Interaction/@fragment.7 //Interaction/@fragment.10 //Interaction/@fragment.21 //Interaction/@fragment.32 //Interaction/@fragment.45 //Interaction/@fragment.46 //Interaction/@fragment.4 //Interaction/@fragment.31 //Interaction/@fragment.34 //Interaction/@fragment.15 //Interaction/@fragment.30 //Interaction/@fragment.43 //Interaction/@fragment.12 //Interaction/@fragment.33 //Interaction/@fragment.22 //Interaction/@fragment.1 //Interaction/@fragment.29 //Interaction/@fragment.20"/>
+    <lifeline name="Manage user" visibility="public" coveredBy="//Interaction/@fragment.49 //Interaction/@fragment.51 //Interaction/@fragment.54 //Interaction/@fragment.55 //Interaction/@fragment.57 //Interaction/@fragment.58 //Interaction/@fragment.64 //Interaction/@fragment.66 //Interaction/@fragment.67 //Interaction/@fragment.68 //Interaction/@fragment.69 //Interaction/@fragment.73 //Interaction/@fragment.53 //Interaction/@fragment.63 //Interaction/@fragment.0 //Interaction/@fragment.60 //Interaction/@fragment.52 //Interaction/@fragment.62 //Interaction/@fragment.59 //Interaction/@fragment.25 //Interaction/@fragment.17 //Interaction/@fragment.50 //Interaction/@fragment.2 //Interaction/@fragment.70 //Interaction/@fragment.28 //Interaction/@fragment.61 //Interaction/@fragment.71 //Interaction/@fragment.48 //Interaction/@fragment.65 //Interaction/@fragment.72 //Interaction/@fragment.56"/>
+    <lifeline name="Manage the survey" visibility="public" coveredBy="//Interaction/@fragment.3 //Interaction/@fragment.5 //Interaction/@fragment.16 //Interaction/@fragment.18 //Interaction/@fragment.19 //Interaction/@fragment.24 //Interaction/@fragment.26 //Interaction/@fragment.27 //Interaction/@fragment.74 //Interaction/@fragment.75 //Interaction/@fragment.76 //Interaction/@fragment.77 //Interaction/@fragment.78 //Interaction/@fragment.79 //Interaction/@fragment.81 //Interaction/@fragment.82 //Interaction/@fragment.83 //Interaction/@fragment.84 //Interaction/@fragment.85 //Interaction/@fragment.86 //Interaction/@fragment.87 //Interaction/@fragment.89 //Interaction/@fragment.90 //Interaction/@fragment.88 //Interaction/@fragment.80 //Interaction/@fragment.91"/>
+    <lifeline name="Question management" visibility="public" coveredBy="//Interaction/@fragment.6 //Interaction/@fragment.8 //Interaction/@fragment.9 //Interaction/@fragment.92 //Interaction/@fragment.94 //Interaction/@fragment.95 //Interaction/@fragment.96 //Interaction/@fragment.97 //Interaction/@fragment.98 //Interaction/@fragment.100 //Interaction/@fragment.101 //Interaction/@fragment.103 //Interaction/@fragment.104 //Interaction/@fragment.105 //Interaction/@fragment.107 //Interaction/@fragment.108 //Interaction/@fragment.93 //Interaction/@fragment.99 //Interaction/@fragment.106 //Interaction/@fragment.109 //Interaction/@fragment.102"/>
+    <lifeline name="Response" visibility="public" coveredBy="//Interaction/@fragment.11 //Interaction/@fragment.13 //Interaction/@fragment.14 //Interaction/@fragment.110 //Interaction/@fragment.113 //Interaction/@fragment.114 //Interaction/@fragment.119 //Interaction/@fragment.120 //Interaction/@fragment.121 //Interaction/@fragment.125 //Interaction/@fragment.126 //Interaction/@fragment.116 //Interaction/@fragment.118 //Interaction/@fragment.127 //Interaction/@fragment.111 //Interaction/@fragment.123 //Interaction/@fragment.112 //Interaction/@fragment.122 //Interaction/@fragment.124 //Interaction/@fragment.117 //Interaction/@fragment.115"/>
+    <lifeline name="Lifeline" visibility="public" represents="//Interaction/collaboration/Global%20intelligence" coveredBy="//Interaction/@fragment.35 //Interaction/@fragment.41 //Interaction/@fragment.38 //Interaction/@fragment.36 //Interaction/@fragment.44 //Interaction/@fragment.47 //Interaction/@fragment.42 //Interaction/@fragment.39 //Interaction/@fragment.40 //Interaction/@fragment.37"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20user" start="//Interaction/@fragment.2">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.52"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.57"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.49"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.54"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_" message="//Interaction/Manage%20User"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/Manage%20User"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" start="//Interaction/@fragment.5">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.88"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.91"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_" message="//Interaction/Manage%20Survey%20Details"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/Manage%20Survey%20Details"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Question%20management" finish="//Interaction/@fragment.9" start="//Interaction/@fragment.8">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.106"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.109"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_" message="//Interaction/Manage%20Question%20Details"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" message="//Interaction/Manage%20Question%20Details"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" message="//Interaction/reply"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_" message="//Interaction/reply"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Response" finish="//Interaction/@fragment.14" start="//Interaction/@fragment.13">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.124"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.127"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_" message="//Interaction/Manage%20User%20Response%20Details"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" message="//Interaction/Manage%20User%20Response%20Details"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" message="//Interaction/reply.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_" message="//Interaction/reply.1"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" finish="//Interaction/@fragment.19" start="//Interaction/@fragment.18"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/call"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/call"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Successful%20login_" finish="//Interaction/@fragment.21" start="//Interaction/@fragment.20"/>
+    <fragment xsi:type="uml:CombinedFragment" visibility="public">
+      <operand visibility="public">
+        <guard visibility="public"/>
+      </operand>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" finish="//Interaction/@fragment.27" start="//Interaction/@fragment.26"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/call.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/call.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/reply_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/reply_"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Successful%20login_" finish="//Interaction/@fragment.30" start="//Interaction/@fragment.29"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Successful%20login_" finish="//Interaction/@fragment.33" start="//Interaction/@fragment.32"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Lifeline"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Lifeline"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Lifeline" finish="//Interaction/@fragment.36" start="//Interaction/@fragment.35">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.47"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.39"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.42"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.44"/>
+      <generalOrdering name="Mop86H" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Lifeline" finish="//Interaction/@fragment.41" start="//Interaction/@fragment.40"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Lifeline" toAfter="//Interaction/@fragment.37/@generalOrdering.1" message="//Interaction/call.2"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Lifeline" message="//Interaction/call.2"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Lifeline" message="//Interaction/reply.2"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Lifeline" toAfter="//Interaction/@fragment.37/@generalOrdering.2" message="//Interaction/reply.2"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Successful%20login_" finish="//Interaction/@fragment.46" start="//Interaction/@fragment.45">
+      <generalOrdering name="gwLjji" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Lifeline" toAfter="//Interaction/@fragment.37/@generalOrdering.3" message="//Interaction/Login%20to%20Page"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_" message="//Interaction/Login%20to%20Page"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Successful%20login_" message="//Interaction/reply.3"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Lifeline" toAfter="//Interaction/@fragment.37/@generalOrdering.0" message="//Interaction/reply.3"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20user" finish="//Interaction/@fragment.51" start="//Interaction/@fragment.50"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" toAfter="//Interaction/@fragment.0/@generalOrdering.2" message="//Interaction/call_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/call_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/reply.4"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" toAfter="//Interaction/@fragment.0/@generalOrdering.0" message="//Interaction/reply.4"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20user" finish="//Interaction/@fragment.56" start="//Interaction/@fragment.55"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" toAfter="//Interaction/@fragment.0/@generalOrdering.3" message="//Interaction/Save%2FUpdate%20User"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/Save%2FUpdate%20User"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/reply.5"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" toAfter="//Interaction/@fragment.0/@generalOrdering.1" message="//Interaction/reply.5"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20user" finish="//Interaction/@fragment.59" start="//Interaction/@fragment.58">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.65"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.62"/>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20user" finish="//Interaction/@fragment.64" start="//Interaction/@fragment.63"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" toAfter="//Interaction/@fragment.60/@generalOrdering.1" message="//Interaction/Add%2FEdit%20User"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/Add%2FEdit%20User"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/reply.6"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" toAfter="//Interaction/@fragment.60/@generalOrdering.0" message="//Interaction/reply.6"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20user" finish="//Interaction/@fragment.67" start="//Interaction/@fragment.66">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.70"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.73"/>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20user" finish="//Interaction/@fragment.72" start="//Interaction/@fragment.71">
+      <generalOrdering name="tNZk2d" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" toAfter="//Interaction/@fragment.68/@generalOrdering.0" message="//Interaction/List%2FDelete%20Users_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/List%2FDelete%20Users_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" message="//Interaction/reply_.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20user" toAfter="//Interaction/@fragment.68/@generalOrdering.1" message="//Interaction/reply_.1"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" finish="//Interaction/@fragment.75" start="//Interaction/@fragment.74">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.81"/>
+      <generalOrdering name="WIYHKF" visibility="public" before="//Interaction/@fragment.78"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.86"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.83"/>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" finish="//Interaction/@fragment.80" start="//Interaction/@fragment.79">
+      <generalOrdering name="aT71HM" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" toAfter="//Interaction/@fragment.76/WIYHKF" message="//Interaction/Add%2FEdit%20Survey"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/Add%2FEdit%20Survey"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/reply.7"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" toAfter="//Interaction/@fragment.76/@generalOrdering.0" message="//Interaction/reply.7"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" finish="//Interaction/@fragment.85" start="//Interaction/@fragment.84"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" toAfter="//Interaction/@fragment.76/@generalOrdering.3" message="//Interaction/Save%2FUpdate%20Survey"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/Save%2FUpdate%20Survey"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/reply_.2"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" toAfter="//Interaction/@fragment.76/@generalOrdering.2" message="//Interaction/reply_.2"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" finish="//Interaction/@fragment.90" start="//Interaction/@fragment.89"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" toAfter="//Interaction/@fragment.3/@generalOrdering.0" message="//Interaction/List%2FDelete%20Survey"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/List%2FDelete%20Survey"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" message="//Interaction/reply.8"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Manage%20the%20survey" toAfter="//Interaction/@fragment.3/@generalOrdering.1" message="//Interaction/reply.8"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Question%20management" finish="//Interaction/@fragment.93" start="//Interaction/@fragment.92">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.96"/>
+      <generalOrdering name="Gd4hiL" visibility="public" before="//Interaction/@fragment.101"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.99"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.104"/>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Question%20management" finish="//Interaction/@fragment.98" start="//Interaction/@fragment.97"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" toAfter="//Interaction/@fragment.94/@generalOrdering.0" message="//Interaction/Add%2FEdit%20Questions"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" message="//Interaction/Add%2FEdit%20Questions"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" message="//Interaction/reply.9"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" toAfter="//Interaction/@fragment.94/@generalOrdering.2" message="//Interaction/reply.9"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Question%20management" finish="//Interaction/@fragment.103" start="//Interaction/@fragment.102"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" toAfter="//Interaction/@fragment.94/Gd4hiL" message="//Interaction/Save%2FUpdate%20Question"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" message="//Interaction/Save%2FUpdate%20Question"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" message="//Interaction/reply.10"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" toAfter="//Interaction/@fragment.94/@generalOrdering.3" message="//Interaction/reply.10"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Question%20management" finish="//Interaction/@fragment.108" start="//Interaction/@fragment.107">
+      <generalOrdering name="yFdT7D" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" toAfter="//Interaction/@fragment.6/@generalOrdering.0" message="//Interaction/List%2FDelete%20Survey.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" message="//Interaction/List%2FDelete%20Survey.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" message="//Interaction/reply.11"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Question%20management" toAfter="//Interaction/@fragment.6/@generalOrdering.1" message="//Interaction/reply.11"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Response"/>
+    <fragment xsi:type="uml:ExecutionOccurrenceSpecification" visibility="public" covered="//Interaction/Response"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Response" finish="//Interaction/@fragment.111" start="//Interaction/@fragment.110">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.114"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.117"/>
+      <generalOrdering name="TUO88y" visibility="public" before="//Interaction/@fragment.119"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.122"/>
+    </fragment>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Response" finish="//Interaction/@fragment.116" start="//Interaction/@fragment.115"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" toAfter="//Interaction/@fragment.112/@generalOrdering.0" message="//Interaction/Add%2FEdit%20Users"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" message="//Interaction/Add%2FEdit%20Users"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" message="//Interaction/reply.12"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" toAfter="//Interaction/@fragment.112/@generalOrdering.1" message="//Interaction/reply.12"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Response" finish="//Interaction/@fragment.121" start="//Interaction/@fragment.120"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" toAfter="//Interaction/@fragment.112/TUO88y" message="//Interaction/Save%2FUpdate%20Users"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" message="//Interaction/Save%2FUpdate%20Users"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" message="//Interaction/reply.13"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" toAfter="//Interaction/@fragment.112/@generalOrdering.3" message="//Interaction/reply.13"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Response" finish="//Interaction/@fragment.126" start="//Interaction/@fragment.125">
+      <generalOrdering name="dF0qCV" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" toAfter="//Interaction/@fragment.11/@generalOrdering.0" message="//Interaction/List%2FDelete%20Users"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" message="//Interaction/List%2FDelete%20Users"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" message="//Interaction/reply.14"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Response" toAfter="//Interaction/@fragment.11/@generalOrdering.1" message="//Interaction/reply.14"/>
+    <message name="Manage User" visibility="public" receiveEvent="//Interaction/@fragment.2" sendEvent="//Interaction/@fragment.1"/>
+    <message name="Manage Survey Details" visibility="public" receiveEvent="//Interaction/@fragment.5" sendEvent="//Interaction/@fragment.4"/>
+    <message name="Manage Question Details" visibility="public" receiveEvent="//Interaction/@fragment.8" sendEvent="//Interaction/@fragment.7"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.10" sendEvent="//Interaction/@fragment.9"/>
+    <message name="Manage User Response Details" visibility="public" receiveEvent="//Interaction/@fragment.13" sendEvent="//Interaction/@fragment.12"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.15" sendEvent="//Interaction/@fragment.14"/>
+    <message name="call" visibility="public" messageSort="asynchCall" receiveEvent="//Interaction/@fragment.18" sendEvent="//Interaction/@fragment.17"/>
+    <message name="call" visibility="public" receiveEvent="//Interaction/@fragment.26" sendEvent="//Interaction/@fragment.25"/>
+    <message name="reply_" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.28" sendEvent="//Interaction/@fragment.27"/>
+    <message name="call" visibility="public" receiveEvent="//Interaction/@fragment.40" sendEvent="//Interaction/@fragment.39"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.42" sendEvent="//Interaction/@fragment.41"/>
+    <message name="Login to Page" visibility="public" receiveEvent="//Interaction/@fragment.45" sendEvent="//Interaction/@fragment.44"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.47" sendEvent="//Interaction/@fragment.46"/>
+    <message name="call_" visibility="public" receiveEvent="//Interaction/@fragment.50" sendEvent="//Interaction/@fragment.49"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.52" sendEvent="//Interaction/@fragment.51"/>
+    <message name="Save/Update User" visibility="public" receiveEvent="//Interaction/@fragment.55" sendEvent="//Interaction/@fragment.54"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.57" sendEvent="//Interaction/@fragment.56"/>
+    <message name="Add/Edit User" visibility="public" receiveEvent="//Interaction/@fragment.63" sendEvent="//Interaction/@fragment.62"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.65" sendEvent="//Interaction/@fragment.64"/>
+    <message name="List/Delete Users_" visibility="public" receiveEvent="//Interaction/@fragment.71" sendEvent="//Interaction/@fragment.70"/>
+    <message name="reply_" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.73" sendEvent="//Interaction/@fragment.72"/>
+    <message name="Add/Edit Survey" visibility="public" receiveEvent="//Interaction/@fragment.79" sendEvent="//Interaction/@fragment.78"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.81" sendEvent="//Interaction/@fragment.80"/>
+    <message name="Save/Update Survey" visibility="public" receiveEvent="//Interaction/@fragment.84" sendEvent="//Interaction/@fragment.83"/>
+    <message name="reply_" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.86" sendEvent="//Interaction/@fragment.85"/>
+    <message name="List/Delete Survey" visibility="public" receiveEvent="//Interaction/@fragment.89" sendEvent="//Interaction/@fragment.88"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.91" sendEvent="//Interaction/@fragment.90"/>
+    <message name="Add/Edit Questions" visibility="public" receiveEvent="//Interaction/@fragment.97" sendEvent="//Interaction/@fragment.96"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.99" sendEvent="//Interaction/@fragment.98"/>
+    <message name="Save/Update Question" visibility="public" receiveEvent="//Interaction/@fragment.102" sendEvent="//Interaction/@fragment.101"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.104" sendEvent="//Interaction/@fragment.103"/>
+    <message name="List/Delete Survey" visibility="public" receiveEvent="//Interaction/@fragment.107" sendEvent="//Interaction/@fragment.106"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.109" sendEvent="//Interaction/@fragment.108"/>
+    <message name="Add/Edit Users" visibility="public" receiveEvent="//Interaction/@fragment.115" sendEvent="//Interaction/@fragment.114"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.117" sendEvent="//Interaction/@fragment.116"/>
+    <message name="Save/Update Users" visibility="public" receiveEvent="//Interaction/@fragment.120" sendEvent="//Interaction/@fragment.119"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.122" sendEvent="//Interaction/@fragment.121"/>
+    <message name="List/Delete Users" visibility="public" receiveEvent="//Interaction/@fragment.125" sendEvent="//Interaction/@fragment.124"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.127" sendEvent="//Interaction/@fragment.126"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Actor" name="Actor" visibility="public"/>
+</uml:Model>

@@ -74,10 +74,10 @@ public class TestAmble_7 {
 //		getBranches(baseResource, backupURI, m0URI, uriList);		
 
 //		testMerge(uriList, typeGraph, typeEdgeList, null, m1URI, ep);
-//		testEquality(m0URI, m1URI);
+		testEquality(m0URI, m1URI);
 
 //		testEMFCompare(uriList, m2URI);
-		testEquality(m0URI, m2URI);
+//		testEquality(m0URI, m2URI);
 
 	}
 

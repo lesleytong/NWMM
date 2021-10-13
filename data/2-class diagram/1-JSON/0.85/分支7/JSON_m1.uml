@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="JSON" visibility="public">
+  <packagedElement xsi:type="uml:Class" name="Value" visibility="public" isAbstract="true">
+    <ownedAttribute name="attribute" visibility="protected" type="//String.1">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedAttribute>
+    <ownedOperation name="get_name" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="accept" visibility="public" isAbstract="true">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Visitor" isUnique="false" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Null" visibility="public">
+    <generalization general="//Value"/>
+    <ownedOperation name="accept" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Visitor" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="GkgYLQ" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="String" visibility="public">
+    <generalization general="//Value"/>
+    <ownedAttribute name="data" visibility="private" type="//String"/>
+    <ownedOperation name="get_data" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//String" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="accept" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Visitor" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="t7GnIS" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Bool" visibility="public">
+    <generalization general="//Value"/>
+    <ownedAttribute name="data" visibility="private" type="//Boolean"/>
+    <ownedOperation name="get_data" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//Boolean" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="accept" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Visitor" isUnique="false" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Number" visibility="public">
+    <generalization general="//Value"/>
+    <ownedAttribute name="data_" visibility="private" type="//Long"/>
+    <ownedOperation name="get_data" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//Long" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="accept" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Visitor" isUnique="false" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Array" visibility="public">
+    <generalization general="//Value"/>
+    <ownedAttribute name="data_" visibility="private" type="//Value" isOrdered="true">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedAttribute>
+    <ownedOperation name="get_data" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//Value" isUnique="false" direction="return" effect="create">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation name="accept" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Visitor" isUnique="false" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Visitor" visibility="public">
+    <ownedOperation name="visit" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Array" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="visit" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Bool" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="visit" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Null" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="visit" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Number" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="visit" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//String.1" isUnique="false" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Json" visibility="public">
+    <generalization general="//Value"/>
+    <ownedAttribute name="values" visibility="private" type="//Value">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedAttribute>
+    <ownedOperation name="accept" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Visitor" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="write_file" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="get_values" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" type="//Value" isUnique="false" direction="return" effect="create">
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation name="add_value" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Value" isUnique="false" effect="create">
+        <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+        <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+      </ownedParameter>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Documents" visibility="public">
+    <ownedAttribute name="file" visibility="private"/>
+    <ownedAttribute name="data" visibility="private" type="//Json">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralUnlimitedNatural" visibility="public" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute name="file_name" visibility="private" type="//String.1"/>
+    <ownedOperation name="write_file" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="write_object" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Json" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="write_array" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Array" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="write_string" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//String" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="write_bool" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Bool" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="write_null" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Null" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="write_number" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Number" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="write_value" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+      <ownedParameter name="parameter" visibility="public" type="//Value" isUnique="false" effect="create"/>
+    </ownedOperation>
+    <ownedOperation name="tab" visibility="public">
+      <ownedParameter name="returnParameter" visibility="public" isUnique="false" direction="return" effect="create"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Print" visibility="public">
+    <generalization general="//Visitor"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="ArrPrint" visibility="public">
+    <generalization general="//Visitor"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Long" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Integer" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Boolean" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="String" visibility="public"/>
+</uml:Model>

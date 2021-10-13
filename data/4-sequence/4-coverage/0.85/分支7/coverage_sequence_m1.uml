@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="coverage-sequence" visibility="public">
+  <packagedElement xsi:type="uml:Interaction" name="Interaction" visibility="public" isReentrant="true">
+    <ownedComment annotatedElement="//Interaction/registerAttemp" body="Cuando se finalice en diligenciamiento"/>
+    <lifeline name="User Interface" visibility="public" coveredBy="//Interaction/@fragment.4 //Interaction/@fragment.34 //Interaction/@fragment.31 //Interaction/@fragment.1"/>
+    <lifeline name="Converge Controller" visibility="public" coveredBy="//Interaction/@fragment.0 //Interaction/@fragment.2 //Interaction/@fragment.3 //Interaction/@fragment.6 //Interaction/@fragment.9 //Interaction/@fragment.30 //Interaction/@fragment.32 //Interaction/@fragment.36 //Interaction/@fragment.39 //Interaction/@fragment.33"/>
+    <lifeline name="Converge Service" visibility="public" coveredBy="//Interaction/@fragment.11 //Interaction/@fragment.16 //Interaction/@fragment.35 //Interaction/@fragment.41 //Interaction/@fragment.56 //Interaction/@fragment.19 //Interaction/@fragment.59 //Interaction/@fragment.5 //Interaction/@fragment.55 //Interaction/@fragment.46 //Interaction/@fragment.37 //Interaction/@fragment.7 //Interaction/@fragment.58 //Interaction/@fragment.51 //Interaction/@fragment.21 //Interaction/@fragment.54 //Interaction/@fragment.44 //Interaction/@fragment.26 //Interaction/@fragment.57 //Interaction/@fragment.8 //Interaction/@fragment.24 //Interaction/@fragment.14 //Interaction/@fragment.29 //Interaction/@fragment.49 //Interaction/@fragment.38"/>
+    <lifeline name="PersonDAO" visibility="public" coveredBy="//Interaction/@fragment.18 //Interaction/@fragment.42 //Interaction/@fragment.43 //Interaction/@fragment.40 //Interaction/@fragment.17 //Interaction/@fragment.10 //Interaction/@fragment.13 //Interaction/@fragment.15 //Interaction/@fragment.12"/>
+    <lifeline name="JPA" visibility="public"/>
+    <lifeline name="Database" visibility="public"/>
+    <lifeline name="AttemptDAO" visibility="public" coveredBy="//Interaction/@fragment.20 //Interaction/@fragment.22 //Interaction/@fragment.23 //Interaction/@fragment.45 //Interaction/@fragment.47 //Interaction/@fragment.48"/>
+    <lifeline name="AssementDAO" visibility="public" coveredBy="//Interaction/@fragment.25 //Interaction/@fragment.27 //Interaction/@fragment.28 //Interaction/@fragment.50 //Interaction/@fragment.52 //Interaction/@fragment.53"/>
+    <lifeline name="LcfUNq" visibility="public"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Converge%20Controller" finish="//Interaction/@fragment.3" start="//Interaction/@fragment.2">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.6"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.9"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/User%20Interface" message="//Interaction/generateAssesment"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Controller" message="//Interaction/generateAssesment"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Controller" message="//Interaction/return%20JSON%20(Assement%20+%20attemp)"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/User%20Interface" message="//Interaction/return%20JSON%20(Assement%20+%20attemp)"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Converge%20Service" finish="//Interaction/@fragment.8" start="//Interaction/@fragment.7">
+      <generalOrdering name="tecpPH" visibility="public" before="//Interaction/@fragment.11"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.14"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.16"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.19"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.21"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.24"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.26"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.29"/>
+      <generalOrdering name="LCriXy" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Controller" toAfter="//Interaction/@fragment.0/@generalOrdering.0" message="//Interaction/generateAssesment.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" message="//Interaction/generateAssesment.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" message="//Interaction/return%20%20(Assement%20+%20attemp"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Controller" toAfter="//Interaction/@fragment.0/@generalOrdering.1" message="//Interaction/return%20%20(Assement%20+%20attemp"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/PersonDAO" finish="//Interaction/@fragment.13" start="//Interaction/@fragment.12">
+      <generalOrdering name="Y9mwhY" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.5/tecpPH" message="//Interaction/findByIdentification"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/PersonDAO" message="//Interaction/findByIdentification"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/PersonDAO" message="//Interaction/reply"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.5/@generalOrdering.1" message="//Interaction/reply"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/PersonDAO" finish="//Interaction/@fragment.18" start="//Interaction/@fragment.17"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.5/@generalOrdering.2" message="//Interaction/create"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/PersonDAO" message="//Interaction/create"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/PersonDAO" message="//Interaction/reply.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.5/@generalOrdering.3" message="//Interaction/reply.1"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/AttemptDAO" finish="//Interaction/@fragment.23" start="//Interaction/@fragment.22"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.5/@generalOrdering.4" message="//Interaction/create_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/AttemptDAO" message="//Interaction/create_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/AttemptDAO" message="//Interaction/reply.2"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.5/@generalOrdering.5" message="//Interaction/reply.2"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/AssementDAO" finish="//Interaction/@fragment.28" start="//Interaction/@fragment.27"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.5/@generalOrdering.6" message="//Interaction/searchByLanguage"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/AssementDAO" message="//Interaction/searchByLanguage"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/AssementDAO" message="//Interaction/reply.3"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.5/@generalOrdering.7" message="//Interaction/reply.3"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Converge%20Controller" finish="//Interaction/@fragment.33" start="//Interaction/@fragment.32">
+      <generalOrdering name="dbGxL4" visibility="public" before="//Interaction/@fragment.36"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.39"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/User%20Interface" message="//Interaction/registerAttemp"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Controller" message="//Interaction/registerAttemp"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Controller" message="//Interaction/reply.4"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/User%20Interface" message="//Interaction/reply.4"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Converge%20Service" finish="//Interaction/@fragment.38" start="//Interaction/@fragment.37">
+      <generalOrdering visibility="public" before="//Interaction/@fragment.41"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.44"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.46"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.49"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.51"/>
+      <generalOrdering name="cVQ6Xk" visibility="public" before="//Interaction/@fragment.54"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.56"/>
+      <generalOrdering visibility="public" before="//Interaction/@fragment.59"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Controller" toAfter="//Interaction/@fragment.30/dbGxL4" message="//Interaction/registerAttemp.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" message="//Interaction/registerAttemp.1"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" message="//Interaction/reply.5"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Controller" toAfter="//Interaction/@fragment.30/@generalOrdering.1" message="//Interaction/reply.5"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/PersonDAO" finish="//Interaction/@fragment.43" start="//Interaction/@fragment.42"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.35/@generalOrdering.0" message="//Interaction/validatePerson"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/PersonDAO" message="//Interaction/validatePerson"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/PersonDAO" message="//Interaction/reply.6"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.35/@generalOrdering.1" message="//Interaction/reply.6"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/AttemptDAO" finish="//Interaction/@fragment.48" start="//Interaction/@fragment.47"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.35/@generalOrdering.2" message="//Interaction/validatevalidateAttemp"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/AttemptDAO" message="//Interaction/validatevalidateAttemp"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/AttemptDAO" message="//Interaction/reply.7"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.35/@generalOrdering.3" message="//Interaction/reply.7"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/AssementDAO" finish="//Interaction/@fragment.53" start="//Interaction/@fragment.52">
+      <generalOrdering name="6GgX7S" visibility="public"/>
+    </fragment>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.35/@generalOrdering.4" message="//Interaction/obtainQuestionIDsAndQUestionTypesAndAnswers"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/AssementDAO" message="//Interaction/obtainQuestionIDsAndQUestionTypesAndAnswers"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/AssementDAO" message="//Interaction/reply.8"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.35/cVQ6Xk" message="//Interaction/reply.8"/>
+    <fragment xsi:type="uml:BehaviorExecutionSpecification" visibility="public" covered="//Interaction/Converge%20Service" finish="//Interaction/@fragment.58" start="//Interaction/@fragment.57"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.35/@generalOrdering.6" message="//Interaction/validateReceivedQuestions_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" message="//Interaction/validateReceivedQuestions_"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" message="//Interaction/reply.9"/>
+    <fragment xsi:type="uml:MessageOccurrenceSpecification" visibility="public" covered="//Interaction/Converge%20Service" toAfter="//Interaction/@fragment.35/@generalOrdering.7" message="//Interaction/reply.9"/>
+    <message name="generateAssesment" visibility="public" receiveEvent="//Interaction/@fragment.2" sendEvent="//Interaction/@fragment.1"/>
+    <message name="return JSON (Assement + attemp)" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.4" sendEvent="//Interaction/@fragment.3"/>
+    <message name="generateAssesment" visibility="public" receiveEvent="//Interaction/@fragment.7" sendEvent="//Interaction/@fragment.6"/>
+    <message name="return  (Assement + attemp" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.9" sendEvent="//Interaction/@fragment.8"/>
+    <message name="findByIdentification" visibility="public" receiveEvent="//Interaction/@fragment.12" sendEvent="//Interaction/@fragment.11"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.14" sendEvent="//Interaction/@fragment.13"/>
+    <message name="create" visibility="public" receiveEvent="//Interaction/@fragment.17" sendEvent="//Interaction/@fragment.16"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.19" sendEvent="//Interaction/@fragment.18"/>
+    <message name="create_" visibility="public" receiveEvent="//Interaction/@fragment.22" sendEvent="//Interaction/@fragment.21"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.24" sendEvent="//Interaction/@fragment.23"/>
+    <message name="searchByLanguage" visibility="public" receiveEvent="//Interaction/@fragment.27" sendEvent="//Interaction/@fragment.26"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.29" sendEvent="//Interaction/@fragment.28"/>
+    <message name="registerAttemp" visibility="public" receiveEvent="//Interaction/@fragment.32" sendEvent="//Interaction/@fragment.31"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.34" sendEvent="//Interaction/@fragment.33"/>
+    <message name="registerAttemp" visibility="public" receiveEvent="//Interaction/@fragment.37" sendEvent="//Interaction/@fragment.36"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.39" sendEvent="//Interaction/@fragment.38"/>
+    <message name="validatePerson" visibility="public" receiveEvent="//Interaction/@fragment.42" sendEvent="//Interaction/@fragment.41"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.44" sendEvent="//Interaction/@fragment.43"/>
+    <message name="validatevalidateAttemp" visibility="public" receiveEvent="//Interaction/@fragment.47" sendEvent="//Interaction/@fragment.46"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.49" sendEvent="//Interaction/@fragment.48"/>
+    <message name="obtainQuestionIDsAndQUestionTypesAndAnswers" visibility="public" receiveEvent="//Interaction/@fragment.52" sendEvent="//Interaction/@fragment.51"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.54" sendEvent="//Interaction/@fragment.53"/>
+    <message name="validateReceivedQuestions_" visibility="public" receiveEvent="//Interaction/@fragment.57" sendEvent="//Interaction/@fragment.56"/>
+    <message name="reply" visibility="public" messageSort="reply" receiveEvent="//Interaction/@fragment.59" sendEvent="//Interaction/@fragment.58"/>
+  </packagedElement>
+</uml:Model>

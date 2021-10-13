@@ -1,0 +1,592 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uml:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" name="Bus ticket" visibility="public">
+  <packagedElement xsi:type="uml:UseCase" name="Manage Bus" visibility="public">
+    <extensionPoint name="ExtPoint" visibility="public"/>
+    <extensionPoint name="ExtPoint2" visibility="public"/>
+    <extensionPoint name="ExtPoint3" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Manage Bookings" visibility="public">
+    <extensionPoint name="ExtPoint" visibility="public"/>
+    <extensionPoint name="ExtPoint2" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Manage Customers" visibility="public">
+    <extensionPoint name="ExtPoint" visibility="public"/>
+    <extensionPoint name="ExtPoint2" visibility="public"/>
+    <extensionPoint name="ExtPoint3" visibility="public"/>
+    <extensionPoint name="ExtPoint4" visibility="public"/>
+    <extensionPoint name="ExtPoint5" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Actor" name="Super Admin_" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="Customer_" visibility="public"/>
+  <packagedElement xsi:type="uml:Actor" name="Agent_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Manage Users and Full Aplication" visibility="public">
+    <extend visibility="public" extendedCase="//Manage%20Users%20and%20Full%20Aplication"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Manage Operators" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Manage Ticket Booking" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Booking Payments" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Book Customer Ticket" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Make Payment" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="View Booking History" visibility="public">
+    <extend visibility="public" extendedCase="//View%20Booking%20History"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Actor" name="System User_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Search Bus" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Book Ticket" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Update my Profile" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Change Account Password_" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Manage Users and Full Aplication" visibility="public" memberEnd="//Super%20Admin_Manage%20Users%20and%20Full%20Aplication/manage%20Users%20and%20Full%20Aplication //Super%20Admin_Manage%20Users%20and%20Full%20Aplication/super%20Admin" navigableOwnedEnd="//Super%20Admin_Manage%20Users%20and%20Full%20Aplication/super%20Admin //Super%20Admin_Manage%20Users%20and%20Full%20Aplication/manage%20Users%20and%20Full%20Aplication">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Manage%20Users%20and%20Full%20Aplication">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="manage Users and Full Aplication" visibility="public" type="//Manage%20Users%20and%20Full%20Aplication" association="//Super%20Admin_Manage%20Users%20and%20Full%20Aplication">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Mange Bus" visibility="public" memberEnd="//Super%20Admin_Mange%20Bus/mange%20Bus //Super%20Admin_Mange%20Bus/super%20Admin" navigableOwnedEnd="//Super%20Admin_Mange%20Bus/super%20Admin //Super%20Admin_Mange%20Bus/mange%20Bus">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Mange%20Bus">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="mange Bus" visibility="public" type="//Manage%20Bus" association="//Super%20Admin_Mange%20Bus">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Manage Bookings" visibility="public" memberEnd="//Super%20Admin_Manage%20Bookings/manage%20Bookings //Super%20Admin_Manage%20Bookings/super%20Admin" navigableOwnedEnd="//Super%20Admin_Manage%20Bookings/super%20Admin //Super%20Admin_Manage%20Bookings/manage%20Bookings">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Manage%20Bookings">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="manage Bookings" visibility="public" type="//Manage%20Bookings" association="//Super%20Admin_Manage%20Bookings">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Update my Profile" visibility="public" memberEnd="//Super%20Admin_Update%20my%20Profile/update%20my%20Profile //Super%20Admin_Update%20my%20Profile/super%20Admin" navigableOwnedEnd="//Super%20Admin_Update%20my%20Profile/super%20Admin //Super%20Admin_Update%20my%20Profile/update%20my%20Profile">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Update%20my%20Profile">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="update my Profile" visibility="public" type="//Update%20my%20Profile" association="//Super%20Admin_Update%20my%20Profile">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Manage Customers" visibility="public" memberEnd="//Super%20Admin_Manage%20Customers/manage%20Customers //Super%20Admin_Manage%20Customers/super%20Admin" navigableOwnedEnd="//Super%20Admin_Manage%20Customers/super%20Admin //Super%20Admin_Manage%20Customers/manage%20Customers">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Manage%20Customers">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="manage Customers" visibility="public" type="//Manage%20Customers" association="//Super%20Admin_Manage%20Customers">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Manage Ticket Booking" visibility="public" memberEnd="//Super%20Admin_Manage%20Ticket%20Booking/manage%20Ticket%20Booking //Super%20Admin_Manage%20Ticket%20Booking/super%20Admin" navigableOwnedEnd="//Super%20Admin_Manage%20Ticket%20Booking/super%20Admin //Super%20Admin_Manage%20Ticket%20Booking/manage%20Ticket%20Booking">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Manage%20Ticket%20Booking">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="manage Ticket Booking" visibility="public" type="//Manage%20Ticket%20Booking" association="//Super%20Admin_Manage%20Ticket%20Booking">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Manage Operators" visibility="public" memberEnd="//Super%20Admin_Manage%20Operators/manage%20Operators //Super%20Admin_Manage%20Operators/super%20Admin" navigableOwnedEnd="//Super%20Admin_Manage%20Operators/super%20Admin //Super%20Admin_Manage%20Operators/manage%20Operators">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Manage%20Operators">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="manage Operators" visibility="public" type="//Manage%20Operators" association="//Super%20Admin_Manage%20Operators">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Agent_Booking Payments" visibility="public" memberEnd="//Agent_Booking%20Payments/booking%20Payments //Agent_Booking%20Payments/agent" navigableOwnedEnd="//Agent_Booking%20Payments/agent //Agent_Booking%20Payments/booking%20Payments">
+    <ownedEnd name="agent" visibility="public" type="//Agent_" association="//Agent_Booking%20Payments">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="booking Payments" visibility="public" type="//Booking%20Payments" association="//Agent_Booking%20Payments">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Agent_Book Customer Ticket" visibility="public" memberEnd="//Agent_Book%20Customer%20Ticket/book%20Customer%20Ticket //Agent_Book%20Customer%20Ticket/agent" navigableOwnedEnd="//Agent_Book%20Customer%20Ticket/agent //Agent_Book%20Customer%20Ticket/book%20Customer%20Ticket">
+    <ownedEnd name="agent" visibility="public" type="//Agent_" association="//Agent_Book%20Customer%20Ticket">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="book Customer Ticket" visibility="public" type="//Book%20Customer%20Ticket" association="//Agent_Book%20Customer%20Ticket">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Agent_View Booking History" visibility="public" memberEnd="//Agent_View%20Booking%20History/view%20Booking%20History //Agent_View%20Booking%20History/agent" navigableOwnedEnd="//Agent_View%20Booking%20History/agent //Agent_View%20Booking%20History/view%20Booking%20History">
+    <ownedEnd name="agent" visibility="public" type="//Agent_" association="//Agent_View%20Booking%20History">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="view Booking History" visibility="public" type="//View%20Booking%20History" association="//Agent_View%20Booking%20History">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Customer_Search Bus" visibility="public" memberEnd="//Customer_Search%20Bus/search%20Bus //Customer_Search%20Bus/customer" navigableOwnedEnd="//Customer_Search%20Bus/customer //Customer_Search%20Bus/search%20Bus">
+    <ownedEnd name="customer" visibility="public" type="//Customer_" association="//Customer_Search%20Bus">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="search Bus" visibility="public" type="//Search%20Bus" association="//Customer_Search%20Bus">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Customer_Book Ticket" visibility="public" memberEnd="//Customer_Book%20Ticket/book%20Ticket //Customer_Book%20Ticket/customer" navigableOwnedEnd="//Customer_Book%20Ticket/customer //Customer_Book%20Ticket/book%20Ticket">
+    <ownedEnd name="customer" visibility="public" type="//Customer_" association="//Customer_Book%20Ticket">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="book Ticket" visibility="public" type="//Book%20Ticket" association="//Customer_Book%20Ticket">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Customer_Make Payment" visibility="public" memberEnd="//Customer_Make%20Payment/make%20Payment //Customer_Make%20Payment/customer" navigableOwnedEnd="//Customer_Make%20Payment/customer //Customer_Make%20Payment/make%20Payment">
+    <ownedEnd name="customer" visibility="public" type="//Customer_" association="//Customer_Make%20Payment">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="make Payment" visibility="public" type="//Make%20Payment" association="//Customer_Make%20Payment">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Agent_Change Account Password" visibility="public" memberEnd="//Agent_Change%20Account%20Password/change%20Account%20Password //Agent_Change%20Account%20Password/agent" navigableOwnedEnd="//Agent_Change%20Account%20Password/agent //Agent_Change%20Account%20Password/change%20Account%20Password">
+    <ownedEnd name="agent" visibility="public" type="//Agent_" association="//Agent_Change%20Account%20Password">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="change Account Password" visibility="public" type="//Change%20Account%20Password_" association="//Agent_Change%20Account%20Password">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Customer_Update my Profile" visibility="public" memberEnd="//Customer_Update%20my%20Profile/update%20my%20Profile //Customer_Update%20my%20Profile/customer" navigableOwnedEnd="//Customer_Update%20my%20Profile/customer //Customer_Update%20my%20Profile/update%20my%20Profile">
+    <ownedEnd name="customer" visibility="public" type="//Customer_" association="//Customer_Update%20my%20Profile">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="update my Profile" visibility="public" type="//Update%20my%20Profile" association="//Customer_Update%20my%20Profile">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Customer_Change Account Password" visibility="public" memberEnd="//Customer_Change%20Account%20Password/change%20Account%20Password //Customer_Change%20Account%20Password/customer" navigableOwnedEnd="//Customer_Change%20Account%20Password/customer //Customer_Change%20Account%20Password/change%20Account%20Password">
+    <ownedEnd name="customer" visibility="public" type="//Customer_" association="//Customer_Change%20Account%20Password">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="change Account Password" visibility="public" type="//Change%20Account%20Password_" association="//Customer_Change%20Account%20Password">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="System User_Manage Customers" visibility="public" memberEnd="//System%20User_Manage%20Customers/manage%20Customers //System%20User_Manage%20Customers/system%20User" navigableOwnedEnd="//System%20User_Manage%20Customers/system%20User //System%20User_Manage%20Customers/manage%20Customers">
+    <ownedEnd name="system User" visibility="public" type="//System%20User_" association="//System%20User_Manage%20Customers">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="manage Customers" visibility="public" type="//Manage%20Customers" association="//System%20User_Manage%20Customers">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="System User_Manage Ticket Booking" visibility="public" memberEnd="//System%20User_Manage%20Ticket%20Booking/manage%20Ticket%20Booking //System%20User_Manage%20Ticket%20Booking/system%20User" navigableOwnedEnd="//System%20User_Manage%20Ticket%20Booking/system%20User //System%20User_Manage%20Ticket%20Booking/manage%20Ticket%20Booking">
+    <ownedEnd name="system User" visibility="public" type="//System%20User_" association="//System%20User_Manage%20Ticket%20Booking">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="manage Ticket Booking" visibility="public" type="//Manage%20Ticket%20Booking" association="//System%20User_Manage%20Ticket%20Booking">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="System User_Manage Operators" visibility="public" memberEnd="//System%20User_Manage%20Operators/manage%20Operators //System%20User_Manage%20Operators/system%20User" navigableOwnedEnd="//System%20User_Manage%20Operators/system%20User //System%20User_Manage%20Operators/manage%20Operators">
+    <ownedEnd name="system User" visibility="public" type="//System%20User_" association="//System%20User_Manage%20Operators">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="manage Operators" visibility="public" type="//Manage%20Operators" association="//System%20User_Manage%20Operators">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="System User_Change Account Password" visibility="public" memberEnd="//System%20User_Change%20Account%20Password/change%20Account%20Password //System%20User_Change%20Account%20Password/system%20User" navigableOwnedEnd="//System%20User_Change%20Account%20Password/system%20User //System%20User_Change%20Account%20Password/change%20Account%20Password">
+    <ownedEnd name="system User" visibility="public" type="//System%20User_" association="//System%20User_Change%20Account%20Password">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="change Account Password" visibility="public" type="//Change%20Account%20Password_" association="//System%20User_Change%20Account%20Password">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Role Class" visibility="public">
+    <ownedAttribute name="role_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="attribute" visibility="public" type="//String"/>
+    <ownedAttribute name="attribute2" visibility="public" type="//String"/>
+    <ownedOperation name="addRole" visibility="public"/>
+    <ownedOperation name="editRole" visibility="public"/>
+    <ownedOperation name="deleteRole" visibility="public"/>
+    <ownedOperation name="searchRole" visibility="public"/>
+    <ownedOperation name="assignRole" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Permission Class" visibility="public">
+    <ownedAttribute name="permission" visibility="public" type="//Integer"/>
+    <ownedAttribute name="permission" visibility="public" type="//Integer"/>
+    <ownedAttribute name="permission" visibility="public" type="//String"/>
+    <ownedAttribute name="permission" visibility="public" type="//String"/>
+    <ownedAttribute name="permission" visibility="public" type="//String"/>
+    <ownedOperation name="addPermission" visibility="public"/>
+    <ownedOperation name="editPermission" visibility="public"/>
+    <ownedOperation name="deletePermission" visibility="public"/>
+    <ownedOperation name="searchPermission" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Seat Class" visibility="public">
+    <ownedAttribute name="seat_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="seat_bus_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="seat_customer_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="seat_number" visibility="public" type="//String"/>
+    <ownedAttribute name="seat_type" visibility="public" type="//String"/>
+    <ownedAttribute name="seat_description" visibility="public" type="//String"/>
+    <ownedOperation name="addSeat" visibility="public"/>
+    <ownedOperation name="editSeat" visibility="public"/>
+    <ownedOperation name="deleteSeat" visibility="public"/>
+    <ownedOperation name="searchSeat" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Customer Class" visibility="public">
+    <ownedAttribute name="customer_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="customer_name" visibility="public" type="//String"/>
+    <ownedAttribute name="customer_mobile" visibility="public" type="//String"/>
+    <ownedAttribute name="customer_email" visibility="public" type="//String"/>
+    <ownedAttribute name="customer_address" visibility="public" type="//String"/>
+    <ownedAttribute name="customer_password" visibility="public" type="//String"/>
+    <ownedAttribute name="customer_username" visibility="public" type="//String"/>
+    <ownedOperation name="addCustomer" visibility="public"/>
+    <ownedOperation name="editCustomer" visibility="public"/>
+    <ownedOperation name="deleteCustomer" visibility="public"/>
+    <ownedOperation name="searchCustomer" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Booking Class" visibility="public">
+    <ownedAttribute name="booking_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="booking_title" visibility="public" type="//String"/>
+    <ownedAttribute name="booking_type" visibility="public" type="//String"/>
+    <ownedAttribute name="booking_description" visibility="public" type="//String"/>
+    <ownedAttribute name="booking_ticket" visibility="public" type="//String"/>
+    <ownedAttribute name="booking_date" visibility="public" type="//Date"/>
+    <ownedOperation name="addBooking" visibility="public"/>
+    <ownedOperation name="editBooking" visibility="public"/>
+    <ownedOperation name="deleteBooking" visibility="public"/>
+    <ownedOperation name="searchBooking" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Ticket Booking Class" visibility="public">
+    <ownedAttribute name="ticket booking_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="ticket booking_type" visibility="public" type="//String"/>
+    <ownedAttribute name="ticket booking_description" visibility="public" type="//String"/>
+    <ownedAttribute name="ticket booking_date" visibility="public" type="//Date"/>
+    <ownedOperation name="addTicketBooking" visibility="public"/>
+    <ownedOperation name="editTicketBooking" visibility="public"/>
+    <ownedOperation name="deleteTicketBooking" visibility="public"/>
+    <ownedOperation name="searchTicketBooking" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="Bus Class" visibility="public">
+    <ownedAttribute name="bus_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="bus_name" visibility="public" type="//String"/>
+    <ownedAttribute name="bus_number" visibility="public" type="//String"/>
+    <ownedAttribute name="bus_seat_number" visibility="public" type="//String"/>
+    <ownedAttribute name="bus_type" visibility="public" type="//String"/>
+    <ownedAttribute name="bus_description" visibility="public" type="//String"/>
+    <ownedAttribute name="bus_ticket" visibility="public" type="//String"/>
+    <ownedOperation name="addBus" visibility="public"/>
+    <ownedOperation name="editBus" visibility="public"/>
+    <ownedOperation name="deleteBus" visibility="public"/>
+    <ownedOperation name="searchBus" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Class" name="User Class" visibility="public">
+    <generalization general="//Role%20Class"/>
+    <generalization general="//Permission%20Class"/>
+    <ownedAttribute name="user_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="user_role_id" visibility="public" type="//Integer"/>
+    <ownedAttribute name="user_name" visibility="public" type="//String"/>
+    <ownedAttribute name="user_email" visibility="public" type="//String"/>
+    <ownedAttribute name="user_dob" visibility="public" type="//Date"/>
+    <ownedAttribute name="user_address" visibility="public" type="//String"/>
+    <ownedOperation name="addUser" visibility="public"/>
+    <ownedOperation name="editUser" visibility="public"/>
+    <ownedOperation name="deleteUser" visibility="public"/>
+    <ownedOperation name="searchUser" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:DataType" name="date" visibility="public"/>
+  <packagedElement xsi:type="uml:DataType" name="Date" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="Permission Class_Ticket Booking Class" visibility="public" memberEnd="//Permission%20Class_Ticket%20Booking%20Class/ticket%20Booking%20Class //Permission%20Class_Ticket%20Booking%20Class/permission%20Class" navigableOwnedEnd="//Permission%20Class_Ticket%20Booking%20Class/permission%20Class //Permission%20Class_Ticket%20Booking%20Class/ticket%20Booking%20Class">
+    <ownedEnd name="permission Class" visibility="public" type="//Permission%20Class" association="//Permission%20Class_Ticket%20Booking%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="ticket Booking Class" visibility="public" type="//Ticket%20Booking%20Class" aggregation="shared" association="//Permission%20Class_Ticket%20Booking%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Permission Class_Customer Class" visibility="public" memberEnd="//Permission%20Class_Customer%20Class/customer%20Class //Permission%20Class_Customer%20Class/permission%20Class" navigableOwnedEnd="//Permission%20Class_Customer%20Class/permission%20Class //Permission%20Class_Customer%20Class/customer%20Class">
+    <ownedEnd name="permission Class" visibility="public" type="//Permission%20Class" association="//Permission%20Class_Customer%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="customer Class" visibility="public" type="//Customer%20Class" aggregation="shared" association="//Permission%20Class_Customer%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Bus Class_Permission Class" visibility="public" memberEnd="//Bus%20Class_Permission%20Class/permission%20Class //Bus%20Class_Permission%20Class/bus%20Class" navigableOwnedEnd="//Bus%20Class_Permission%20Class/bus%20Class //Bus%20Class_Permission%20Class/permission%20Class">
+    <ownedEnd name="bus Class" visibility="public" type="//Bus%20Class" association="//Bus%20Class_Permission%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="permission Class" visibility="public" type="//Permission%20Class" association="//Bus%20Class_Permission%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Booking Class_Permission Class" visibility="public" memberEnd="//Booking%20Class_Permission%20Class/permission%20Class //Booking%20Class_Permission%20Class/booking%20Class" navigableOwnedEnd="//Booking%20Class_Permission%20Class/booking%20Class //Booking%20Class_Permission%20Class/permission%20Class">
+    <ownedEnd name="booking Class" visibility="public" type="//Booking%20Class" association="//Booking%20Class_Permission%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="permission Class" visibility="public" type="//Permission%20Class" association="//Booking%20Class_Permission%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Permission Class_Seat Class" visibility="public" memberEnd="//Permission%20Class_Seat%20Class/seat%20Class //Permission%20Class_Seat%20Class/permission%20Class" navigableOwnedEnd="//Permission%20Class_Seat%20Class/permission%20Class //Permission%20Class_Seat%20Class/seat%20Class">
+    <ownedEnd name="permission Class" visibility="public" type="//Permission%20Class" association="//Permission%20Class_Seat%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="seat Class" visibility="public" type="//Seat%20Class" aggregation="shared" association="//Permission%20Class_Seat%20Class">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Add/Edit Bus" visibility="public">
+    <extend visibility="public" extendedCase="//Manage%20Bus" extensionLocation="//Manage%20Bus/ExtPoint"/>
+    <extensionPoint name="ExtPoint" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Save/Update Bus" visibility="public">
+    <extend visibility="public" extendedCase="//Manage%20Bus" extensionLocation="//Manage%20Bus/ExtPoint2"/>
+    <extensionPoint name="ExtPoint" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Delete Bus" visibility="public">
+    <extend visibility="public" extendedCase="//Manage%20Bus" extensionLocation="//Manage%20Bus/ExtPoint3"/>
+    <extensionPoint name="ExtPoint" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="System User_Update my Profile" visibility="public" memberEnd="//System%20User_Update%20my%20Profile/update%20my%20Profile //System%20User_Update%20my%20Profile/system%20User" navigableOwnedEnd="//System%20User_Update%20my%20Profile/system%20User //System%20User_Update%20my%20Profile/update%20my%20Profile">
+    <ownedEnd name="system User" visibility="public" type="//System%20User_" association="//System%20User_Update%20my%20Profile">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="update my Profile" visibility="public" type="//Update%20my%20Profile" association="//System%20User_Update%20my%20Profile">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Change Account Password" visibility="public" memberEnd="//Super%20Admin_Change%20Account%20Password/change%20Account%20Password //Super%20Admin_Change%20Account%20Password/super%20Admin" navigableOwnedEnd="//Super%20Admin_Change%20Account%20Password/super%20Admin //Super%20Admin_Change%20Account%20Password/change%20Account%20Password">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Change%20Account%20Password">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="change Account Password" visibility="public" type="//Change%20Account%20Password_" association="//Super%20Admin_Change%20Account%20Password">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Add/Edit Booking" visibility="public">
+    <extend visibility="public" extendedCase="//Manage%20Bookings" extensionLocation="//Manage%20Bookings/ExtPoint"/>
+    <extend visibility="public" extendedCase="//Add%2FEdit%20Booking"/>
+    <extensionPoint name="ExtPoint" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Save/Update Booking" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Delete Booking" visibility="public">
+    <extend visibility="public" extendedCase="//Manage%20Bookings" extensionLocation="//Manage%20Bookings/ExtPoint2"/>
+    <extend visibility="public" extendedCase="//Delete%20Booking"/>
+    <extensionPoint name="ExtPoint" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Save/Update_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Add/Edit Customer" visibility="public">
+    <extend visibility="public" extendedCase="//Manage%20Customers" extensionLocation="//Manage%20Customers/ExtPoint3"/>
+    <extend visibility="public" extendedCase="//Add%2FEdit%20Customer"/>
+    <extensionPoint name="ExtPoint" visibility="public"/>
+    <extensionPoint name="ExtPoint2" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Save/Update Customer" visibility="public">
+    <extend visibility="public" extendedCase="//Manage%20Customers" extensionLocation="//Manage%20Customers/ExtPoint4"/>
+    <extensionPoint name="ExtPoint" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Delete Customer" visibility="public">
+    <extend visibility="public" extendedCase="//Manage%20Customers" extensionLocation="//Manage%20Customers/ExtPoint5"/>
+    <extensionPoint name="ExtPoint" visibility="public"/>
+    <extensionPoint name="ExtPoint2" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Login" visibility="public">
+    <extensionPoint name="ExtPoint" visibility="public"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Registration" visibility="public">
+    <extensionPoint name="ExtPoint" visibility="public"/>
+    <include visibility="public" addition="//Confirm%20password"/>
+    <include visibility="public" addition="//Verify%20email_"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Logout" visibility="public"/>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Login" visibility="public" memberEnd="//Super%20Admin_Login/login //Super%20Admin_Login/super%20Admin" navigableOwnedEnd="//Super%20Admin_Login/super%20Admin //Super%20Admin_Login/login">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Login">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="login" visibility="public" type="//Login" association="//Super%20Admin_Login">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Registration" visibility="public" memberEnd="//Super%20Admin_Registration/registration //Super%20Admin_Registration/super%20Admin" navigableOwnedEnd="//Super%20Admin_Registration/super%20Admin //Super%20Admin_Registration/registration">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Registration">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="registration" visibility="public" type="//Registration" association="//Super%20Admin_Registration">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Super Admin_Logout" visibility="public" memberEnd="//Super%20Admin_Logout/logout //Super%20Admin_Logout/super%20Admin" navigableOwnedEnd="//Super%20Admin_Logout/super%20Admin //Super%20Admin_Logout/logout">
+    <ownedEnd name="super Admin" visibility="public" type="//Super%20Admin_" association="//Super%20Admin_Logout">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="logout" visibility="public" type="//Logout" association="//Super%20Admin_Logout">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="System User_Registration" visibility="public" memberEnd="//System%20User_Registration/registration //System%20User_Registration/system%20User" navigableOwnedEnd="//System%20User_Registration/system%20User //System%20User_Registration/registration">
+    <ownedEnd name="system User" visibility="public" type="//System%20User_" association="//System%20User_Registration">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="registration" visibility="public" type="//Registration" association="//System%20User_Registration">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="System User_Login" visibility="public" memberEnd="//System%20User_Login/login //System%20User_Login/system%20User" navigableOwnedEnd="//System%20User_Login/system%20User //System%20User_Login/login">
+    <ownedEnd name="system User" visibility="public" type="//System%20User_" association="//System%20User_Login">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="login" visibility="public" type="//Login" association="//System%20User_Login">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="System User_Logout" visibility="public" memberEnd="//System%20User_Logout/logout //System%20User_Logout/system%20User" navigableOwnedEnd="//System%20User_Logout/system%20User //System%20User_Logout/logout">
+    <ownedEnd name="system User" visibility="public" type="//System%20User_" association="//System%20User_Logout">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="logout" visibility="public" type="//Logout" association="//System%20User_Logout">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Agent_Registration" visibility="public" memberEnd="//Agent_Registration/registration //Agent_Registration/agent" navigableOwnedEnd="//Agent_Registration/agent //Agent_Registration/registration">
+    <ownedEnd name="agent" visibility="public" type="//Agent_" association="//Agent_Registration">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="registration" visibility="public" type="//Registration" association="//Agent_Registration">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Agent_Login" visibility="public" memberEnd="//Agent_Login/login //Agent_Login/agent" navigableOwnedEnd="//Agent_Login/agent //Agent_Login/login">
+    <ownedEnd name="agent" visibility="public" type="//Agent_" association="//Agent_Login">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="login" visibility="public" type="//Login" association="//Agent_Login">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Agent_Logout" visibility="public" memberEnd="//Agent_Logout/logout //Agent_Logout/agent" navigableOwnedEnd="//Agent_Logout/agent //Agent_Logout/logout">
+    <ownedEnd name="agent" visibility="public" type="//Agent_" association="//Agent_Logout">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="logout" visibility="public" type="//Logout" association="//Agent_Logout">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Customer_Registration" visibility="public" memberEnd="//Customer_Registration/registration //Customer_Registration/customer" navigableOwnedEnd="//Customer_Registration/customer //Customer_Registration/registration">
+    <ownedEnd name="customer" visibility="public" type="//Customer_" association="//Customer_Registration">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="registration" visibility="public" type="//Registration" association="//Customer_Registration">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Login_Customer" visibility="public" memberEnd="//Login_Customer/customer //Login_Customer/login" navigableOwnedEnd="//Login_Customer/login //Login_Customer/customer">
+    <ownedEnd name="login" visibility="public" type="//Login" association="//Login_Customer">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="customer" visibility="public" type="//Customer_" association="//Login_Customer">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Logout_Customer" visibility="public" memberEnd="//Logout_Customer/customer //Logout_Customer/logout" navigableOwnedEnd="//Logout_Customer/logout //Logout_Customer/customer">
+    <ownedEnd name="logout" visibility="public" type="//Logout" association="//Logout_Customer">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="customer" visibility="public" type="//Customer_" association="//Logout_Customer">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:Association" name="Agent_Update my Profile" visibility="public" memberEnd="//Agent_Update%20my%20Profile/update%20my%20Profile //Agent_Update%20my%20Profile/agent" navigableOwnedEnd="//Agent_Update%20my%20Profile/agent //Agent_Update%20my%20Profile/update%20my%20Profile">
+    <ownedEnd name="agent" visibility="public" type="//Agent_" association="//Agent_Update%20my%20Profile">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+    <ownedEnd name="update my Profile" visibility="public" type="//Update%20my%20Profile" association="//Agent_Update%20my%20Profile">
+      <lowerValue xsi:type="uml:LiteralInteger" visibility="public"/>
+      <upperValue xsi:type="uml:LiteralInteger" visibility="public" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Confirm password" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Verify email_" visibility="public"/>
+  <packagedElement xsi:type="uml:UseCase" name="Display Error Message" visibility="public">
+    <extend visibility="public" extendedCase="//Registration" extensionLocation="//Registration/ExtPoint"/>
+    <extend visibility="public" extendedCase="//Login" extensionLocation="//Login/ExtPoint"/>
+  </packagedElement>
+  <packagedElement xsi:type="uml:UseCase" name="Verify password_" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="Integer" visibility="public"/>
+  <packagedElement xsi:type="uml:PrimitiveType" name="String" visibility="public"/>
+</uml:Model>

@@ -68,11 +68,11 @@ public class TestDent_7 {
 //		EvaluateEngine.getM0(baseResource, m0URI, 1);					
 //		getBranches(baseResource, backupURI, m0URI, uriList);		
 
-//		testMerge(uriList, typeGraph, typeEdgeList, null, m1URI, ep);
+		testMerge(uriList, typeGraph, typeEdgeList, null, m1URI, ep);
 //		testEquality(m0URI, m1URI);
 
 //		testEMFCompare(uriList, m2URI);
-		testEquality(m0URI, m2URI);
+//		testEquality(m0URI, m2URI);
 		
 		
 
